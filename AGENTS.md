@@ -47,18 +47,20 @@ Whenever the user asks for a portfolio review or invokes `/mcp:robinhood:portfol
 
 ---
 
-## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Oct 15, 2026 Audit)
+## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Oct 19, 2026 Audit)
 
-* **Total Portfolio Value:** **$24,762.30** (Targeting $25,000 Milestone; up +147.6% vs $10,000 initial base)
-* **Total Liquid Cash:** **$3,733.80** (Expanded via $2,000 external cash injection)
-* **Spendable Buying Power:** **$3,577.81** (🟢 **Massive Dry Powder Surplus** — $2,077.81 above $1,500 minimum buffer!)
+* **Total Portfolio Value:** **$24,900.95** (Within $99 of $25,000 Milestone; up +149.0% vs $10,000 initial base)
+* **Total Liquid Cash:** **$3,466.05**
+* **Spendable Buying Power:** **$2,167.86** (🟢 **Dry Powder Surplus Maintained** — $667.86 above $1,500 minimum buffer after all limit reserves!)
 * **Gold Hedge (IAU):** **59.65 Shares** (~$4,653.90 value, $84.43 cost) held as a permanent geopolitical & inflation shield.
 * **Core Active Directives & Executions:**
-  * **NVDA (16.00 Shares, Avg Cost $232.43):** Accumulation complete. 16 shares working.
-  * **AMKR (66.80 Shares, Avg Cost $51.38):** Pending directive to stage Limit SELL order at **$56.50** (20 shares = $1,130 cash harvest).
-  * **NBIS (11.00 Shares):** Active GTC Limit BUY order set for 1.00 share @ **$155.99** (reserves $155.99; buying power $3,577.81).
+  * **NVDA (16.00 Shares, Avg Cost $232.43):** Active GTC Limit BUY order for **4.00 shares @ $213.80** (reserves $855.20).
+  * **SPCX (Bucket A):** Active GTC Limit BUY order for **2.00 shares @ $143.50** (reserves $287.00).
+  * **AMKR (66.80 Shares, Avg Cost $51.38):** Active GTC Limit SELL order for **20.00 shares @ $56.50** ($1,130 cash harvest).
+  * **NBIS (11.00 Shares):** Active GTC Limit BUY order set for **1.00 share @ $155.99**.
+  * **IRON:** Executed buy of 3 shares @ $89.25.
   * **INTC (21.41 Shares) & CRWV (24.01 Shares):** Hold current shares; zero new capital allocated.
-  * **APLD (12.67 Shares):** Active limit sell open for 12.0 shares @ $35.00 GTC.
+
 
 
 ---
