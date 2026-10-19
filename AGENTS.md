@@ -68,6 +68,7 @@ Whenever the user asks for a portfolio review or invokes `/mcp:robinhood:portfol
 ## 🛡️ 5. The "Never Repeat" Mistake Rule
 Whenever any market surprise, bad entry, or drawdown occurs, the assistant and user MUST immediately perform a post-mortem and permanently write the lesson into a new markdown rule under `.agents/rules/` to ensure the mistake is never repeated.
 * **Core Enforced Standard:** [buy_the_dip_vs_falling_knife_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buy_the_dip_vs_falling_knife_rule.md) (The 5 Golden Rules of Dip-Buying vs Falling Knives).
+* **Forensic Dilution & Debt Standard:** [mandatory_debt_and_dilution_forensic_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_debt_and_dilution_forensic_audit_rule.md) (The 3-Gate Screen for Active ATM Programs, Distressed >12% Bond Yields, and 15% Interest Burden).
 
 ---
 
@@ -81,5 +82,13 @@ All trading models, quantitative algorithms, technical support/resistance levels
 ## 🗳️ 7. U.S. Election Impact & Post-Election Surge Framework
 All market evaluations during Midterm and Presidential election seasons must account for the 3-phase election cycle, peak pre-election volatility/de-grossing, and the historical 100% 12-month post-midterm rally track record.
 * **Core Enforced Standard:** [us_election_market_impact_and_post_election_surge_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/us_election_market_impact_and_post_election_surge_rule.md).
+
+---
+
+## 🚀 8. The 5-Engine Quantitative Growth Compounding Algorithm
+All growth stock evaluations, dip purchases, and capital allocations must pass the 5-Engine Quantitative Growth Model (Secular TAM, Operating Leverage & Cash Conversion, Anti-Dilution Balance Sheet, Valuation PEG Discipline, and Technical Support Staging).
+* **Core Enforced Standard:** [ultimate_high_conviction_growth_investing_algorithm_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/ultimate_high_conviction_growth_investing_algorithm_rule.md).
+* **Execution Threshold:** Minimum Composite Score of **85/100** required for Tier 1 capital allocation. Zero capital ($0.00) for scores below 70 or any hard dilution/cash burn veto.
+
 
 
