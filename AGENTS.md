@@ -69,6 +69,7 @@ Whenever the user asks for a portfolio review or invokes `/mcp:robinhood:portfol
 Whenever any market surprise, bad entry, or drawdown occurs, the assistant and user MUST immediately perform a post-mortem and permanently write the lesson into a new markdown rule under `.agents/rules/` to ensure the mistake is never repeated.
 * **Core Enforced Standard:** [buy_the_dip_vs_falling_knife_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buy_the_dip_vs_falling_knife_rule.md) (The 5 Golden Rules of Dip-Buying vs Falling Knives).
 * **Forensic Dilution & Debt Standard:** [mandatory_debt_and_dilution_forensic_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_debt_and_dilution_forensic_audit_rule.md) (The 3-Gate Screen for Active ATM Programs, Distressed >12% Bond Yields, and 15% Interest Burden).
+* **Upfront Dealbreaker Standard:** [mandatory_why_not_to_invest_bullet_points_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_why_not_to_invest_bullet_points_rule.md) (Mandatory 5-Bullet Red Flag Screen exposing why NOT to invest before committing any capital).
 
 ---
 

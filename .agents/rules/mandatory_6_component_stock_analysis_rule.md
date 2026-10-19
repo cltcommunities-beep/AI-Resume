@@ -12,6 +12,7 @@ EVERY stock analysis report generated in this workspace MUST strictly include al
 4. 📅 **Weekly Market Moving Catalysts Table**
 5. 🛡️ **4-Point Fundamental Strength Gate Audit Table**
 6. 📊 **17-Column Master Executive Portfolio Readiness Table**
+7. 🛑 **Mandatory Forensic Red Flags: Why You Should NOT Invest** (5-Bullet Inversion Screen per `mandatory_why_not_to_invest_bullet_points_rule.md`)
 
 ## Compliance & Enforcement
 - No component may be omitted, abbreviated, or replaced.
