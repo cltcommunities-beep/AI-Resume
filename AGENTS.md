@@ -74,3 +74,10 @@ All trading models, quantitative algorithms, technical support/resistance levels
 * **Core Enforced Standard:** [mandatory_continuous_algorithm_update_and_calibration_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_continuous_algorithm_update_and_calibration_rule.md).
 * **Strict Rule:** Trading on uncalibrated models or stale levels triggers an immediate **100% Capital Allocation Freeze ($0.00)**.
 
+---
+
+## 🗳️ 7. U.S. Election Impact & Post-Election Surge Framework
+All market evaluations during Midterm and Presidential election seasons must account for the 3-phase election cycle, peak pre-election volatility/de-grossing, and the historical 100% 12-month post-midterm rally track record.
+* **Core Enforced Standard:** [us_election_market_impact_and_post_election_surge_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/us_election_market_impact_and_post_election_surge_rule.md).
+
+
