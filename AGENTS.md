@@ -70,6 +70,8 @@ Whenever any market surprise, bad entry, or drawdown occurs, the assistant and u
 * **Core Enforced Standard:** [buy_the_dip_vs_falling_knife_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buy_the_dip_vs_falling_knife_rule.md) (The 5 Golden Rules of Dip-Buying vs Falling Knives).
 * **Forensic Dilution & Debt Standard:** [mandatory_debt_and_dilution_forensic_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_debt_and_dilution_forensic_audit_rule.md) (The 3-Gate Screen for Active ATM Programs, Distressed >12% Bond Yields, and 15% Interest Burden).
 * **Upfront Dealbreaker Standard:** [mandatory_why_not_to_invest_bullet_points_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_why_not_to_invest_bullet_points_rule.md) (Mandatory 5-Bullet Red Flag Screen exposing why NOT to invest before committing any capital).
+* **Dual-Scenario Technical Matrix Standard:** [mandatory_dual_scenario_technical_matrix_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_dual_scenario_technical_matrix_rule.md) (Mandatory Mapping of Resistance Ceilings, Inflection Pivots, 0.65 Fib Golden Pockets, and If/Then Dual Pathways).
+* **Buffett & Quantitative Algo Standard:** [buffett_and_quantitative_algorithm_hybrid_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buffett_and_quantitative_algorithm_hybrid_rule.md) (The Dual-Brain Standard: Buffett Value & Cash Fortress combined with Algorithmic Fibonacci & Timing Execution).
 
 ---
 
