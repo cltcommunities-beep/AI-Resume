@@ -3,66 +3,91 @@ trigger: model_decision
 description: Mandatory Intraday Reality & Morning Dip Window Execution Rule (9:45 AM – 10:30 AM EDT)
 ---
 
-# 🔴 RED-TAG MANDATORY RULE: THE INTRADAY REALITY & MORNING DIP WINDOW EXECUTION PROTOCOL
+# 🔴 RED-TAG MANDATORY RULE: THE INTRADAY REALITY & CONFIRMED SETUP MORNING DIP PROTOCOL
 
 ## 🚨 MANDATORY EXECUTIVE DIRECTIVE
-Under NO circumstances will this assistant recommend, propose, or execute a stock purchase based solely on static daily closing prices or prior-afternoon support without factoring in **The Intraday Reality**. 
+Under NO circumstances will this assistant recommend, propose, or execute a stock purchase based solely on the clock being within a time window. 
 
-Every single stock recommendation, buy directive, and order ticket MUST explicitly account for the **Opening Bell Liquidity Flush** and enforce the **Morning Dip Execution Window (9:45 AM – 10:30 AM EDT)**. **NO EXCEPTIONS PERMITTED.**
+The **9:45 AM – 10:30 AM EDT window is NOT a guaranteed buying opportunity**, and there is no reliable rule that retail panic will magically end during that period. Stocks can and do continue falling throughout the entire trading day.
+
+**THE BETTER TRADING RULE:**
+Only consider entering trades between **9:45 AM and 10:30 AM Eastern Time**, and **ONLY when price action actively confirms a valid setup**. **NEVER enter a trade simply because the clock is within this window.** **NO EXCEPTIONS PERMITTED.**
 
 ---
 
-## 🏛️ 1. The Intraday Reality: Market Microstructure & Auction Dynamics
+## 🏛️ 1. The 5 Golden Pillars of Confirmed Intraday Execution
 
-Stocks do not trade in a vacuum of daily closing prices. Every trading day operates across 4 distinct institutional liquidity phases:
+Every trading day, the assistant and user MUST strictly enforce the following 5 Golden Pillars:
 
-| Phase | Time Window (EDT) | Market Microstructure & Institutional Mechanics | Assistant & Trade Execution Rule |
-| :--- | :--- | :--- | :--- |
-| **Phase 1: Pre-Market & Open Trap** | **8:00 AM – 9:45 AM** | Thin book, wide bid/ask spreads. Retail market orders trigger algorithmic imbalances. Market makers deliberately drive bids down to shake out retail stops. | 🚫 **STRICT BUYING BAN.** Never execute market or limit buys at the open or prior-day close. |
-| **Phase 2: ⚡ Golden Morning Dip Window** | **9:45 AM – 10:30 AM** | Selling volume exhausts; high-frequency algorithms finish sweeping retail stop-losses. Stock prints its lowest daily intraday wick, testing the **S2/S3 Support Floor**. | 🛒 **MANDATORY EXECUTION WINDOW.** Execute tiered limit buy orders strictly within this 45-minute window. |
-| **Phase 3: Institutional Absorption** | **10:30 AM – 2:00 PM** | Bulge-bracket desks, institutional algorithms, and VWAP engines absorb supply. Stock stabilizes and grinds back up toward daily mean. | ⏸️ **HOLD & MONITOR.** Never chase rallies if the morning dip was missed. |
-| **Phase 4: Power Hour & Settlement** | **3:00 PM – 4:00 PM** | Market-on-Close (MOC) institutional rebalancing and day-trader de-risking. | 🎯 **EXECUTE PROFIT RECYCLING (R1 / R2 Target Limit Sells).** |
+### 1. 🔭 9:30 AM – 9:45 AM EDT: Observe Market Direction (Strict Ban on Impulsive Entries)
+* **Market Microstructure:** Thin book, wide bid/ask spreads, market maker opening sweeps.
+* **Mandatory Directive:** **Observe market direction only.** Avoid impulsive market orders or emotional dip-chasing at the open. Do not attempt to catch opening candles.
+
+### 2. ⚡ 9:45 AM – 10:30 AM EDT: Setup Confirmation Window (Look for Stabilization)
+* **What to Look For:**
+  1. **Stabilization:** Price stops making lower lows and forms a base.
+  2. **Support Holding:** Key S1/S2/S3 support levels hold on retests.
+  3. **Improving Buying Volume:** Bids thicken, selling volume dries up, and green volume bars appear.
+* **The Law:** If a stock is slicing through support with accelerating selling volume, **it is a falling knife. DO NOT TOUCH IT.**
+
+### 3. 🔍 Pre-Entry Audit Gate: Risk & Option Metric Verification
+Before proposing or executing ANY entry ticket, audit the following 4 dimensions:
+* **Trend Alignment:** Is the broader sector and index (`SPY`/`QQQ`) supporting the bounce, or dragging it lower?
+* **Option Premium Check:** Are option implied volatility (IV) levels artificially inflated, signaling severe headline risk?
+* **Defined Risk:** Exact dollar stop-loss level identified (-2% to -3% below the confirmed swing floor).
+* **Maximum Potential Loss:** Quantify the maximum capital at risk before placing the trade.
+
+### 4. ⚖️ The Iron Law: "No Confirmation = No Trade"
+* **Missing a trade is 100x better than forcing a bad trade.**
+* If the setup does not confirm stabilization, let it go. Missing an upward bounce costs **$0.00**, while buying an unconfirmed falling knife costs real capital.
+
+### 5. 🛑 10:30 AM EDT Hard Cutoff: Stop Initiating New Trades
+* Once the clock passes **10:30 AM EDT**, stop initiating new dip-buying trades under this strategy.
+* The market transitions into **Phase 3 (Midday Absorption / Lunch Lull)** where volume dries up and false breakouts dominate.
 
 ---
 
 ## 🎯 2. Mandatory 3-Tranche Staged Limit Order Protocol
 
-Whenever proposing or recommending a stock purchase, the assistant MUST NEVER provide a single lump-sum price. All entries MUST be structured as a **3-Tranche Staged Limit Order Directive**:
+Whenever proposing or recommending an entry after price confirmation, the assistant MUST NEVER provide a single lump-sum price:
 
 1. **Tranche 1 (33% Allocation):**
-   - **Target Level:** Primary S1/S2 Support Floor.
-   - **Timing Condition:** Must be executed **ONLY between 9:45 AM and 10:30 AM EDT** after the initial opening flush.
+   - **Target Level:** Primary confirmed S1/S2 Support Floor.
+   - **Timing Condition:** Must be executed **ONLY between 9:45 AM and 10:30 AM EDT** after price action confirms stabilization.
 2. **Tranche 2 (33% Allocation):**
    - **Target Level:** Deep S3 Wick Support Floor (Capitulation Low).
-   - **Timing Condition:** Staged limit order waiting at the wick low to capture the maximum morning dip discount.
+   - **Timing Condition:** Staged limit order waiting at the wick low to capture the maximum discount.
 3. **Tranche 3 (34% Allocation):**
    - **Target Level:** Liquid Cash War Chest Reserve.
-   - **Condition:** Held in liquid buying power to exploit broader macro flash dips (e.g. Fed announcements or geopolitical headlines).
+   - **Condition:** Held in liquid buying power to defend against broader macro flash dips.
 
 ---
 
 ## 🛡️ 3. Mandatory Output Formatting in All Analyses & Tables
 
-In every single stock audit, Table 4 (Compact Solvency Summary), and Table 5 (17-Column Solvency Audit Table), the Tactical Buy Directive MUST explicitly state:
+In every single stock audit and order ticket, the Tactical Buy Directive MUST explicitly state:
 
 * **Format:**
-  `Recommended Buy: $XX.XX – $XX.XX (Execute strictly during 9:45 AM – 10:30 AM EDT Morning Dip Window at S2/S3 Floor)`
+  `Recommended Buy: $XX.XX – $XX.XX (Execute strictly during 9:45 AM – 10:30 AM EDT ONLY with price action stabilization & volume confirmation)`
 * **Stop-Loss Protection:**
-  `Stop-Loss Buffer: $XX.XX (-2% to -3% below S3 Capitulation Floor to prevent false morning shakeouts)`
+  `Stop-Loss Buffer: $XX.XX (-2% to -3% below confirmed S3 support floor)`
 
 ---
 
 ## 🚫 4. Strict Prohibitions
-1. **NO Blind Afternoon Entries:** Never recommend entering a stock at 3:30 PM EDT without instructing the user to wait for the next morning's 9:45 AM – 10:30 AM dip.
-2. **NO Market Orders at the Open:** Blind market orders placed at 9:30 AM EDT are strictly prohibited.
-3. **NO Chasing Green Spikes:** If a stock opens green and runs away, let it go. Never chase outside the morning dip window.
-4. **NO LaTeX Math Blocks:** Plain text numbers and formulas inside markdown tables only (`no_latex_math_blocks_rule.md`).
+1. **NO Clock-Only Buying:** Never recommend a buy simply because the time is between 9:45 AM and 10:30 AM without confirming support holding and volume.
+2. **NO Falling Knife Entries:** If a stock is continuing to fall with no base, let it drop.
+3. **NO Afternoon Entries (10:30 AM – 3:30 PM EDT):** No new buys initiated outside the confirmed morning window.
+4. **NO Blind Market Orders at 9:30 AM Open:** Market orders at the open are strictly banned.
+5. **NO LaTeX Math Blocks:** Plain text numbers and formulas inside markdown tables only (`no_latex_math_blocks_rule.md`).
 
 ---
 
 ## 📋 5. Pre-Execution Checklist
 Before outputting any buy recommendation:
-- [ ] Is the proposed entry price placed at S2/S3 support rather than prior close? ──► **MUST BE YES.**
-- [ ] Has the 9:45 AM – 10:30 AM EDT Morning Dip Window been explicitly specified? ──► **MUST BE YES.**
+- [ ] Is the time between 9:45 AM and 10:30 AM EDT? ──► **MUST BE YES.**
+- [ ] Has price action stabilized and confirmed support holding? ──► **MUST BE YES.**
+- [ ] Has buying volume improved and selling volume dried up? ──► **MUST BE YES.**
+- [ ] Have trend, risk, and maximum potential loss been quantified? ──► **MUST BE YES.**
 - [ ] Is capital divided into 3 tranches rather than lump sum? ──► **MUST BE YES.**
-- [ ] Is the stop-loss buffered -2% to -3% below the S3 wick floor? ──► **MUST BE YES.**
+- [ ] If NO confirmation: Has the trade been skipped? ──► **MUST BE YES ("No confirmation = No trade").**

@@ -27,13 +27,17 @@ Every morning when the user opens the project, the assistant must follow this di
 1. **8:00 AM – 9:00 AM EDT (Pre-Market Macro Audit):**
    * Check the **6 Macro Pressure Gauges** per `mandatory_macro_market_down_pressure_signals_rule.md` (Brent Crude, 10Y Yield, QQQ, SPY, IWM, Binary Events).
    * Review the day's high-impact economic calendar (CPI, PPI, Fed speakers, TSMC earnings).
-2. **9:30 AM – 9:45 AM EDT (Opening Bell Patience):**
-   * **Strict Buying Ban:** Do not chase opening bell spikes or panic-sell into retail stop-sweeps.
-3. **9:45 AM – 10:30 AM EDT (⚡ The Golden Morning Dip Window):**
+2. **9:30 AM – 9:45 AM EDT (Observe Market Direction):**
+   * **Strict Buying Ban:** Observe market direction only. Avoid impulsive entries, opening-spike chasing, or panic selling.
+3. **9:45 AM – 10:30 AM EDT (⚡ The Confirmed Setup Morning Window):**
    * Enforce `mandatory_intraday_reality_and_morning_dip_rule.md`.
-   * Execute staged limit buy orders strictly within this 45-minute window at confirmed **S1/S2/S3 Support Floors**.
-4. **3:30 PM – 4:00 PM EDT (Daily Closing Audit & Profit Recycling):**
-   * Audit closing performance and review active limit sell orders at **R1 / R2 Resistance Targets**.
+   * **The Golden Law:** Never enter simply because the clock is within this window. Only enter if price action confirms **support holding, price stabilization, and improving buying volume**.
+   * **Pre-Entry Audit:** Check trend, option premium, defined risk, and maximum loss.
+   * **Iron Law:** **No confirmation = No trade.** Missing a trade is 100x better than forcing one.
+4. **10:30 AM – 3:30 PM EDT (Intraday Absorption & Cutoff):**
+   * **Hard Cutoff:** Stop initiating new dip-buying trades after 10:30 AM EDT. Hold and monitor.
+5. **3:30 PM – 4:00 PM EDT (Power Hour & Profit Recycling):**
+   * Audit closing performance and review active limit sell orders at **R1 / R2 Resistance Targets**. Zero new market buys.
 
 ---
 
