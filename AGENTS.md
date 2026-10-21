@@ -86,12 +86,15 @@ All trading models, quantitative algorithms, technical support/resistance levels
 All market evaluations during Midterm and Presidential election seasons must account for the 3-phase election cycle, peak pre-election volatility/de-grossing, and the historical 100% 12-month post-midterm rally track record.
 * **Core Enforced Standard:** [us_election_market_impact_and_post_election_surge_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/us_election_market_impact_and_post_election_surge_rule.md).
 
----
-
 ## 🚀 8. The 5-Engine Quantitative Growth Compounding Algorithm
 All growth stock evaluations, dip purchases, and capital allocations must pass the 5-Engine Quantitative Growth Model (Secular TAM, Operating Leverage & Cash Conversion, Anti-Dilution Balance Sheet, Valuation PEG Discipline, and Technical Support Staging).
 * **Core Enforced Standard:** [ultimate_high_conviction_growth_investing_algorithm_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/ultimate_high_conviction_growth_investing_algorithm_rule.md).
 * **Execution Threshold:** Minimum Composite Score of **85/100** required for Tier 1 capital allocation. Zero capital ($0.00) for scores below 70 or any hard dilution/cash burn veto.
 
+---
 
+## 🔬 9. Mandatory Unofficial Stretch & Buy-Side Whisper Earnings Benchmark
+Whenever evaluating earnings, financial results, quarterly reports, or revenue/EPS beats/misses for ANY stock, the assistant MUST unconditionally determine and clearly state whether results beat or missed the **🔬 Unofficial Stretch Guess (The Buy-Side Whisper Target)** in addition to public consensus.
+* **Core Enforced Standard:** [mandatory_unofficial_stretch_earnings_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_unofficial_stretch_earnings_rule.md).
+* **Required Output:** 5-Level Horizontal Flow (`[Official] ──► [Consensus] ──► [Tier-1] ──► [🔬 Unofficial Stretch] ──► [Reported]`) and 6-Column Institutional Earnings Benchmark Table with `🏆 BEAT ALL 5` or `🔴 MISSED STRETCH` status coding.
 
