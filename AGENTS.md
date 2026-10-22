@@ -170,6 +170,31 @@ All entries into any asset—including Tier 1 / Bucket A Anchor Monopolies (`NVD
   4. **Active Capital Recycling:** If a stock spikes on headlines into macro headwinds, sell 25%–50% into the pop and queue lower limit orders at support to reduce permanent cost basis.
   5. **Forward PEG Ceiling:** Ceiling at 1.5x; positive FCF conversion mandatory.
 
+---
+
+## 🌐 14. Mandatory Pre-Investment Macro-Impact Gate (No Trade Without Macro Clearance)
+Before staging or recommending ANY buy order, limit staging, or capital allocation, the assistant MUST unconditionally audit the 5 Macro-Impact Pillars.
+* **Core Enforced Standards:** [mandatory_pre_investment_market_audit_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_market_audit_gate_rule.md), [macroeconomic_catalysts_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/macroeconomic_catalysts_rule.md), and [weekly_market_moving_catalysts_table_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/weekly_market_moving_catalysts_table_rule.md).
+* **The 5 Macro-Impact Pillars:**
+  1. **Labor & Growth Data:** Weekly Initial Jobless Claims (e.g. 194K print), Non-Farm Payrolls, GDP Growth.
+  2. **Inflation Metrics:** Core PCE Index (Federal Reserve's primary gauge), CPI, PPI.
+  3. **Interest Rates & Yields:** 10-Year U.S. Treasury Yield (>5.0% = valuation compression).
+  4. **Commodity Shocks:** Brent Crude Oil (>$100/bbl = margin compression).
+  5. **Binary Event Window:** Scheduled FOMC meetings, Fed Chair speeches, and Mega-Cap earnings within 24–48 hours.
+* **The Absolute Law:** **No Macro Clearance = $0.00 Capital Allocation.** Micro company quality NEVER overrides a macro storm.
+
+---
+
+## 📊 15. Mandatory Dual Solvency Table Standard (Compact 5-Column + Full 17-Column Solvency Audit Table)
+Whenever the assistant performs a stock analysis, due diligence review, or investment evaluation, rendering BOTH solvency tables is UNCONDITIONALLY MANDATORY.
+* **Core Enforced Standards:** [compact_solvency_summary_table_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/compact_solvency_summary_table_rule.md), [master_stock_analysis_standard.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/master_stock_analysis_standard.md), and [mandatory_executive_portfolio_table_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_executive_portfolio_table_rule.md).
+* **The Dual Table Mandate:**
+  1. **Table 4: Compact Executive Solvency Summary Table (5 Columns):** Fast executive reading with mandatory 3-bullet takeaway (Price & Support, Solvency & F1/F2 Net Surplus, Risk Management & Directives).
+  2. **Table 5: Full 17-Column Solvency Audit Table:** The granular 17-metric institutional matrix auditing Column 2 Live Price vs Wall St Cap/Shares, Support S1/S2/S3, Moats, Cash, Debt, CapEx, Pre-Paid Backlog, New Cash, F1/F2 Net Surplus, Dilution/ATM headroom, Next Qtr Outlook, Risk Compliance, R1 Target, and Upside Chart.
+* **Zero Exceptions:** Neither table may ever be omitted, altered, or replaced with plain text.
+
+
+
 
 
 
