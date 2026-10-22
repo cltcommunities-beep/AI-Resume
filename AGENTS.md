@@ -193,6 +193,19 @@ Whenever the assistant performs a stock analysis, due diligence review, or inves
   2. **Table 5: Full 17-Column Solvency Audit Table:** The granular 17-metric institutional matrix auditing Column 2 Live Price vs Wall St Cap/Shares, Support S1/S2/S3, Moats, Cash, Debt, CapEx, Pre-Paid Backlog, New Cash, F1/F2 Net Surplus, Dilution/ATM headroom, Next Qtr Outlook, Risk Compliance, R1 Target, and Upside Chart.
 * **Zero Exceptions:** Neither table may ever be omitted, altered, or replaced with plain text.
 
+---
+
+## 📲 16. Mandatory Always Check with Robinhood Live APIs Standard (Zero Guesswork)
+Whenever the user or assistant discusses stock prices, open/filled orders, portfolio balances, or cash buying power, executing real-time Robinhood MCP tool calls is UNCONDITIONALLY MANDATORY.
+* **Core Enforced Standards:** [mandatory_always_check_robinhood_api_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_always_check_robinhood_api_rule.md), [mandatory_robinhood_mcp_portfolio_review_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_robinhood_mcp_portfolio_review_rule.md), and [no_static_stock_prices_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/no_static_stock_prices_rule.md).
+* **The 4 Real-Time Triggers:**
+  1. **Order Checks:** Call `get_equity_orders` (Account `868333782`) to verify exact order state (`filled` vs `confirmed`). Never guess based on price.
+  2. **Live Ticks:** Call `get_equity_quotes` for real-time SIP consolidated tape prices and session closes.
+  3. **Cash & Buying Power:** Call `get_portfolio` for authoritative spendable funds.
+  4. **Positions & Basis:** Call `get_equity_positions` for exact share counts and average buy prices.
+* **Zero Exceptions:** Relying on conversational memory, cached numbers, or static prices is strictly banned. The live broker state is the sole source of truth.
+
+
 
 
 
