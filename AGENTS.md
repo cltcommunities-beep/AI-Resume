@@ -56,19 +56,19 @@ Whenever the user asks for a portfolio review or invokes `/mcp:robinhood:portfol
 
 ---
 
-## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Oct 21, 2026 Audit)
+## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Nov 8, 2026 Dynamic Calibration)
 
-* **Total Portfolio Value:** **$25,721.76** (All-Time High; up **+157.2%** vs $10,000 initial base)
-* **Total Liquid Cash:** **$2,367.87**
-* **Spendable Buying Power:** **$1,206.07**
-* **Gold Hedge (IAU):** **59.65 Shares** (~$4,628.84 value, $84.43 cost) held as permanent geopolitical & inflation shield.
+* **Total Portfolio Value:** **$21,309.86** (Equity: $20,747.37 | Crypto: $561.94 | Up **+113.1%** vs $10,000 initial base)
+* **Total Liquid Cash:** **$0.55** (Buying Power: $0.55)
+* **Gold Hedge (IAU):** **59.65 Shares** (~$4,553.48 value, $84.43 cost basis). Target $2,000 cash harvest scheduled for Nov 9–10 ahead of Nov 11 Veterans Day bank holiday.
 * **Core Active Holdings & Executions:**
-  * **NVDA (Bucket A):** **20.00 Shares** (Avg Cost $228.70, Current $221.30). Filled 4.00 sh @ $213.80 on Oct 20.
-  * **SPCX (Bucket A):** **11.01 Shares** (Avg Cost $162.48, Current $158.18). Filled 2.00 sh @ $143.50 on Oct 20. Surging on TSLA/SpaceX news.
-  * **AMKR (Bucket B):** **66.80 Shares** (Avg Cost $51.38, Current $43.81). Q3 Earnings Oct 26. Active GTC Limit SELL order for **20.00 shares @ $56.50** ($1,130 cash harvest).
-  * **NBIS (Bucket B):** **11.00 Shares** (Avg Cost $236.47, Current $172.85). Active GTC Limit BUY order for **5.00 shares @ $160.00** (reserves $800.00; drops avg cost to $212.57 upon fill).
-  * **SMCI:** Active GTC Limit BUY orders for **4.00 shares @ $33.85** ($135.40) and **2.00 shares @ $33.20** ($66.40).
-  * **INTC (21.41 Shares) & CRWV (39.01 Shares):** Hold current shares; 100% Capital Allocation Freeze ($0.00).
+  * **NVDA (Bucket A):** **22.00 Shares** (Avg Cost $227.55, Current $187.58). Reclaimed S1 floor ($185.00); targeting $200.00 resistance.
+  * **SPCX (Bucket A):** **11.01 Shares** (Avg Cost $162.48, Current $134.80). Surged +9.04% on Friday; Space defense proxy.
+  * **AMKR (Bucket B):** **80.17 Shares** (Avg Cost $49.18, Current $32.73). Bottomed at $30.49; active GTC Limit SELL order for **20.00 shares @ $54.00** (`id: 6ae38580-0ae4-4e3b-aac4-c8f6238ad079`) staged for $1,080 cash harvest.
+  * **NBIS (Bucket B):** **17.00 Shares** (Avg Cost $209.49, Current $130.24). Reclaimed $130 pivot; multi-year pre-paid enterprise backlog intact.
+  * **OKLO (Thematic Energy):** **41.02 Shares** (Avg Cost $33.26, Current $23.63). Surged +23.07% on Q3 earnings; $3.131B cash fortress & Centrus HALEU fuel agreement.
+  * **INTC (21.41 Shares @ $56.35) & CRWV (39.01 Shares @ $43.39):** Hold current shares; 100% Capital Allocation Freeze ($0.00).
+  * **MRVL (0.15 Shares @ $135.84):** $20 dust position; 100% Capital Allocation Freeze ($0.00) due to 33% Lumentum deal dilution.
 
 
 
@@ -204,6 +204,18 @@ Whenever the user or assistant discusses stock prices, open/filled orders, portf
   3. **Cash & Buying Power:** Call `get_portfolio` for authoritative spendable funds.
   4. **Positions & Basis:** Call `get_equity_positions` for exact share counts and average buy prices.
 * **Zero Exceptions:** Relying on conversational memory, cached numbers, or static prices is strictly banned. The live broker state is the sole source of truth.
+
+---
+
+## 🧠 17. Mandatory Brilliant Mind Mental Models & Asymmetric Convexity Flywheel Standard
+All trading decisions, position scaling, order staging, and capital preservation protocols must strictly operate under the 4 Brilliant Mind Mental Models (Stanley Druckenmiller asymmetry, Jim Simons quantitative mechanics, and Warren Buffett value fortress).
+* **Core Enforced Standard:** [mandatory_brilliant_mind_mental_models_and_asymmetric_flywheel_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_brilliant_mind_mental_models_and_asymmetric_flywheel_rule.md).
+* **The 4 Brilliant Pillars:**
+  1. **Asymmetric Convexity Flywheel (Zero-Theta Synthetic Leverage):** Stage equity tranches at statistical moving average floors (20MFA / S3) instead of high-decay options to capture outsized +20% to +50% explosive rebounds with zero time decay.
+  2. **Energy & Compute Bottleneck Front-Running:** Front-run the inevitable physical constraints of the AI revolution by owning clean nuclear energy (`OKLO`) and high-efficiency GPU datacenter infrastructure (`NBIS`).
+  3. **Predatory Liquidity Staging:** Pre-stage GTC limit buy orders in the dark at key moving average floors, allowing panicking retail stop-outs to fill our orders at wholesale prices.
+  4. **Dynamic Tranche Recycling Machine:** Bifurcate holdings into permanent Core Compounding Shares (60%–70%) and Tactical Velocity Tranches (30%–40%). Systematically harvest velocity tranches at R1/R2 resistance to continuously replenish the Liquid Cash War Chest.
+
 
 
 
