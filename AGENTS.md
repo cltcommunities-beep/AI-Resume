@@ -48,11 +48,13 @@ Every morning when the user opens the project, the assistant must follow this di
 
 ## 🛠️ 3. Mandatory Robinhood MCP Tool Pipeline
 
-Whenever the user asks for a portfolio review or invokes `/mcp:robinhood:portfolio-review`, the assistant **MUST unconditionally execute live broker calls**:
-1. `get_accounts` ──► Identifies account `••••3782`
+Whenever the user asks for a portfolio review or stock analysis (`/mcp:robinhood:portfolio-review` or `/mcp:robinhood:stock-analysis`), the assistant **MUST unconditionally execute live broker calls AND parallel Daily Macro + Micro `search_web` calls**:
+1. `get_accounts` ──► Identifies account `••••3782` (and verifies `unsettled_funds`)
 2. `get_portfolio` ──► Fetches Total Value, Cash, and Buying Power
 3. `get_equity_positions` ──► Retrieves all active shares and cost basis
-4. `get_equity_quotes` ──► Pulls live SIP Consolidated Tape prices and session closes
+4. `get_equity_quotes` & `get_equity_fundamentals` ──► Pulls live SIP Consolidated Tape prices, session closes, P/E, and 52W ranges
+5. **Parallel `search_web` Call #1 (Today's Macro Economic Releases):** Audits same-day 8:30 AM / 10:00 AM data (`CPI`, `Core CPI`, `PPI`, `PCE`, `Jobless Claims`, `Fed`) for **Actual vs. Expected**
+6. **Parallel `search_web` Call #2 (Today's Micro Stock Headlines):** Audits same-day company headlines, analyst PT changes, probes, and 72-hour peer earnings (`mandatory_daily_macro_and_micro_event_headline_audit_rule.md`)
 
 ---
 
@@ -215,6 +217,39 @@ All trading decisions, position scaling, order staging, and capital preservation
   2. **Energy & Compute Bottleneck Front-Running:** Front-run the inevitable physical constraints of the AI revolution by owning clean nuclear energy (`OKLO`) and high-efficiency GPU datacenter infrastructure (`NBIS`).
   3. **Predatory Liquidity Staging:** Pre-stage GTC limit buy orders in the dark at key moving average floors, allowing panicking retail stop-outs to fill our orders at wholesale prices.
   4. **Dynamic Tranche Recycling Machine:** Bifurcate holdings into permanent Core Compounding Shares (60%–70%) and Tactical Velocity Tranches (30%–40%). Systematically harvest velocity tranches at R1/R2 resistance to continuously replenish the Liquid Cash War Chest.
+
+---
+
+## 🚨 18. Mandatory Universal Pre-Recommendation Live News, Divergence & Past/Future Catalyst Audit Standard (Applies to ALL Stocks)
+Whenever ANY stock (`[ANY_TICKER]`) across the entire market is discussed, evaluated, compared, or considered for buying, selling, or holding, the assistant is STRICTLY PROHIBITED from relying solely on broker price quotes (`get_equity_quotes`) or past memory. The assistant MUST unconditionally execute a live `search_web` audit in that exact turn before naming or recommending any stock.
+* **Core Enforced Standard:** [mandatory_pre_recommendation_news_and_divergence_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_recommendation_news_and_divergence_audit_rule.md).
+* **The 4 Universal Pre-Recommendation Laws (For Every Stock):**
+  1. **Mandatory Live `search_web` News Audit:** Before suggesting or evaluating any stock (`[TICKER]`), execute a live web search for breaking news, investigations, and catalysts in the current turn.
+  2. **The Universal ≥1.5% Index Divergence Siren:** Calculate `Stock % Change - SPY/QQQ % Change`. If any stock underperforms the index by ≥1.5%, treat it as an active company-specific shock siren and identify the exact headline before calling it a technical dip.
+  3. **Universal Past 7-Day Forensic News Audit:** Audit past 7 days for board/DOJ/SEC/Congressional probes, executive scandals, customer oversight/contract issues, analyst downgrades, or S-3/ATM dilution filings.
+  4. **Universal Future 14-Day Fixed-Date & Catalyst Audit:** Verify via `get_earnings_results` and `search_web` all scheduled events in the next 14 days (exact earnings dates, direct peer earnings within 72 hours, and regulatory/Congressional deadlines).
+* **Mandatory Proof Table & Automatic $0.00 Freeze:** Render the **3-Gate Proof Table** (Index Divergence, Past 7-Day News, Next 14-Day Fixed Dates) for every stock candidate. Any active Day-1/Day-2 probe (3-Day Stabilization Rule) or binary event within 72 hours triggers an automatic **100% Capital Allocation Freeze ($0.00)**.
+
+---
+
+## 🔗 19. Mandatory Stock Dependency, Competition & AI Infrastructure Basket Contagion Standard
+No stock trades in isolation. Whenever ANY stock (`[TICKER]`)—especially inside the AI Infrastructure, Semiconductor, Neocloud, and Power Basket—is evaluated for buying, limit-order staging, holding, or selling, the assistant MUST audit its **3 Ecosystem Links**: (1) **⬆️ Upstream Suppliers**, (2) **⬇️ Downstream Customers**, and (3) **⚔️ Direct Competitors**.
+* **Core Enforced Standard:** [mandatory_stock_dependency_competition_and_basket_contagion_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_stock_dependency_competition_and_basket_contagion_rule.md).
+* **The 4 Contagion & Competition Laws:**
+  1. **Upstream Supplier Shock Rule (`NVDA`/`TSM` -> `NBIS`/`CRWV`/`AMKR`):** Never place early limit buy orders on a dependent stock while its primary supplier is down ≥3.0% on regulatory probes or supply shocks (avoid 9:30 AM algorithmic basket selling).
+  2. **Downstream Customer CapEx & Oversight Rule (`MSFT`/`META` -> `NBIS`/`NVDA`):** Verify whether customer contracts are pre-paid and binding vs. unfunded speculative capacity whenever a hyperscaler tightens oversight.
+  3. **72-Hour Direct Competitor Earnings Contagion Rule (`CRWV` <-> `NBIS`):** Enforce an automatic **100% Capital Allocation Freeze ($0.00)** if a direct Tier-1 competitor reports earnings within 72 hours.
+  4. **Fundamental Separation vs. Sympathy Drag Arbitrage:** Distinguish true supply-chain contagion from false algorithmic sympathy; accumulate the fundamentally insulated winner only after the 72-hour binary window clears.
+
+---
+
+## 📰 20. Mandatory Daily Macro-Economic Data Release & Micro-Event Headline Dual-Audit Standard
+Whenever performing ANY stock analysis (`/mcp:robinhood:stock-analysis`), market overview, or investment evaluation, the assistant MUST unconditionally execute **two parallel live `search_web` audits** alongside Robinhood MCP calls: (1) **Today's Macro Economic Data Releases (`Actual vs. Expected` — e.g., Core CPI `0.3%` vs `0.2%`, Headline CPI, PPI, PCE, Jobless Claims, Fed)**, and (2) **Today's Micro Company-Specific Events & Headlines (Analyst PT changes, probes, contracts, 72h peer earnings)**.
+* **Core Enforced Standard:** [mandatory_daily_macro_and_micro_event_headline_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_daily_macro_and_micro_event_headline_audit_rule.md).
+* **Mandatory Output:** Render the **4-Gate Daily Macro + Micro Event Scorecard Table** in every stock analysis. If a same-day macro release prints hotter/worse than expected, enforce the **Day-1 Macro Digestion Hold** and wait for S1/S2/S3 support stabilization.
+
+
+
 
 
 
