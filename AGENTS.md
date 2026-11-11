@@ -7,8 +7,8 @@ Every agent session, chat turn, and subagent invocation in this workspace MUST a
 
 ### 📋 Mandatory Response Format: Green Dot (To Follow) & Red Dot (NOT to Follow)
 In **EVERY** response, analysis, review, or strategic update, the assistant MUST unconditionally structure the action checklist using color-coded dots:
-* 🟢 **GREEN BULLETS (To Follow by You):** Exact, positive actions to execute (orders to stage or maintain, confirmed setups, risk compliance, and profit targets).
-* 🔴 **RED BULLETS (NOT to Follow by You):** Strict prohibitions, buying bans, capital freezes ($0.00), emotional pitfalls, falling knives, and dealbreakers to avoid.
+* 🟢 **GREEN BULLETS (To Follow by You):** Exact, positive actions to execute (orders to stage or maintain, confirmed setups, risk compliance, and profit targets). **Whenever mentioning a stock in a buy/hold/exit action, ALWAYS explicitly include its `Wall St Market Value` (`Market Cap / Shares Outstanding`, plus diluted value if material) right beside the `Live Price` and entry/stop/target levels so valuation vs. price is immediately clear.**
+* 🔴 **RED BULLETS (NOT to Follow by You):** Strict prohibitions, buying bans, capital freezes ($0.00), emotional pitfalls, falling knives, and dealbreakers to avoid. **ALWAYS state the `Live Price` vs. `Wall St Market Value` (premium/discount & dilution gap) when warning why NOT to buy or chase a stock.**
 
 ---
 
@@ -58,19 +58,28 @@ Whenever the user asks for a portfolio review or stock analysis (`/mcp:robinhood
 
 ---
 
-## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Nov 8, 2026 Dynamic Calibration)
+## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Nov 10, 2026 Dynamic Calibration)
 
-* **Total Portfolio Value:** **$21,309.86** (Equity: $20,747.37 | Crypto: $561.94 | Up **+113.1%** vs $10,000 initial base)
-* **Total Liquid Cash:** **$0.55** (Buying Power: $0.55)
-* **Gold Hedge (IAU):** **59.65 Shares** (~$4,553.48 value, $84.43 cost basis). Target $2,000 cash harvest scheduled for Nov 9–10 ahead of Nov 11 Veterans Day bank holiday.
-* **Core Active Holdings & Executions:**
-  * **NVDA (Bucket A):** **22.00 Shares** (Avg Cost $227.55, Current $187.58). Reclaimed S1 floor ($185.00); targeting $200.00 resistance.
-  * **SPCX (Bucket A):** **11.01 Shares** (Avg Cost $162.48, Current $134.80). Surged +9.04% on Friday; Space defense proxy.
-  * **AMKR (Bucket B):** **80.17 Shares** (Avg Cost $49.18, Current $32.73). Bottomed at $30.49; active GTC Limit SELL order for **20.00 shares @ $54.00** (`id: 6ae38580-0ae4-4e3b-aac4-c8f6238ad079`) staged for $1,080 cash harvest.
-  * **NBIS (Bucket B):** **17.00 Shares** (Avg Cost $209.49, Current $130.24). Reclaimed $130 pivot; multi-year pre-paid enterprise backlog intact.
-  * **OKLO (Thematic Energy):** **41.02 Shares** (Avg Cost $33.26, Current $23.63). Surged +23.07% on Q3 earnings; $3.131B cash fortress & Centrus HALEU fuel agreement.
-  * **INTC (21.41 Shares @ $56.35) & CRWV (39.01 Shares @ $43.39):** Hold current shares; 100% Capital Allocation Freeze ($0.00).
-  * **MRVL (0.15 Shares @ $135.84):** $20 dust position; 100% Capital Allocation Freeze ($0.00) due to 33% Lumentum deal dilution.
+* **True Cumulative Wealth Generated:** **$21,478.28** (**$19,478.28** remaining account value + **$2,000.00** realized cash withdrawal submitted to bank Nov 10 ahead of Nov 11 Veterans Day bank holiday; up **+114.8%** vs $10,000 initial base)
+* **Total Settled Cash in Account:** **$2,622.58** (`unsettled_funds: $0.00`)
+  * **$1,000.00 Earmarked for `NVDA`:** Tranche 1 (`3 sh @ $164.50`) + Tranche 2 (`3 sh @ $149.50` capitulation trap) OR post-House Committee letter execution Thursday, Nov 12 @ 9:45 AM EST.
+  * **$1,000.00 Earmarked for `NBIS` (CONDITIONAL):** Held until **Thursday, Nov 12 @ 8:00 AM EST** Q3 Earnings Audit; **MUST pass Credit & Permitting Gate** below or divert `$1,000` into debt-free `NVDA`.
+  * **$622.58 Unallocated Reserve Buffer:** Pure dry powder earning daily cash sweep interest (minimum war-chest protection).
+* **Core Active Holdings & Confirmed Open Orders (Verified Nov 10, 2026):**
+  * **NVDA (Bucket A):** **22.00 Shares** (Avg Cost $227.55 | Nov 10 Close $168.79 / AH $170.43). House Committee response deadline Wednesday Nov 11 (5:00 PM COB) for Nov 18 closed-door briefing; Q3 Earnings Nov 18.
+  * **NBIS (Bucket B — Credit & Permitting Watch):** **17.00 Shares** (Avg Cost $209.49 | Nov 10 Close $133.91 / AH $142.10). **Calibrated Balance Sheet:** `~$8.0B` cash vs `~$10.0B` convertibles + `$3.5B` Citigroup 364-day secured facility (Oct 22) + `271.86M` diluted shares. `S1: $128.51 | S2: $120.37 | S3: $113.30`.
+  * **CRWV (Bucket B — Frozen):** **39.01 Shares** (Avg Cost $76.00 | Nov 10 Close $48.73 / AH $51.50). Reported Q3 Nov 10 PM: `$3.661B` Rev beat (`$132.5B` backlog), but `$846M` quarterly interest bleed keeps 100% Capital Allocation Freeze ($0.00) active.
+  * **AMKR (Bucket B):** **80.17 Shares** (Avg Cost $49.18 | Nov 10 Close $34.48 / AH $34.90). Active GTC Limit SELL order for **20.00 shares @ $54.00** (`id: 6ae38580-0ae4-4e3b-aac4-c8f6238ad079`, confirmed).
+  * **APLD (Speculative Legacy):** **12.67 Shares** (Avg Cost $33.13). Active GTC Limit SELL order for **12.00 shares @ $35.00** (`id: 6a8b2a22-ecad-42bb-897b-d8c611e7a0ce`, confirmed).
+  * **SPCX (Bucket A):** **11.01 Shares** (Avg Cost $162.48 | Close $143.15). Space defense proxy.
+  * **OKLO (Thematic Energy):** **41.02 Shares** (Avg Cost $33.26 | Close $25.09). Nuclear baseload infrastructure.
+  * **INTC (21.41 Shares @ $111.94) & MRVL (0.15 Shares @ $238.45):** 100% Capital Allocation Freeze ($0.00).
+  * **Crypto (`BCH`):** **2.128298 BCH** (Cost Basis `$702.19` / Avg `$329.93` | Live `$230.73`). Repair-and-exit only (never exceed 5% crypto ceiling); deep support watch at `$217.00`.
+
+### 🚨 Mandatory Tracker: Super Thursday `NBIS` Credit & Permitting Gate (Nov 12 @ 8:00 AM EST)
+* **Rule:** Do **NOT** deploy Thursday's `$1,000.00` into `NBIS` if its Q3 release discloses **rising interest bleed (>10–12% of revenue)**, heavy short-term Citigroup `$3.5B` facility distress, **local data center permitting/construction delays (140MW New Jersey / Europe)**, or **fresh ATM share dilution** beyond `271.86M` shares.
+* **Pass Protocol:** Deploy `$1,000.00` at **`S1 ($128.00–$130.00)`** during the **9:45 AM – 10:30 AM EST** settlement window AND stage an automated **Hard Stop-Loss at `$110.50`** (-2.5% below S3 `$113.30`).
+* **Fail Protocol:** Immediately enforce **`$0.00` Capital Freeze on `NBIS`** and rotate the earmarked `$1,000.00` into **debt-free, cash-fortress `NVDA`**.
 
 
 

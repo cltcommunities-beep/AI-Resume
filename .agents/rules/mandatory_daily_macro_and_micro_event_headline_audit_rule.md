@@ -12,13 +12,13 @@ Every single day, stock prices are driven by the collision of **TWO daily forces
 1. **🌐 Daily Macro-Economic Data Releases (`8:30 AM / 10:00 AM / 2:00 PM EST`):** Same-day economic numbers (`Core CPI`, `Headline CPI`, `PPI`, `Core PCE`, `Initial Jobless Claims`, `Non-Farm Payrolls`, `GDP`, `ISM PMI`, `10-Year Treasury Yield`, and `FOMC / Fed Speakers`) where **`Actual vs. Expected`** dictates whether the entire market (`SPY`/`QQQ`) rallies or sells off.
 2. **📰 Daily Micro Company-Specific Events & Headlines:** Same-day company headlines (`Analyst Price Target Cuts/Upgrades`, `Board/Regulatory Probes`, `Export Controls`, `New Customer Contracts`, `Dilution Filings`, and `Same-Day / 72-Hour Peer Earnings`).
 
-Before outputting **any** stock analysis or investment plan, the assistant **MUST UNCONDITIONALLY** execute **BOTH** live web searches in that turn and synthesize them into the **4-Gate Daily Macro + Micro Event Scorecard**.
+Before outputting **any** stock analysis or investment plan, the assistant **MUST UNCONDITIONALLY** execute **THREE orthogonal, unbiased live web searches** in that turn (never cramming old-topic keywords into breaking-news queries) and synthesize them into the **4-Gate Daily Macro + Micro Event Scorecard**.
 
 ---
 
-## 🏛️ 1. The 2 Mandatory Parallel `search_web` Queries (Every Stock Analysis)
+## 🏛️ 1. The 3 Mandatory Unbiased Parallel `search_web` Queries (Nov 11 Reuters H200 Post-Mortem Upgrade)
 
-In every stock analysis turn, alongside live Robinhood MCP calls (`get_equity_quotes`, `get_equity_fundamentals`, `get_earnings_results`), the assistant MUST execute:
+**🚨 Why 3 Orthogonal Queries Are Mandatory:** Cramming specific terms (like `"analyst price target"` or `"House letter"`) into a breaking-news query creates **Search Confirmation Bias** and hides orthogonal breaking wire scoops (such as Reuters export-control or PLA military procurement investigations). Every stock news audit MUST run three cleanly separated, unbiased searches:
 
 ### Query A: 🌐 Same-Day Macro Economic Release Audit (`Actual vs. Expected`)
 * **Search Pattern:** `"US economic data release today CPI PPI jobless claims PCE Fed actual vs expected [Current Month Day Year]"`
@@ -27,12 +27,18 @@ In every stock analysis turn, alongside live Robinhood MCP calls (`get_equity_qu
   2. Did the data **Beat (Cooler/Bullish)**, **Meet (In-Line)**, or **Miss (Hotter/Bearish)** consensus expectations?
   3. How is the macro print impacting **10-Year Treasury Yields**, **Gold (`IAU`)**, and the broad indices (**`SPY` / `QQQ` / `IWM`**)?
 
-### Query B: 📰 Same-Day Micro Company Event & Headline Audit (Per Stock `[TICKER]`)
-* **Search Pattern:** `"[TICKER] stock breaking news analyst price target upgrade downgrade catalysts [Current Month Day Year]"`
+### Query B: 📰 Pure Unfiltered Wire Breaking News (`Reuters / Bloomberg / FT / CNBC`)
+* **Search Pattern:** `"[Company Name]" OR "[TICKER]" Reuters Bloomberg FT CNBC breaking news [Current Month Day Year]` *(Keep free of narrow topic adjectives so major wire scoops rank first).*
 * **What Must Be Verified & Stated:**
-  1. **Wall Street Analyst Actions Today:** Did any investment bank (Wells Fargo, Morgan Stanley, Mizuho, Goldman Sachs, Citi, etc.) raise or cut its price target or rating today?
-  2. **Corporate & Regulatory Headlines Today:** Are there any board probes, government export-license stories, customer contract wins/losses, or private class-action press releases?
+  1. **Top-Tier Wire Scoops:** Any breaking Reuters, Bloomberg, WSJ, or FT investigative pieces over the last 24–48 hours.
+  2. **Wall Street Analyst Actions Today:** Did any investment bank raise or cut its price target or rating today?
   3. **Today & 72-Hour Earnings Contagion:** Does the stock or its direct competitor (`CRWV` <-> `NBIS`) report earnings today or within 72 hours?
+
+### Query C: 🛡️ Adversarial, Regulatory, Export-Control & Supply-Chain Sweep
+* **Search Pattern:** `"[Company Name]" OR "[TICKER]" export China military DOJ SEC investigation lawsuit delay Reuters [Current Month Year]`
+* **What Must Be Verified & Stated:**
+  1. Government blacklists, third-party reseller / grey-market leaks (e.g., PLA-linked university procurement), DOJ/SEC subpoenas, or Congressional probes.
+  2. Supply-chain bottlenecks, customer delays, or product defect headlines.
 
 ---
 
