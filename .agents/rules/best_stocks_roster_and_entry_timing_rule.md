@@ -14,13 +14,13 @@ The assistant MUST determine precise **Entry Timing (Recommended Buy Zone, Suppo
 
 ## 🏆 The Approved Best Stocks Roster
 
-| Category | Approved Best Tickers | Primary Investment Role | Entry Strategy |
+| Category | Approved Best Tickers | Primary Investment Role | Entry Strategy / Allocation Status |
 | :--- | :--- | :--- | :--- |
-| **Primary Semiconductors** | `NVDA`, `MRVL`, `INTC` | Dominant Chip Architecture & Foundry Turnaround | Accumulate at S1 Support; trim near R1 targets |
-| **Advanced Packaging & Systems** | `AMKR`, `SMCI` | Chip Packaging & High-Density AI Server Rack Infrastructure | Buy on 4/4 Gate validation dips |
-| **Enterprise AI & Compute Platforms** | `PLTR`, `NBIS`, `CRWV` | Enterprise AI OS, Cloud Hyperscalers, & High-Performance Compute | Accumulate on high-volume pullbacks |
-| **AI Power & Fintech Infrastructure** | `BE`, `SOFI` | 24/7 Clean Energy Fuel Cells & High-Margin Digital Banking | Strong cash flow compounders |
-| **Future Watchlist (Reserve)** | `OKLO` | Next-Gen Nuclear SMR AI Power | ⏳ **FUTURE RESERVE:** Wait for S1/S2 support floor pullback |
+| **Primary Semiconductors** | `NVDA` *(Anchor)*<br>*(Frozen: `INTC`, `MRVL`)* | Dominant GPU Compute & CUDA Software Ecosystem | Accumulate strictly at S1/S2 Support Floors ($164.50 / $149.50) ahead of Nov 18 earnings. |
+| **Datacenter Infrastructure & Cooling** | **`NVT`** *(Approved Compounder)* | AI Liquid Cooling, Datacenter Power & Enclosures | **PRIMARY TARGET:** Staging Tranche 1 ($600.00) at S1 Support ($114–$116) during 9:45–10:30 AM EST window. |
+| **Advanced Packaging & Systems** | `AMKR`, `SMCI` | Chip Packaging (CoWoS) & High-Density AI Server Infrastructure | Buy on 4/4 Gate validation dips; trim near R1 targets ($54.00 AMKR limit active). |
+| **Enterprise AI & Compute Platforms** | `PLTR`<br>*(Frozen: `NBIS`, `CRWV`)* | Enterprise AI OS & Government/Commercial Intelligence Platforms | Accumulate on confirmed support pullbacks. `NBIS` frozen ($0.00) post-Q3 on capacity delays; `CRWV` frozen on debt bleed. |
+| **AI Power & Baseload Infrastructure** | `BE`, `SOFI`<br>*(Owned: `OKLO`)* | 24/7 Clean Energy Fuel Cells & High-Margin Digital Banking | Strong cash flow compounders. `OKLO` held (41.02 sh, 5.07% cap); $0.00 freeze on adding more shares. `SMR` vetoed ($0.00). |
 
 ---
 

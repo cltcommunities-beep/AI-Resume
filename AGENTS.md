@@ -58,28 +58,30 @@ Whenever the user asks for a portfolio review or stock analysis (`/mcp:robinhood
 
 ---
 
-## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Nov 10, 2026 Dynamic Calibration)
+## 📜 4. Active Orders & Holdings Tracking (Live Snapshot - Nov 12, 2026 Dynamic Calibration)
 
-* **True Cumulative Wealth Generated:** **$21,478.28** (**$19,478.28** remaining account value + **$2,000.00** realized cash withdrawal submitted to bank Nov 10 ahead of Nov 11 Veterans Day bank holiday; up **+114.8%** vs $10,000 initial base)
-* **Total Settled Cash in Account:** **$2,622.58** (`unsettled_funds: $0.00`)
-  * **$1,000.00 Earmarked for `NVDA`:** Tranche 1 (`3 sh @ $164.50`) + Tranche 2 (`3 sh @ $149.50` capitulation trap) OR post-House Committee letter execution Thursday, Nov 12 @ 9:45 AM EST.
-  * **$1,000.00 Earmarked for `NBIS` (CONDITIONAL):** Held until **Thursday, Nov 12 @ 8:00 AM EST** Q3 Earnings Audit; **MUST pass Credit & Permitting Gate** below or divert `$1,000` into debt-free `NVDA`.
-  * **$622.58 Unallocated Reserve Buffer:** Pure dry powder earning daily cash sweep interest (minimum war-chest protection).
-* **Core Active Holdings & Confirmed Open Orders (Verified Nov 10, 2026):**
-  * **NVDA (Bucket A):** **22.00 Shares** (Avg Cost $227.55 | Nov 10 Close $168.79 / AH $170.43). House Committee response deadline Wednesday Nov 11 (5:00 PM COB) for Nov 18 closed-door briefing; Q3 Earnings Nov 18.
-  * **NBIS (Bucket B — Credit & Permitting Watch):** **17.00 Shares** (Avg Cost $209.49 | Nov 10 Close $133.91 / AH $142.10). **Calibrated Balance Sheet:** `~$8.0B` cash vs `~$10.0B` convertibles + `$3.5B` Citigroup 364-day secured facility (Oct 22) + `271.86M` diluted shares. `S1: $128.51 | S2: $120.37 | S3: $113.30`.
-  * **CRWV (Bucket B — Frozen):** **39.01 Shares** (Avg Cost $76.00 | Nov 10 Close $48.73 / AH $51.50). Reported Q3 Nov 10 PM: `$3.661B` Rev beat (`$132.5B` backlog), but `$846M` quarterly interest bleed keeps 100% Capital Allocation Freeze ($0.00) active.
-  * **AMKR (Bucket B):** **80.17 Shares** (Avg Cost $49.18 | Nov 10 Close $34.48 / AH $34.90). Active GTC Limit SELL order for **20.00 shares @ $54.00** (`id: 6ae38580-0ae4-4e3b-aac4-c8f6238ad079`, confirmed).
+* **True Cumulative Wealth Generated:** **$21,958.91** (**$19,958.91** live account value + **$2,000.00** realized cash withdrawal submitted to bank Nov 10; up **+119.6%** vs $10,000 initial base)
+* **Total Settled Cash in Account:** **$2,115.20** (`unsettled_funds: $0.00` | Authoritative Spendable Buying Power: **$2,114.33 USD**)
+  * **$600.00 Earmarked for `NVT` (Tranche 1):** Deploying Friday, Nov 13 @ 9:45 AM – 10:30 AM EST at S1 Support ($114.00–$116.00). User added $1.00 tracking position Nov 12.
+  * **$500.00 Earmarked for `NVDA` (Dip Reserve):** Tranche 1 support watch at $164.50 (or $149.50 capitulation trap) ahead of Nov 18 Q3 Earnings & House Committee closed-door briefing.
+  * **$1,014.33 Unallocated War-Chest Reserve Buffer:** Pure dry powder earning daily cash sweep interest (minimum war-chest protection).
+* **Core Active Holdings & Confirmed Open Orders (Verified Nov 12, 2026):**
+  * **NVDA (Bucket A):** **25.004289 Shares** (Avg Cost $220.50 | Nov 12 Live $164.74). Resting on S1 Support ($164.50). House Committee closed-door briefing Nov 18; Q3 Earnings Nov 18.
+  * **NBIS (Bucket B — Frozen Post-Earnings):** **17.003932 Shares** (Avg Cost $209.49 | Nov 12 Live $127.40). Reported Q3 Nov 12 AM: Rev beat $980.8M (+571% YoY), Adj. EBITDA +$465.8M, but full-year 2026 guidance trimmed to $3.0B and CapEx raised to $27B on data center/power capacity delays pushing deployments into H1 2027. **Fail Protocol Officially Triggered: 100% Capital Allocation Freeze ($0.00) on new cash; HOLD existing 17.00 shares.**
+  * **NVT (Tier-2 Industrial Datacenter Compounder):** **Active $1.00 Tracking Slice** (Live $115.47 | Market Cap $18.66B / 161.59M shares). Approved Tier-2 non-tech compounder (+44% Q3 sales, $268M FCF, debt-safe). Staged for $600.00 Tranche 1 Friday Nov 13 morning.
+  * **OKLO (Thematic Energy):** **41.023452 Shares** (Avg Cost $33.26 | Nov 12 Live $24.83). Current weight 5.07% maxes out 5.0% single-stock ceiling on pre-commercial assets. **100% Capital Allocation Freeze ($0.00) on adding shares; HOLD existing 41.02 shares.**
+  * **SMR (NuScale Power):** Forensic audit Nov 12: **100% Capital Allocation Freeze ($0.00)** due to 429.9M share dilution, -$401.4M 9-month cash burn, and Nov 2026 class action lawsuits.
+  * **CRWV (Bucket B — Frozen):** **39.011664 Shares** (Avg Cost $76.00 | Nov 12 Live $51.50). Reported Q3 Nov 10 PM: $3.661B Rev beat, but $846M quarterly interest bleed keeps 100% Capital Allocation Freeze ($0.00) active.
+  * **AMKR (Bucket B):** **80.167016 Shares** (Avg Cost $49.18 | Nov 12 Live $37.17). Active GTC Limit SELL order for **20.00 shares @ $54.00** (`id: 6ae38580-0ae4-4e3b-aac4-c8f6238ad079`, confirmed).
   * **APLD (Speculative Legacy):** **12.67 Shares** (Avg Cost $33.13). Active GTC Limit SELL order for **12.00 shares @ $35.00** (`id: 6a8b2a22-ecad-42bb-897b-d8c611e7a0ce`, confirmed).
-  * **SPCX (Bucket A):** **11.01 Shares** (Avg Cost $162.48 | Close $143.15). Space defense proxy.
-  * **OKLO (Thematic Energy):** **41.02 Shares** (Avg Cost $33.26 | Close $25.09). Nuclear baseload infrastructure.
+  * **SPCX (Bucket A):** **11.007110 Shares** (Avg Cost $162.48 | Nov 12 Live $141.81). Space defense proxy.
   * **INTC (21.41 Shares @ $111.94) & MRVL (0.15 Shares @ $238.45):** 100% Capital Allocation Freeze ($0.00).
-  * **Crypto (`BCH`):** **2.128298 BCH** (Cost Basis `$702.19` / Avg `$329.93` | Live `$230.73`). Repair-and-exit only (never exceed 5% crypto ceiling); deep support watch at `$217.00`.
+  * **Crypto (`BCH`):** **2.128298 BCH** (Cost Basis `$702.19` / Avg `$329.93` | Live `$225.56` / Value `$480.06`). Repair-and-exit only; support watch at `$217.00`.
 
-### 🚨 Mandatory Tracker: Super Thursday `NBIS` Credit & Permitting Gate (Nov 12 @ 8:00 AM EST)
-* **Rule:** Do **NOT** deploy Thursday's `$1,000.00` into `NBIS` if its Q3 release discloses **rising interest bleed (>10–12% of revenue)**, heavy short-term Citigroup `$3.5B` facility distress, **local data center permitting/construction delays (140MW New Jersey / Europe)**, or **fresh ATM share dilution** beyond `271.86M` shares.
-* **Pass Protocol:** Deploy `$1,000.00` at **`S1 ($128.00–$130.00)`** during the **9:45 AM – 10:30 AM EST** settlement window AND stage an automated **Hard Stop-Loss at `$110.50`** (-2.5% below S3 `$113.30`).
-* **Fail Protocol:** Immediately enforce **`$0.00` Capital Freeze on `NBIS`** and rotate the earmarked `$1,000.00` into **debt-free, cash-fortress `NVDA`**.
+### 🚨 Completed Tracker: Super Thursday `NBIS` Credit & Permitting Gate (Nov 12 @ 8:00 AM EST)
+* **Outcome: FAIL PROTOCOL TRIGGERED.** While Q3 revenues surged +571% ($980.8M) and EBITDA swung positive ($465.8M), management explicitly disclosed data center power and capacity delays pushing rollouts into H1 2027 and raised CapEx to $27B.
+* **Enforced Action:** Strict **$0.00 Capital Allocation Freeze on `NBIS`**. Zero new cash deployed. Existing 17.00 shares held for 2027 recovery. Earmarked buying power rotated into Tier-2 non-tech compounder **`NVT`** for Friday, Nov 13.
+* **Macro Catalyst Ahead:** **Friday, Nov 13 @ 8:30 AM EST October PPI** (Consensus: 0.4% MoM / 0.3% Core; Headline YoY expected at 6.6%).
 
 
 
@@ -256,6 +258,19 @@ No stock trades in isolation. Whenever ANY stock (`[TICKER]`)—especially insid
 Whenever performing ANY stock analysis (`/mcp:robinhood:stock-analysis`), market overview, or investment evaluation, the assistant MUST unconditionally execute **two parallel live `search_web` audits** alongside Robinhood MCP calls: (1) **Today's Macro Economic Data Releases (`Actual vs. Expected` — e.g., Core CPI `0.3%` vs `0.2%`, Headline CPI, PPI, PCE, Jobless Claims, Fed)**, and (2) **Today's Micro Company-Specific Events & Headlines (Analyst PT changes, probes, contracts, 72h peer earnings)**.
 * **Core Enforced Standard:** [mandatory_daily_macro_and_micro_event_headline_audit_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_daily_macro_and_micro_event_headline_audit_rule.md).
 * **Mandatory Output:** Render the **4-Gate Daily Macro + Micro Event Scorecard Table** in every stock analysis. If a same-day macro release prints hotter/worse than expected, enforce the **Day-1 Macro Digestion Hold** and wait for S1/S2/S3 support stabilization.
+
+---
+
+## ⚖️ 21. Mandatory Always-On Fair Decision Standard
+Every response evaluating any stock, order, chart, or market event MUST deliver an unbiased, objective, plain-English **Fair Decision**—never flattering the user or cherry-picking one side of the story.
+* **Core Enforced Standard (`trigger: always_on`):** [mandatory_fair_decision_always_needed_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_fair_decision_always_needed_rule.md).
+* **The 5 Fair Decision Gates:**
+  1. **Live Data Over Feelings:** Verify real-time quotes, `Cap / Shares` (plus actual diluted shares), live orders, and 1-minute opening bars (to prove when a missed low was a 60-second trap inside `9:30–9:45 AM`).
+  2. **Unfiltered Both-Sides Truth:** Weigh real strengths (backlog, institutional support) alongside real dealbreakers (dilution, OCF burn, CapEx surge, macro yields, analyst cuts, scandals).
+  3. **Time, Macro & Scandal Clearance:** Enforce the `9:30–9:45 AM` ban, `72h` binary freeze, and **3-Day Scandal Freeze**.
+  4. **Split Verdict (`Existing Shares` vs. `New Cash`):** Always state separate **Hold/Trim** guidance for shares owned and **Deploy/Wait/`$0.00` Freeze** guidance for buying power.
+  5. **Plain-English Clarity:** Short scannable bullets, simple tables, masked `••••3782`, and `🟢 GREEN` / `🔴 RED` bullets with `Live Price` vs `Wall St Market Value`.
+
 
 
 
