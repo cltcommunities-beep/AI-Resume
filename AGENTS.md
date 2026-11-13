@@ -95,6 +95,7 @@ Whenever any market surprise, bad entry, or drawdown occurs, the assistant and u
 * **Dual-Scenario Technical Matrix Standard:** [mandatory_dual_scenario_technical_matrix_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_dual_scenario_technical_matrix_rule.md) (Mandatory Mapping of Resistance Ceilings, Inflection Pivots, 0.65 Fib Golden Pockets, and If/Then Dual Pathways).
 * **Buffett & Quantitative Algo Standard:** [buffett_and_quantitative_algorithm_hybrid_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buffett_and_quantitative_algorithm_hybrid_rule.md) (The Dual-Brain Standard: Buffett Value & Cash Fortress combined with Algorithmic Fibonacci & Timing Execution).
 * **Headline Spike Fade & Dynamic Harvest Standard:** [headline_spike_fade_and_dynamic_harvest_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/headline_spike_fade_and_dynamic_harvest_rule.md) (The SPCX Oct 21 Post-Mortem: Dynamic Profit-Taking and Breakeven Stops on Headline Pops into Hostile Macro Tapes).
+* **Friday Pre-Catalyst De-Grossing & S1 Trap Standard:** [mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md) (The Nov 13 Post-Mortem: 4-Gate Pre-Order Forensic Friction Checklist banning S1 limit orders on pre-catalyst Fridays, mandating S2 Deep Capitulation Traps and zero intraday double-dipping).
 
 ---
 
