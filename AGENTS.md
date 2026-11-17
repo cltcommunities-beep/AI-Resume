@@ -272,6 +272,17 @@ Every response evaluating any stock, order, chart, or market event MUST deliver 
   4. **Split Verdict (`Existing Shares` vs. `New Cash`):** Always state separate **Hold/Trim** guidance for shares owned and **Deploy/Wait/`$0.00` Freeze** guidance for buying power.
   5. **Plain-English Clarity:** Short scannable bullets, simple tables, masked `••••3782`, and `🟢 GREEN` / `🔴 RED` bullets with `Live Price` vs `Wall St Market Value`.
 
+---
+
+## 📊 22. Mandatory Pre-Investment Visual Chart Standard (Clean, Live & Non-Confusing)
+Before recommending, evaluating, or staging any buy/investment trade on ANY stock (`[TICKER]`), the assistant MUST generate and embed a clean interactive HTML/Canvas chart (`<agent-embed>`) built strictly from live Robinhood MCP data (`get_equity_quotes`, `get_equity_fundamentals`, `get_equity_historicals`, `get_equity_technical_indicators`) — never committing capital blind or cluttering charts with overlapping labels.
+* **Core Enforced Standard:** [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md).
+* **Two Non-Confusing Chart Modes:**
+  * **View A (Default Dual-Scenario `1D` Candlestick Chart):** Verified daily bars + live `*` candle, interactive toggles (`Gaps & SMAs`, `Pattern/Channel/Fib`, `Dual Scenario Paths`), zero-overlap right-axis labels (`>= 16px` separation), hover OHLC tooltip, and verified Open vs. Filled gap status.
+  * **View B (4-Step Interactive Ladder `1 -> 2 -> 3 -> 4`):** Zero-jargon button walkthrough separating **1. Shape (`S-H-S` / `W-Bottom`)**, **2. Neckline (`Main Roof`)**, **3. Pivot (`Step 1 Turning Switch — improves odds, NEVER guarantees no drop`)**, and **4. Full Ladder (`Floor -> Pivot -> Neckline -> Open Gaps`)**.
+* **Visual Veto:** Buying directly under an unconfirmed Pivot/Neckline lid or chasing outside `9:45–10:30 AM EDT` triggers an automatic `$0.00` freeze until support confirmation (`S2` / `0.65` Golden Pocket) or a confirmed breakout retest.
+
+
 
 
 
