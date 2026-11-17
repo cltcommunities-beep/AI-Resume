@@ -274,11 +274,11 @@ Every response evaluating any stock, order, chart, or market event MUST deliver 
 
 ---
 
-## 📊 22. Mandatory Pre-Investment Visual Chart Standard (Clean, Live & Non-Confusing)
-Before recommending, evaluating, or staging any buy/investment trade on ANY stock (`[TICKER]`), the assistant MUST generate and embed a clean interactive HTML/Canvas chart (`<agent-embed>`) built strictly from live Robinhood MCP data (`get_equity_quotes`, `get_equity_fundamentals`, `get_equity_historicals`, `get_equity_technical_indicators`) — never committing capital blind or cluttering charts with overlapping labels.
+## 📊 22. Mandatory Pre-Investment Visual Chart Standard (12-Month Scan, Clean Display & Non-Confusing)
+Before recommending, evaluating, or staging any buy/investment trade on ANY stock (`[TICKER]`), the assistant MUST fetch a **full `12 months` (`~252` daily bars; `>= 15 months` warm-up for `200-SMA`)** from live Robinhood MCP tools (`get_equity_quotes`, `get_equity_fundamentals`, `get_equity_historicals`, `get_equity_technical_indicators`) to scan **all 1-year unfilled gaps and major support floors**, then embed a clean interactive HTML/Canvas chart (`<agent-embed>`) without cluttering labels.
 * **Core Enforced Standard:** [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md).
 * **Two Non-Confusing Chart Modes:**
-  * **View A (Default Dual-Scenario `1D` Candlestick Chart):** Verified daily bars + live `*` candle, interactive toggles (`Gaps & SMAs`, `Pattern/Channel/Fib`, `Dual Scenario Paths`), zero-overlap right-axis labels (`>= 16px` separation), hover OHLC tooltip, and verified Open vs. Filled gap status.
+  * **View A (Default Dual-Scenario `1D` Candlestick Chart):** Displays the cleanest **`35–60` recent daily bars (`~1.5–3 months`)** + live `*` candle with key `6–12 month` support/gap reference lines overlaid, interactive toggles (`Gaps & SMAs`, `Pattern/Channel/Fib`, `Dual Scenario Paths`), zero-overlap right-axis labels (`>= 16px` separation), hover OHLC tooltip, and verified Open vs. Filled gap status.
   * **View B (4-Step Interactive Ladder `1 -> 2 -> 3 -> 4`):** Zero-jargon button walkthrough separating **1. Shape (`S-H-S` / `W-Bottom`)**, **2. Neckline (`Main Roof`)**, **3. Pivot (`Step 1 Turning Switch — improves odds, NEVER guarantees no drop`)**, and **4. Full Ladder (`Floor -> Pivot -> Neckline -> Open Gaps`)**.
 * **Visual Veto:** Buying directly under an unconfirmed Pivot/Neckline lid or chasing outside `9:45–10:30 AM EDT` triggers an automatic `$0.00` freeze until support confirmation (`S2` / `0.65` Golden Pocket) or a confirmed breakout retest.
 
