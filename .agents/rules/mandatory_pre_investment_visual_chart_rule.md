@@ -1,61 +1,75 @@
 ---
-trigger: model_decision
-description: Mandatory Pre-Investment Visual Chart Rule — Draw a clean, non-confusing interactive live Robinhood 1D Dual-Scenario & Step-by-Step Ladder chart before recommending or staging any stock buy or investment.
+trigger: always_on
+description: Mandatory Pre-Investment Visual Chart Rule (The Permanent SOFI 3-Tab Gold-Standard Blueprint) — Always build every stock chart matching the SOFI layout with [1D Chart | Simple 4-Step Graph | 4-Step Explanation], 7-Signal Robinhood MCP HUD, 3 layer toggles, Floor Zone canvas callout, non-overlapping pills, clickable Show Graph -> buttons, and Account ••••3782 footer.
 ---
 
-# 📊 MANDATORY RULE: PRE-INVESTMENT VISUAL CHART STANDARD (CLEAN, LIVE & NON-CONFUSING)
+# 📊 MANDATORY RULE: PRE-INVESTMENT VISUAL CHART STANDARD (`SOFI` 3-TAB GOLD-STANDARD BLUEPRINT)
 
-## 🛑 Executive Directive
-Whenever the assistant evaluates, recommends, proposes, or prepares to stage a **buy, add, dip-buy, or rebalance trade** for **ANY stock or ETF (`[TICKER]`)** — or whenever the user asks to draw/explain a chart — the assistant MUST generate and embed a **clean, interactive live-data visual chart (`<agent-embed>`) FIRST**, before finalizing any investment decision.
-
-**Core Principle ("Visual Clarity Before Capital"):** Never commit buying power blind from numbers alone, AND never clutter a chart with 15 overlapping lines or unexplained jargon. Every chart must make the exact **Floor**, **Step 1 Pivot**, **Step 2 Neckline**, **Open Gaps**, and **Dual Scenario Risk Paths** unmistakable in 10 seconds.
-
----
-
-## 🛠️ 1. Mandatory 12-Month Live Robinhood MCP Data Pipeline (Zero Guessed Candles)
-
-Every pre-investment chart MUST be built strictly from real-time session calls in that turn — static memory or invented OHLC bars are strictly forbidden:
-1. **`get_equity_quotes` (`[TICKER], SPY, QQQ`):** Real-time `last_trade_price`, `Bid/Ask`, official prior close, and index relative divergence.
-2. **`get_equity_fundamentals` (`[TICKER]`, `bounds: "regular"`):** Today's live intraday bar (`open`, `high`, `low`, `volume`), `52W` high/low, and `market_cap / shares_outstanding` (`Wall St Market Value`).
-3. **`get_equity_historicals` (`[TICKER]`, `interval: "day"` — MANDATORY 12-MONTH FETCH):** ALWAYS pull **`12 months` (`365` calendar days / `~252` completed regular daily OHLCV bars**; or maximum available post-IPO history if listed `< 12` months, explicitly noted) ending yesterday, then append today's live intraday candle cleanly tagged `*`.
-4. **`get_equity_technical_indicators` (`[TICKER]`):** Pull **`sma` (`20`, `50`, `200` — integer periods, using `>= 15 months` start_time warm-up so `200-SMA` computes cleanly)**, `rsi` (`14`), and `pivot_points` (`classic`).
-5. **Full 12-Month Gap, Swing & Pattern Verification:** Run programmatic/explicit scan across the **entire 12-month (`~252`-bar) history** for:
-   * **Unfilled Gaps (`Open` vs. `Already Filled`):** `low[i] > high[i-1]` (gap up) or `high[i] < low[i-1]` (gap down) checked against all subsequent highs/lows across the full year.
-   * **12-Month Major Support/Resistance (`S1/S2/S3` & Macro Base) & Fibonacci Grid (`0.50` & `0.618–0.65` Golden Pocket):** Calculated directly from verified 12-month / dominant swing highs and lows so critical older floors or gaps are never hidden off-screen.
+## 🛑 Executive Directive (Match the `SOFI` Chart Template on Every Stock — Always)
+Whenever the assistant draws, explains, or reviews a chart for **ANY stock or ETF (`[TICKER]`)** — or evaluates/recommends a buy, add, dip-buy, stop-hunt check, or open-order stress-test — the assistant **MUST ALWAYS** build and embed an interactive chart (`<agent-embed>`) following the **exact `SOFI` 3-Tab Gold-Standard Blueprint** below. Never strip tabs, drop the plain-English `4-Step Explanation`, omit the `7-Signal HUD`, or scatter cluttering labels over candlesticks.
 
 ---
 
-## 🎨 2. Two Approved Interactive Chart Views (Keep It Clean & Non-Confusing)
+## 🛠️ 1. Mandatory `12-Month` + All-Prediction Live Robinhood MCP Data Pipeline (Zero Guessed Candles)
 
-All widgets MUST follow `generative_ui` HTML/Canvas standards (`<= 450px` total height, `>= 12px` text, `ResizeObserver`, `themechange` light/dark sync, and **automatic right-axis pill separation `>= 16px` so labels NEVER overlap**):
-
-### View A: Dual-Scenario `1D` Candlestick Chart (Default Pre-Investment View)
-* **Clean Display Window (`35 – 60` Candles Shown):** Slice and plot the most recent **`35 – 60` regular daily bars (`~1.5 – 3 months`)** plus the live `*` candle so every candlestick stays wide and clear — while automatically projecting key **`6–12 month` floors, `200-SMA`, and older open gaps** as labeled horizontal lines. *(When a multi-year macro view is requested, render `1-Week` candles over `1–3 years` instead of squishing `250+` daily needles.)*
-* Interactive toggles (`checkboxes`) so the user can isolate layers without visual clutter:
-  1. `Gaps & SMAs` (`20/50/200-SMA` + shaded Open/Filled gaps)
-  2. `Pattern, Channel & Fib` (Ascending/Descending channel rails, `S-H-S` or `W-Bottom` arcs, `0.50` & `0.618–0.65` Golden Pocket)
-  3. `Dual Scenario Paths` (Bullish higher-low reclaim arrow vs. Bearish breakdown arrow)
-* Interactive hover crosshair tooltip displaying `Date | O / H / L / C | Vol`.
-
-### View B: Ultra-Simple 4-Step Interactive Ladder (`1 → 2 → 3 → 4` Buttons)
-* Required whenever explaining a setup in plain English or whenever the user asks `"what is Pivot / Neckline?"` or expresses confusion:
-  * **Button 1 — `The Shape`:** Shows only the clean price curve and simple bottom/top landmarks (e.g., `Left Shoulder`, `Head`, `Right Shoulder` or `"W" Double-Bottom`).
-  * **Button 2 — `Neckline (Main Roof / Water Line)`:** Shows ONLY the pattern breakout ceiling (`Step 2 Gate`) required to confirm a full trend reversal.
-  * **Button 3 — `Pivot (Step 1 Turning Switch)`:** Shows ONLY the short-term battle hinge (`20-SMA` / `Classic Pivot`) inside the pattern.
-  * **Button 4 — `Full Ladder`:** Displays the plain-English hierarchy: **`🟢 Floor → 🟠 Step 1 Pivot → 🔴 Step 2 Neckline → 🚀 Target / Open Gaps`**.
+Pull ALL real-time broker & prediction datasets **before** writing chart HTML (zero static memory or invented OHLC bars):
+1. **`get_equity_quotes` (`[TICKER], SPY, QQQ, IWM, IAU`):** Real-time price (`Regular` / `AH`), `Bid/Ask`, prior close, and `>= 1.5%` index divergence siren check.
+2. **`get_equity_fundamentals` (`[TICKER]`, `bounds: "regular"` / `"extended"`):** Session OHLCV (`*` candle), `52W` high/low + dates, `P/E` (trailing & forward if held), and `Wall St Value = Market Cap / Shares Outstanding`.
+3. **`get_equity_historicals` (`[TICKER]`, `interval: "day"` — `12` Months / `~252` Bars):** Fetch full 1-year daily OHLCV (ending yesterday) + append today's live `*` bar. Run programmatic scan for **all unfilled Open Up Gaps (below)** vs. **Open Down Gaps (above)** across the entire year.
+4. **`get_equity_technical_indicators` (`[TICKER]`, `>= 15 months` warm-up):** `20-SMA`, `50-SMA`, `200-SMA`, `14-Day RSI`, and `Classic Pivot Points` (`Pivot / S1–S3 / R1–R3`).
+5. **Robinhood Live Volatility, L2 Depth & Options Suite + Portfolio Check:**
+   * `get_index_quotes` (`VIX`, `SPX`, `NDX`, plus Brent `e316e480-6263-4c8c-8687-114fd4381b49` & Gold `aee755c2-b2b2-4a9b-984f-e66d383b9980`).
+   * `preview_scan` (`ivRank`, `frontIV`, `backIV`, `optionsPutDayVolume`, `optionsCallDayVolume`, `Put/Call OI`).
+   * `get_equity_price_book` (`[TICKER]`, `SPY` → total resting Bid vs. Ask share depth ratio).
+   * `get_option_chains` + `get_option_instruments` + `get_option_quotes` (nearest ATM Call + Put `mark_price` straddle `±$ / ±%` expected move & key Strike OI).
+   * `get_portfolio`, `get_equity_positions`, `get_equity_orders` (`••••3782`), `get_earnings_calendar`, `get_earnings_results`, `get_equity_analyst_ratings`, `get_politician_trades`, plus `search_web` (`10Y` Yield, `CME FedWatch`, daily macro/micro news).
 
 ---
 
-## 🪜 3. Plain-English Rules Every Pre-Investment Chart Must Enforce
+## 🧩 2. Exact `SOFI` 5-Row Chart Widget Architecture (All Elements Mandatory)
 
-Before recommending ANY buy order (`S1/S2/S3` limit or breakout), verify all 4 visual gates on the chart:
-1. **Define Floor vs. Pivot vs. Neckline Honestly:**
-   * **🟢 Support Floor (`S1 / S2 / Base`):** Where buyers previously stepped in; staying above keeps the bullish base alive.
-   * **🟠 Pivot (`Step 1 Turning Switch`):** Short-term trend flip line (`20-SMA` / `Classic Pivot`). **CRITICAL TRUTH:** Crossing a Pivot only *improves odds* of testing the Neckline — it is **NEVER a "no way to drop" guarantee** (intraday wicks and macro shocks can still reject back below it). Require a **confirmed daily close (and/or retest)** above the Pivot.
-   * **🔴 Neckline (`Step 2 Main Ceiling`):** Full pattern reversal gate (`50-SMA` / `S-H-S` peak / `"W"` middle peak). Breaking & holding above unlocks measured-move targets.
-2. **Pre-Buy Visual Veto (`$0.00` Freeze Triggers):**
-   * **NEVER buy directly underneath an unconfirmed Pivot or Neckline resistance lid** (`mandatory_dual_scenario_technical_matrix_rule.md`).
-   * **NEVER chase vertical green spikes into `R1/R2` resistance** or initiate trades outside the `9:45 AM – 10:30 AM EDT` confirmed setup window (`mandatory_intraday_reality_and_morning_dip_rule.md`).
-   * If a lower **open gap** sits underneath current price during a red macro tape (`10Y` yield `> 5.0%` or `SPY/QQQ` red), treat the open gap as an active downside magnet and wait/stage only at lower `S2` / `0.65 Golden Pocket` support (once Macro & Event gates pass).
-3. **Mandatory Output Pairing:**
-   * Embed `<agent-embed>` + clickable `[chart.html](file://...)` link, pair with the **4-Gate Macro + Micro Scorecard**, **Dual-Scenario Table**, and **Fair Decision 🟢 GREEN / 🔴 RED bullets** (explicitly stating `Live Price` vs. `Wall St Market Value` (`Market Cap / Shares Outstanding`) and masked `••••3782` account context; zero LaTeX math blocks).
+Embed via `<agent-embed src="file:///..."></agent-embed>` (never pass a `height` attr) + clickable `[file.html](file:///...)` link. Enforce `generative_ui` standards (`<= 450px` total height, Tailwind v3 allowlisted CDN, **ZERO `:root` CSS overrides**, `>= 12px` minimum text across HTML & Canvas, `themechange` + `.light`/`.dark` + `🌓` toggle, resize redraw).
+
+### Row 1 — Header Bar with Live Price, Wall St Value & EXACT 3 Tabs
+* **Left:** `[TICKER]` pill · `Company Name` · **`$LivePrice`** · **`Today/AH % + Divergence Tag`** · **`Wall St Value $XX.XX ($Cap / Shares · P/E)`**.
+* **Right:** `role="tablist"` with **EXACTLY these 3 interactive tabs** + `🌓` button:
+  1. **`1D Chart`** (`#btnViewA` — Default active tab)
+  2. **`Simple 4-Step Graph`** (`#btnViewB`)
+  3. **`4-Step Explanation`** (`#btnViewC`)
+
+### Row 2 — Compact `7-Signal` All-Robinhood-MCP Prediction HUD Banner
+* Highlighted border when `4+` signals red, wrapping cleanly with **1 Bold Verdict Pill + 6 Compact Telemetry Pills**:
+  `[🔴/🟡/🟢 X/7 VERDICT]` · `10Y Yield % (FedWatch %)` · `VIX · SPY %` · `Front IV % vs Back IV %` · `L2 Asks/Bids Ratio (Shares)` · `Binary Catalyst (NVDA/FOMC/Earnings)` · `Active Order / Lower Gap Check`.
+
+### Row 3 — Layer Toggles & Contextual Mode Hint (`#ctrlStrip`)
+* **3 Color-Coded Checkboxes (checked by default, shown in View A):**
+  1. 🟠 `Open Gap(s) & SMAs` (`#chkGaps`, `#ea580c`)
+  2. 🔵 `12M Floor & Fib` (`#chkFib`, `#2563eb`)
+  3. 🟢 `Market Forecast` (`#chkFcst`, `#16a34a`)
+* **Dynamic `#modeHint`:** Explains OHLC hover + `"4-Step Explanation"` in View A, buttons `1–4` in View B, and `"Show Graph ->"` jump buttons in View C.
+
+### Row 4 — The 3 Switchable Interactive Views (`#viewA`, `#viewB`, `#viewC`)
+1. **View A — `1D Chart` (`#mainCanvas`, `254px` height):**
+   * Plots the cleanest **`45` recent daily bars** + live `*` candle + **`3` forecast slots** on right, with **`padR = 160`** so right-axis pills NEVER clip.
+   * Overlays bottom volume bars, `20-SMA` curve (amber), `50/200-SMA` dashed lines (purple), shaded **Open Gaps** (orange), **`0.618–0.65` Golden Pocket** (blue), **Pivot**, **Floor** (`52W / Base`), **Ceiling**, **User Avg Cost / Open Order** dashed line (red), shaded green **Floor Trap / Support Zone** + **Breakout Confirmation Zone**, an explicit **plain-English green in-canvas Floor Zone callout** (placed cleanly in open space without touching candles), purple **ATM Options Expected Move Cone** (`Bear ↔ Bull`), `relaxPills(..., minGap = 17.5)` non-overlapping right-axis pills with leader ticks, and full crosshair **`Date · O / H / L / C · Vol`** hover tooltip.
+2. **View B — `Simple 4-Step Graph` (`#storyCanvas`, `186px` height):**
+   * MUST always render a real graphical price curve (never text-only) sliced from the key swing to live `*`, toggled by **`4` step buttons** (default **Step `4`**):
+     - **Step 1:** Pattern Shape + Structural Floor (`Bottom 1` / `52W Low`) + `0` or `N` Lower Open Gaps check.
+     - **Step 2:** Main Roof (`Ceiling / Neckline`) + Overhead Open Gap(s) & Level-2 Supply Wall.
+     - **Step 3:** Turning Switch (`Pivot / 20-SMA`) + Golden Pocket + Purple ATM Options Cone.
+     - **Step 4:** **Full Ladder** — Dual-Scenario green Bull Bounce & red Bear Flush dashed paths + shaded Entry/Breakout zones.
+   * Clean non-overlapping curve dot markers (`dx/dy` checked against x-axis dates & slope), `relaxPills(minGap = 17.5)`, and live `#storyCap` bottom plain-English bar.
+3. **View C — `4-Step Explanation` (`#viewC`, `2x2` Card Grid):**
+   * `grid-cols-1 sm:grid-cols-2 gap-2` with 4 color-coded plain-English cards matching Steps `1–4` (`#16a34a`, `#ea580c`, `#2563eb`, `#dc2626`): **Floor & Gap Count**, **Main Roof & L2/Gap Wall**, **Turning Switch & ATM Options**, and **Action Plan / Order Stress-Test** (`all_day_hours` vs RTH, hold vs wait).
+   * **Mandatory Clickable Links:** Every card includes `<button class="jumpStep" data-jump="1..4">Show Graph →</button>` that switches immediately to View B on that exact step. Contain zero backticks `` ` `` inside HTML.
+
+### Row 5 — Compact Account `••••3782` Footer Strip
+* **Left:** Masked **`••••3782`** holdings (`shares @ avg cost`), active open order (`type / session hours`), and free cash / buying power.
+* **Right:** Lower vs. Upper Open Gap summary + `52W Range` (`Low (Date) – High (Date)`).
+
+---
+
+## 🚦 3. Mandatory Pre-Buy Visual Veto Rules
+* **Pivot = Turning Switch, NOT a Safety Guarantee:** Crossing `20-SMA` / `Classic Pivot` improves odds of testing the `Ceiling`, never guarantees against a rejection back to the Floor (`Nov 17 SPCX` vs `SOFI` standard). Wait for confirmed close/retest.
+* **Red Tide `S1` & `24/5` Overnight Order Freeze:** When `4+` HUD signals are Red, `10Y >= 5.0%`, `<=72h` binary (`NVDA`, `FOMC`, `CPI`, Earnings), or outside **`9:45 AM – 10:30 AM EDT`**, enforce **`$0.00` New Buy / Pause `all_day_hours` resting orders** and surface the warning directly in HUD + Step 4 card.
+* **Mandatory Pairing:** Always deliver `<agent-embed>` + clickable link alongside the **Fair Decision** (`Existing Shares` vs `New Cash`), **4-Gate Macro+Micro Scorecard**, **Dual Solvency & Master Tables**, **Dual-Scenario Matrix**, and **`🟢 GREEN` / `🔴 RED` Action Bullets** (`Live Price` vs `Wall St Market Value`).

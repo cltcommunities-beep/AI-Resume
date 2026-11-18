@@ -96,6 +96,7 @@ Whenever any market surprise, bad entry, or drawdown occurs, the assistant and u
 * **Buffett & Quantitative Algo Standard:** [buffett_and_quantitative_algorithm_hybrid_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/buffett_and_quantitative_algorithm_hybrid_rule.md) (The Dual-Brain Standard: Buffett Value & Cash Fortress combined with Algorithmic Fibonacci & Timing Execution).
 * **Headline Spike Fade & Dynamic Harvest Standard:** [headline_spike_fade_and_dynamic_harvest_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/headline_spike_fade_and_dynamic_harvest_rule.md) (The SPCX Oct 21 Post-Mortem: Dynamic Profit-Taking and Breakeven Stops on Headline Pops into Hostile Macro Tapes).
 * **Friday Pre-Catalyst De-Grossing & S1 Trap Standard:** [mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md) (The Nov 13 Post-Mortem: 4-Gate Pre-Order Forensic Friction Checklist banning S1 limit orders on pre-catalyst Fridays, mandating S2 Deep Capitulation Traps and zero intraday double-dipping).
+* **Chart Behavior Dynamics & Continuous Learning Standard:** [mandatory_chart_behavior_and_continuous_learning_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_chart_behavior_and_continuous_learning_rule.md) (The 4 Structural Chart Zones, Floor-to-Pivot-to-Neckline Surge Mechanics, 3 Pivot Scenarios, 12-Month Ingestion Baseline, and Never-Repeat Rule Codification Standard).
 
 ---
 
@@ -118,8 +119,14 @@ All growth stock evaluations, dip purchases, and capital allocations must pass t
 ---
 
 ## 🔬 9. Mandatory Unofficial Stretch & Buy-Side Whisper Earnings Benchmark
-Whenever evaluating earnings, financial results, quarterly reports, or revenue/EPS beats/misses for ANY stock, the assistant MUST unconditionally determine and clearly state whether results beat or missed the **🔬 Unofficial Stretch Guess (The Buy-Side Whisper Target)** in addition to public consensus.
+Whenever evaluating earnings, financial results, quarterly reports, or revenue/EPS beats/misses for ANY stock, the assistant MUST unconditionally audit the **5 Mandatory Whisper Data Pillars** to determine whether results beat or missed the **🔬 Unofficial Stretch Guess (The Buy-Side Whisper Target)** in addition to public consensus:
 * **Core Enforced Standard:** [mandatory_unofficial_stretch_earnings_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_unofficial_stretch_earnings_rule.md).
+* **The 5 Mandatory Whisper Data Pillars:**
+  1. **Backward-Looking EPS Whisper:** Diluted Non-GAAP EPS whisper tracked by buy-side trading desks (`thewhispernumber.com`, hedge fund notes).
+  2. **Backward-Looking Revenue Whisper:** Total net revenue whisper target (typically 2%–5% above sell-side consensus).
+  3. **Core Engine / Segment Revenue Whisper:** The core multiple driver (e.g. Nvidia Data Center, SpaceX Starlink, Microsoft Azure, AWS).
+  4. **Forward Gross Margin Guidance Whisper (The Nitpick Trap):** Mandatory gross margin floor; guiding forward margins down (e.g. Nvidia Q4 gross margins guided down -300 to -400 bps) triggers an immediate **🔴 MISSED STRETCH** red flag regardless of revenue beats.
+  5. **13-Week Organic Guidance (Calendar/M&A Normalization):** Strip out 14-week quarter distortions (~7% optical boost) or pending M&A to evaluate true organic forward whisper performance.
 * **Required Output:** 5-Level Horizontal Flow (`[Official] ──► [Consensus] ──► [Tier-1] ──► [🔬 Unofficial Stretch] ──► [Reported]`) and 6-Column Institutional Earnings Benchmark Table with `🏆 BEAT ALL 5` or `🔴 MISSED STRETCH` status coding.
 
 ---
@@ -274,24 +281,41 @@ Every response evaluating any stock, order, chart, or market event MUST deliver 
 
 ---
 
-## 📊 22. Mandatory Pre-Investment Visual Chart Standard (12-Month Scan, Clean Display & Non-Confusing)
-Before recommending, evaluating, or staging any buy/investment trade on ANY stock (`[TICKER]`), the assistant MUST fetch a **full `12 months` (`~252` daily bars; `>= 15 months` warm-up for `200-SMA`)** from live Robinhood MCP tools (`get_equity_quotes`, `get_equity_fundamentals`, `get_equity_historicals`, `get_equity_technical_indicators`) to scan **all 1-year unfilled gaps and major support floors**, then embed a clean interactive HTML/Canvas chart (`<agent-embed>`) without cluttering labels.
-* **Core Enforced Standard:** [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md).
-* **Two Non-Confusing Chart Modes:**
-  * **View A (Default Dual-Scenario `1D` Candlestick Chart):** Displays the cleanest **`35–60` recent daily bars (`~1.5–3 months`)** + live `*` candle with key `6–12 month` support/gap reference lines overlaid, interactive toggles (`Gaps & SMAs`, `Pattern/Channel/Fib`, `Dual Scenario Paths`), zero-overlap right-axis labels (`>= 16px` separation), hover OHLC tooltip, and verified Open vs. Filled gap status.
-  * **View B (4-Step Interactive Ladder `1 -> 2 -> 3 -> 4`):** Zero-jargon button walkthrough separating **1. Shape (`S-H-S` / `W-Bottom`)**, **2. Neckline (`Main Roof`)**, **3. Pivot (`Step 1 Turning Switch — improves odds, NEVER guarantees no drop`)**, and **4. Full Ladder (`Floor -> Pivot -> Neckline -> Open Gaps`)**.
-* **Visual Veto:** Buying directly under an unconfirmed Pivot/Neckline lid or chasing outside `9:45–10:30 AM EDT` triggers an automatic `$0.00` freeze until support confirmation (`S2` / `0.65` Golden Pocket) or a confirmed breakout retest.
+## 📊 22. Mandatory Pre-Investment Visual Chart Standard (`SOFI` 3-Tab Gold-Standard Blueprint)
+Whenever drawing, explaining, or recommending a chart/trade for ANY stock (`[TICKER]`), the assistant MUST pull a **full `12 months` (`~252` daily bars; `>= 15 months` warm-up for `200-SMA`)** + all live Robinhood MCP telemetry and embed an interactive HTML/Canvas widget (`<agent-embed>`) strictly matching the **`SOFI` 3-Tab Gold-Standard Blueprint**:
+* **Core Enforced Standard (`trigger: always_on`):** [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md).
+* **Exact 5-Row `SOFI` Chart Blueprint (`<= 450px` height, `>= 12px` font, zero `:root` override):**
+  1. **Header Bar + EXACT 3 Tabs:** `[TICKER] · Name · $Live (% + Siren) · Wall St Value ($Cap / Shares · P/E)` + **`[1D Chart | Simple 4-Step Graph | 4-Step Explanation]`** + `🌓` toggle.
+  2. **7-Signal All-Robinhood-MCP HUD:** Verdict pill (`🔴/🟡/🟢`) + `10Y/FedWatch` · `VIX/Index` · `Front vs Back IV` · `L2 Asks/Bids Ratio` · `Binary <=72h` · `Active Order / Lower Gap`.
+  3. **Controls Strip:** `3` color-coded checkboxes (`🟠 Open Gap(s) & SMAs`, `🔵 12M Floor & Fib`, `🟢 Market Forecast`) + contextual `#modeHint`.
+  4. **The 3 Interactive Views (`#viewA`, `#viewB`, `#viewC`):**
+     * **View A (`1D Chart`, `254px`):** `45` recent daily bars + `*` bar (`padR = 160`), volume, `20/50/200-SMA`, shaded gaps & `0.65` Golden Pocket, User Cost/Order line, shaded green Floor/Breakout Zones + **green in-canvas Floor Zone callout**, purple ATM Options Cone, `>=17.5px` non-overlapping pills, hover OHLC tooltip.
+     * **View B (`Simple 4-Step Graph`, `186px`):** Graphical price curve (`1 → 4` buttons, default Step `4`) + `#storyCap` plain-English caption + Step `4` Bear/Bull forecast arrows & shaded zones.
+     * **View C (`4-Step Explanation`):** `2x2` color-coded plain-English cards (Floor/Gaps, Roof/L2 Wall, Pivot/ATM Range, `••••3782` Order Stress-Test & Plan) each with a clickable **`Show Graph →`** (`data-jump="1..4"`) button jumping to View B.
+  5. **Account `••••3782` Footer Strip:** Shares/cost + open order + free cash on left; Lower/Upper Open Gaps + `52W Range` on right.
 
+---
 
+## 🧭 23. Mandatory All-Robinhood-MCP On-Chart Market Prediction & Downside Risk HUD Standard
+To prevent buying steady-looking stock charts right before macro sell-offs (e.g., the Nov 13 `NVT` `$116.00` pre-market fill above a `$107.65` open gap ahead of `5.1%+` yields and `NVDA`/`FOMC`), EVERY pre-investment visual chart (`<agent-embed>`) MUST unconditionally query **ALL live Robinhood MCP prediction feeds** before creating the chart (`get_index_quotes` for `VIX`, `Brent Oil`, `Gold`, `SPX`, `NDX`; `preview_scan` for `ivRank`, `frontIV` vs. `backIV`, and `Put/Call` volume & OI; `get_equity_price_book` for Level-2 Bid vs. Ask share walls; `get_option_chains` + `get_option_quotes` for ATM implied move on `<=72h` catalysts; `get_earnings_calendar`, `get_equity_analyst_ratings`, `get_politician_trades`, plus `12M` gaps & `search_web` `10Y`/FedWatch) and display them in a clean **Market Prediction & Downside Risk HUD**.
+* **Core Enforced Standard:** [mandatory_chart_market_prediction_overlay_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_chart_market_prediction_overlay_rule.md).
+* **On-Chart Elements Required (Zero Candlestick Clutter):**
+  1. **Live 7-Signal Robinhood MCP + Macro Prediction Strip:** Scores `10Y/FedWatch`, `SPY/QQQ & VIX`, `IV Rank / Front-Back IV / Put-Call`, `Level-2 Ask/Bid Wall Ratio`, `<=72h Binary Catalyst`, `Trend & Lower Open Gap Magnet`, and `Clock/Friday S1 Trap` into **`🟢 Favorable (0–1)` / `🟡 Caution (2–3, S2 Only)` / `🔴 High Downside Risk (4+, $0.00 Buy Ban)`**.
+  2. **Lower Open Gap & ATM Options Range Callout:** Highlights any unfilled gap below live price as a downside magnet AND marks ATM options Bear/Bull expected-move targets cleanly (`never place buys above a lower open gap during Red Tide`).
+  3. **Honest Scenario Bias:** Labels future Dual-Scenario arrows with objective macro/order-book/options tilt and exact invalidation triggers (never false `100%` certainty).
 
+---
 
-
-
-
-
-
-
-
-
-
-
+## 📈 24. Mandatory Chart Behavior Dynamics, Pivot-to-Neck Surge Mechanics & Continuous Learning Standard
+Whenever analyzing any chart, testing an order level, or reviewing price action, the assistant MUST unconditionally evaluate the asset across the **4 Structural Chart Behavior Zones** and stress-test the **3 Pivot-to-Neckline Scenarios**:
+* **Core Enforced Standard (`trigger: always_on`):** [mandatory_chart_behavior_and_continuous_learning_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_chart_behavior_and_continuous_learning_rule.md).
+* **The 4 Structural Chart Zones:**
+  1. **Zone 1: The Base / Floor (`Bottom 1`, `52W Low`, `200-SMA`):** Value accumulation & stop-hunt defense. Mandatory check: **`0` open down gaps immediately below**.
+  2. **Zone 2: The Turning Switch Pivot:** Mathematical balance point where algorithmic trend models flip. **Below Pivot = Bear Control (~25%–30% odds to Neckline); Above Pivot on Volume = Momentum Surge (~65%–70% odds to Neckline). Touching is NOT breaking.**
+  3. **Zone 3: The Liquidity Vacuum (Pivot-to-Neckline Surge):** Order books between Pivot and Neckline are thin; price accelerates rapidly as shorts cover and breakout algos chase.
+  4. **Zone 4: The Neckline / Main Roof (`R1/R2`, `50-SMA`, `Gap Walls`, Prior Peak):** Heavy institutional distribution wall. **TRIM / PROFIT-HARVESTING ZONE (sell 33%–50%)**, **NEVER an initial buy zone**.
+* **The 3 Pivot Scenarios:**
+  * **Scenario A (Confirmed Surge ~50%):** Volume > 1.3x & 30m close above Pivot ──► Fast surge to Neckline.
+  * **Scenario B (Rejection Trap ~35%):** Intraday wick on weak volume / macro shock ──► Flush back to 200-SMA / Floor.
+  * **Scenario C (Retest & Launch ~15%):** Break above, pullback to hold Pivot as support ──► High-conviction entry.
+* **The Continuous Rule Codification Law:** Every unexpected price movement, false breakout, or order post-mortem MUST be permanently codified into a markdown rule under `.agents/rules/` and anchored to `AGENTS.md` within that turn.
