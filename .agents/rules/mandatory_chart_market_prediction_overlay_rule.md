@@ -35,7 +35,26 @@ Before calculating the HUD score or writing any chart HTML, execute these Robinh
 
 ---
 
-## 🚦 2. Live 7-Signal Robinhood MCP + Macro Market Prediction Score (`0 to 7 Red`)
+## 🚦 2. Leading 5-Pillar Early-Warning Trap Radar + 7-Signal Robinhood MCP Score
+
+### 🚨 Part A — The 5 True Leading Trap Signals (Placed in Row 0 Top-of-Chart Red Alert Banner)
+To stop getting caught reloading Dip #1 after booking bull-market profits (Nov 2026 lesson: `+$2,520` booked Jul–Oct 9, then reloaded into `10Y > 5.0%` rate-hike hurricane), EVERY chart MUST evaluate these **5 Leading Early-Warning Signals** (`move BEFORE stocks crash`) and surface exact **Trap Instructions** right at the **top of the chart**:
+
+| # | True Leading Trap Signal | Early-Warning Trigger | Never-Miss Trap Instruction |
+| :--- | :--- | :--- | :--- |
+| **1. Bonds & Fed Shock** | `10Y Yield`, `TLT`, `CME FedWatch` | `10Y > 4.75%–5.0%` OR Fed flips hawkish / hike odds | **Trap #1 (Buying Trap):** NEVER forget bond yields or buy Dip #1 into surging rates. |
+| **2. Credit / Junk Cracks** | `HYG` ETF & Single-Stock Bond Yields | `HYG` breaks 20/50-SMA OR issuer bond yield `> 10%–12%` | **Credit Veto:** `$0.00` hard buying ban on distressed borrowers (`> 12%` yields like `CRWV`). |
+| **3. `VIX` & IV Panic Skew** | `VIX` (`get_index_quotes`) + `Front IV > Back IV` | `VIX >= 20` (Watch) · `>= 22` (Orange) · `>= 25` (Panic) | **Fear Gauge:** Do NOT chase green pops when `VIX >= 22`; do NOT panic-sell debt-free quality (`NVDA`) at `VIX >= 25` 52W lows (**Trap #2**). |
+| **4. `SPY 200-SMA` & L2 Wall** | `SPY` vs `200-SMA` + `get_equity_price_book` | `SPY < 200-SMA` OR morning pop into `>= 1.25x–1.5x` Ask Wall | **Morning Fade Trap:** Cancel `all_day_hours` & `S1` bids before `9:30 AM`; treat morning spikes under `200-SMA` as institutional exit liquidity. |
+| **5. Profit-Lock Cash Vault** | Realized Profits vs. Free Cash (`••••3782`) | Any Level 1–3 Red Alert active after taking profits | **No-Reload-on-Dip-1 Rule:** Lock **`50%`** of profit proceeds in cash under **L1 Yellow**, **`100%`** under **L2/L3 Orange–Red** until `SPY > 200-SMA` & `VIX < 22`. |
+
+**3-Level Action Playbook Displayed on Row 0 Banner:**
+* 🟢 **`L0 CLEAR (0–1 Leading Red)`:** Normal staged buys allowed (`9:45–10:30 AM ET`); normal profit reloading permitted.
+* 🟡 **`L1 YELLOW WATCH (2 Leading Red)`:** Ban breakouts/`S1` bids; **Lock `50%` of profit-taking proceeds in cash**; trim `20%–25%` of high-debt stocks into green resistance.
+* 🟠 **`L2 ORANGE DE-RISK (3 Leading Red)`:** **`$0.00` New Buys**; **cancel `all_day_hours` & `S1` resting bids before `9:30 AM`**; **Lock `100%` of profits in cash**; build `25%–35%` cash on morning bounces.
+* 🔴 **`L3 RED LOCKDOWN (4–5 Leading Red)`:** Strict **`$0.00` Buying Ban** + **Lock `100%` Cash Vault** + **Anti-Panic Fence** (never panic-sell debt-free quality into 52W lows; trim leveraged borrowers only on relief bounces).
+
+### 📊 Part B — Live 7-Signal Robinhood MCP + Macro HUD Score (`0 to 7 Red`)
 
 Score every chart from live telemetry before rendering:
 
