@@ -77,10 +77,11 @@ Every time a stock exhibits unexpected chart behavior, an order test is executed
 
 | Ticker & Role | Structural Floor (Zone 1) | Turning Pivot (Zone 2) | Liquidity Vacuum (Zone 3) | Neckline Roof (Zone 4) | Active Behavioral Lesson |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`SPY` (Broad Market)** | `$727.00` Low / `$732.34` (200-SMA) | **`$742.61` Pivot** | `$742.61` to `$747.16` | **`$747.16` (R1) & `$754.36` (R2/20-SMA)** | Reclaiming `$742.61` triggers vacuum surge to `$747–$754`; trapped `<$742` until post-FOMC. |
+| **`SPY` (Broad Market)** | `$726.79` Low / `$732.55` (200-SMA) | **`$730.69` Daily Pivot / `$742.84` Weekly Switch** | `$742.84` to `$753.72` | **`$741.60–$742.84` L2 Ask Wall & `$753.72` (20-SMA)** | Nov 18 closed `$730.20` under 200-SMA; Nov 19 pre-market ripped `+1.33%` to `$739.94` on Anthropic `$81.3B` IPO right into 16.4k L2 Ask Wall (`$741.60–$742.80`) & OpEx `$741.62` cap. Never chase pre-market spikes into ask walls ahead of 8:30 AM Claims & 9:45 AM confirmation. |
 | **`SPCX` (Space Defense)** | `$137.50` Base Support | **`$144.50` Pivot** | `$144.50` to `$151.00` | **`$151.00–$153.00` Neckline** | Nov 17 proved: touching `$151.90` Neckline requires taking profits, not buying. |
 | **`SOFI` (Fintech Compounder)** | `$13.86` (52W Double Bottom) | **`$15.42` Pivot** | `$15.42` to `$16.19` | **`$16.19–$16.25` Gap 1 & `$17.74` Peak** | Order at `$13.86` is right price; all_day_hours setting must be protected against overnight shocks. |
 | **`NVDA` (AI Compute Anchor)** | `$149.50` Deep S2 Trap / `$158` Floor | **`$165.50` Pivot** | `$165.50` to `$174.00` | **`$174.00–$180.00` Neckline Roof** | Post-earnings gap-ups face gross margin nitpicks; sell pops at Neckline, accumulate at Floor. |
+| **`BE` (AI Baseload Power)** | `$162.93` Low / `$168.83` (S2 Floor) | **`$178.13` Pivot** | `$178.13` to `$182.35` | **`$182.35` (R1) & `$183.20–$183.89` Gap Roof** | Nov 18 pre-market surged to `$182–$184.99` Neckline, hit 2.9x L2 Ask Wall and rejected back to `$178.13` Pivot. Proves Neckline is a sell zone, never a buy zone. Retesting `$178.13` determines Scenario C Launch vs. Scenario B Flush to `$162.93–$168.83` Buy Zone. |
 
 ---
 
