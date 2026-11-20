@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-description: Mandatory Full Visual Chart Creation Standard — Every stock/ETF chart MUST include ALL 4 timeframes [Today (5m) | 2D (Prior+Today) | 1D Daily | 1W Weekly], ALL 3 views [Chart | Simple 4-Step Graph | 4-Step Explanation], Row 0 Red Alert Trap & Cash-Vault Banner, Always-Visible Cyan Market Stock Value (Banner + Line + Pill + Tooltip), 7-Signal Robinhood MCP HUD, Always-On Interactive 6-Factor Target-Price % Probability Bar (0DTE + 1M/4M/7M/14M) with Always-Visible Purple Dashed Target Line (edge-pinned if off intraday scale), Live VWAP & Event Clock on Today (5m), Account ••••3782 Footer, and Mandatory Automated jsc Syntax Verification.
+description: Mandatory Full Visual Chart Creation Standard — Every stock/ETF chart MUST include ALL 4 timeframes [Today (5m) | 2D (Prior+Today) | 1D Daily | 1W Weekly], ALL 3 views [Chart | Simple 4-Step Graph | 4-Step Explanation], Row 0 Red Alert Trap & Cash-Vault Banner, Always-Visible Cyan Market Stock Value (Banner + Line + Pill + Tooltip), 7-Signal Robinhood MCP HUD, Always-On Interactive 6-Factor Target-Price % Probability Bar (0DTE + 1M/4M/7M/14M) with Always-Visible Purple Dashed Target Line (edge-pinned if off intraday scale), Live VWAP & Event Clock on Today (5m), Mandatory Zero-Missing-Data 6-Zone L2 Bid/Ask Parity (Exact Shares + $M Dollar Values + Total Bid/Ask Level Counts on ALL 4 TFs & View B), Account ••••3782 Footer, and Mandatory Automated Completeness + jsc Syntax Verification.
 ---
 
 # 📊 MANDATORY FULL CHART CREATION STANDARD (`TODAY / 2D / 1D / 1W` HYBRID + ALWAYS-ON TARGET LINE + 6-FACTOR `%` ODDS + RED ALERT BLUEPRINT)
@@ -34,7 +34,7 @@ Before writing any chart HTML, execute ALL live data fetches (zero static memory
 4. **Live Volatility, L2 Depth & Multi-Horizon Options Chain (`0DTE` + `1M / 4M / 7M / 14M`):**
    * `get_index_quotes` (`VIX`, `SPX`, `NDX`, plus Brent `e316e480-6263-4c8c-8687-114fd4381b49` & Gold `aee755c2-b2b2-4a9b-984f-e66d383b9980`).
    * `preview_scan` (`ivRank`, `frontIV`, `backIV`, `optionsPutDayVolume`, `optionsCallDayVolume`, `Put/Call OI`).
-   * `get_equity_price_book` (`[TICKER]` and `SPY` → near-tape `±15%` Bid vs. Ask share depth ratio + exact resting Bid Floor & Ask Wall price levels).
+   * `get_equity_price_book` (`[TICKER]` and `SPY` → extract **ALL** L2 fields: **Total Bid Price Levels (`len(bids)`)** & **Total Ask Price Levels (`len(asks)`)**, **Near-Tape `±15%` Bid vs. Ask total shares, total `$M` dollar depth, level counts, and Bid/Ask ratio**, AND **Top 5 resting Bid Walls + Top 5 resting Ask Walls with exact Price, Resting Shares, and `$M` Dollar Value**; note transparently that Robinhood L2 reports aggregate resting shares per price level, not private buyer IDs).
    * `get_option_chains` + `get_option_instruments` + `get_option_quotes`: Fetch **LIVE ATM + key strike quotes** across **5 horizons**:
      1. **`Today 0D` / Nearest Weekly** (exact intraday `±$` expected move & key OpEx strike OI)
      2. **`1M` (~30d)** · **`4M` (~120d)** · **`7M` (~210d)** · **`14M` (~12–14m LEAPS)**
@@ -121,14 +121,33 @@ Before writing any chart HTML, execute ALL live data fetches (zero static memory
 
 ---
 
-## ✅ 3. Mandatory Pre-Delivery Engineering & Verification Gate (Rule 2, Rule 3, Rule 4)
+## 🔒 2B. Mandatory Zero-Missing-Data & 6-Zone L2 Bid/Ask Parity Law (Never Drop Data Across Stocks!)
 
-Before delivering ANY chart to the user, the assistant MUST pass ALL 5 checks in sequence:
+**Nov 20 `AMD` vs. `NVDA` Post-Mortem Lesson:** Showing exact `$M` Bid Walls (`$135: $63M · $130: $71M`) on `NVDA` while omitting `$M` sizes, total Bid/Ask price-level counts, `1D/1W`/View-B Bid pills, and the chat L2 Order-Book Table on `AMD` creates dangerous analytical blind spots (e.g., hiding that `AMD`'s `±15%` bid support `$78.1M` was nearly **5x thinner** than `NVDA`'s `$363.3M`).
+
+Therefore, **EVERY chart for EVERY stock (`[TICKER]`) MUST display complete L2 Bid/Ask telemetry (`Exact Shares + Exact $M Dollar Values + Total Bid/Ask Price Levels + ±15% Ratio`) across ALL 6 mandatory chart locations — ZERO Omissions Allowed:**
+1. **Row 0 Top-of-Chart Banner:** Cite top Bid Wall(s) with exact `$M` dollar size AND total Bid level count (or explicit Ask-Wall overhang when Asks dominate).
+2. **Row 2 Prediction HUD Pill (`#hudBar`):** Display `RTH/PRE L2 Bids X.XXx ([BidLvls]B/[AskLvls]A lvls · $XM vs $YM · $Wall1: Xk=$XM · $Wall2: Xk=$XM)`.
+3. **Row 2B Target Presets (`#probBar`):** Include at least one **Bid Wall `$M` preset** (e.g., `$400 ($13.5M)` / `$135 ($69M)`) alongside Ask Wall / VWAP / Gap / Mean PT presets.
+4. **Row 3 Layer Checkbox (`#lblFib`):** Display exact `$M` dollar sizes in **BOTH** Intraday (`TODAY`/`2D`) AND Interday (`1D`/`1W`) checkbox labels (never generic `"Bids"` without `$M`!).
+5. **View A Canvas (`ALL 4 Timeframes: Today 5m, 2D, 1D Daily, 1W Weekly`):**
+   * **Intraday (`TODAY` & `2D`):** In-canvas green Bid Floor callout MUST list **both shares AND `$M` values**; right-axis pills MUST show exact shares or `$M` on BOTH Bid Walls (e.g., `$430 BIDS ($5.6M)`) AND Ask Walls (e.g., `$480 ASKS ($12.1M)`).
+   * **Interday (`1D Daily` & `1W Weekly`):** NEVER drop the green Bid Wall layer or right-axis pill on `1D`/`1W`! Always render the green Bid Wall zone + in-canvas Bid Wall label (`Shares + $M`) + green right-axis pill (e.g., `$400–$430 BIDS ($25M)`).
+6. **View B (`Simple 4-Step Graph`) & View C Cards:** View B right-axis pills MUST include the green L2 Bid Wall `$M` pill; View C Card 1 MUST state exact Bid/Ask level counts, `±15%` shares/`$M` depth, and top Bid Wall `$M` figures.
+
+---
+
+## ✅ 3. Mandatory Pre-Delivery Engineering & Zero-Missing-Data Verification Gate (Rule 2, Rule 3, Rule 4)
+
+Before delivering ANY chart to the user, the assistant MUST pass ALL 6 automated checks in sequence (do NOT stop until ALL pass):
 1. **Architecture Plan First (Rules 3 & 4):** Create/reference an MVVM + MVVMC Architecture & Implementation Plan diagram artifact (`*_plan.md`).
 2. **Fresh Filename (Anti-Cache):** Save updated charts to a new distinct `.html` filename in the artifact directory.
 3. **Static Rules Audit:** Programmatically assert **0 raw backticks**, **0 `:root` CSS overrides**, allowlisted `gstatic` Tailwind CDN, and presence of `redAlertBanner`, `mktValBanner`, `probBar`, and all 4 timeframe buttons (`TODAY`, `2D`, `1D`, `1W`).
-4. **JavaScript Engine Syntax Test:** Extract the inline `<script>` block and execute a parse check via macOS JavaScriptCore (`/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc`) confirming **exit code `0`**.
-5. **Visual Math Sanity Check:** Verify right-axis pill count × `15px` fits cleanly within canvas `ch` and confirm zero x-axis label collisions before embedding `<agent-embed src="file:///..."></agent-embed>`.
+4. **Automated Zero-Missing-Data & 6-Zone L2 Parity Audit:** Run a Python verification script asserting **zero missing data** across the generated HTML:
+   * L2 Bid/Ask `$M` dollar values + share counts + total Bid/Ask level counts appear in Row 0, Row 2 HUD, Row 2B Presets, Row 3 Checkbox, View A Intraday (`drawIntraday`), View A Interday (`drawInterday` — `1D/1W` Bid pill MUST exist!), and View B (`drawStory` — Bid pill MUST exist!).
+   * All core indicators present: Live RTH/Extended VWAP, Cyan Market Stock Value (`MKT VAL`), Always-On Purple Target Line (`★`), `0D/1M/4M/7M/14M` Horizons, `12M` Lower/Upper Open Gap count, Big-Game Bonds/Prediction Markets (`10Y`/`TLT`/`Kalshi` or `FedWatch`), Solvency metrics, and masked `••••3782` Footer.
+5. **JavaScript Engine Syntax Test:** Extract the inline `<script>` block and execute a parse check via macOS JavaScriptCore (`/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc`) confirming **exit code `0`**.
+6. **Visual Math Sanity Check:** Verify right-axis pill count × `15px` fits cleanly within canvas `ch` (both View A and View B) and confirm zero x-axis label collisions before embedding `<agent-embed src="file:///..."></agent-embed>`.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-description: Mandatory Always-On All-Robinhood-MCP Market Prediction, Downside Risk HUD & Interest-Rate Big-Game Rule — Unconditionally pulls ALL live Robinhood MCP prediction feeds (VIX, SPX, NDX, Brent/Gold, TLT/HYG/SPY/QQQ/IWM, Scanner IV Rank/Front-Back IV/Put-Call flow, Level-2 Bid/Ask Order Book walls, Multi-Expiry 0DTE→14M Options Expected Move & OI magnets, Earnings Calendar, Analyst/Politician flow, 12M Gaps) alongside live CME FedWatch, Kalshi/Robinhood Prediction Markets event odds, 10Y Treasury yields, and economic releases on EVERY stock analysis, trap check, and chart.
+description: Mandatory Always-On All-Robinhood-MCP Market Prediction, Downside Risk HUD, Interest-Rate Big-Game & Zero-Missing-Data Completeness Rule — Unconditionally pulls ALL live Robinhood MCP prediction feeds (VIX, SPX, NDX, Brent/Gold, TLT/HYG/SPY/QQQ/IWM, Scanner IV Rank/Front-Back IV/Put-Call flow, Complete Level-2 Bid/Ask Order Book with Exact Shares, $M Dollar Values, Total Bid/Ask Level Counts & ±15% Ratio, Multi-Expiry 0DTE→14M Options Expected Move & OI magnets, Earnings Calendar, Analyst/Politician flow, 12M Gaps) alongside live CME FedWatch, Kalshi/Robinhood Prediction Markets event odds, 10Y Treasury yields, and economic releases — enforcing a strict 10-Category Zero-Missing-Data Audit & Mandatory Live L2 Bid/Ask Wall Table on EVERY stock analysis, trap check, and chart.
 ---
 
 # 🧭 MANDATORY ALWAYS-ON RULE: ALL-ROBINHOOD-MCP MARKET PREDICTION DATA, INTEREST-RATE "BIG GAME" AUDIT & DOWNSIDE RISK HUD STANDARD
@@ -24,9 +24,14 @@ Before scoring downside risk, answering a market/stock question, or writing char
 2. **Options IV Regime, Term-Structure Inversion & Put/Call Flow (`preview_scan`):**
    * Query `ivRank`, `frontIV`, `backIV`, `optionsPutDayVolume`, `optionsCallDayVolume`, `optionsPutOpenInterest`, `optionsCallOpenInterest` for `[TICKER]` (and `SPY`/`QQQ` when auditing broad market).
    * Flag **`IV Rank >= 0.80` (`80%+` fear)**, **Inverted Term Structure (`frontIV > backIV`)** signaling imminent binary catalyst hedging (e.g., `FOMC`, Congress testimony, earnings), and **Put/Call Volume or OI skew (`>= 1.0x`)**.
-3. **Live Level-2 Order Book Supply/Demand Walls (`get_equity_price_book`):**
-   * Pull `[TICKER]` (and `SPY`) live Level-2 Bid/Ask depth; compute near-tape `±15%` Bid vs. Ask share ratio and list the **exact top resting Bid Walls (institutional buy shelves)** and **Ask Walls (overhead ceilings)**.
-   * Flag **`Ask Overhang >= 1.25x`** vs. **`Bid Support >= 1.25x`**, while always noting that pre-market books are thin vs. Regular Hours (`9:30 AM – 4:00 PM ET`) and resting bids can be pulled during panic.
+3. **Complete Live Level-2 Order Book Supply/Demand Walls (`get_equity_price_book` — ZERO Partial Summaries!):**
+   * Pull `[TICKER]` (and `SPY`) live Level-2 Bid/Ask book and extract **ALL 5 mandatory L2 metrics**:
+     1. **Total Resting Price-Level Count ("Book Members"):** Exact `len(bids)` Bid price levels & `len(asks)` Ask price levels across the full book + within `±15%`.
+     2. **Full-Book & Near-Tape `±15%` Totals:** Total Bid shares & `$M` dollar value vs. Total Ask shares & `$M` dollar value + `Bid/Ask` share & dollar ratios.
+     3. **Top 5 Resting Bid Walls (within `-20%`):** Exact Price, Exact Resting Shares, AND Exact Dollar Value (`$M`).
+     4. **Top 5 Resting Ask Walls (within `+20%`):** Exact Price, Exact Resting Shares, AND Exact Dollar Value (`$M`).
+     5. **API Honesty Note:** Always state clearly that Robinhood's Level-2 API provides aggregate resting shares per price level (not individual trader/buyer headcount IDs), pre-market books are thin vs. RTH (`9:30 AM – 4:00 PM ET`), and resting limit orders can be cancelled during panic.
+   * Flag **`Ask Overhang >= 1.25x`** vs. **`Bid Support >= 1.25x`**.
 4. **Multi-Horizon Options Implied Move & OI Magnets (`get_option_chains` + `get_option_instruments` + `get_option_quotes`):**
    * Pull **live ATM + key-strike quotes** across **`0DTE`/Nearest Weekly**, **`1M`**, **`4M`**, **`7M`**, and **`14M`** (for full charts & target odds) — or nearest ATM expiry (for quick checks) — to compute exact **Wall Street Expected Move (`±$ / ±%`)**, live Deltas, and massive Put/Call Open Interest strike magnets (e.g., `45k–100k+` strike pins). Always sanity-check stale pre-market option quotes against live underlying tape!
 5. **12-Month Structure, Technicals & Catalysts:**
@@ -40,6 +45,22 @@ Because Robinhood MCP does not yet expose a direct event-contract tool for **Rob
 3. **The "Big Game" Divergence Rule (Headlines vs. Real Money):** Always compare **Media Scare Headlines** against **Real Money Footprints (`10Y` Yield + `TLT` + `HYG` + `CME FedWatch`/Prediction Markets + `Options IV/OI` + `RTH Level-2 Bid Walls`)**:
    * **Trap A (Hawkish-Rate Buying Trap):** Headlines sound bullish/stocks pop, YET `10Y` yields surge `> 5.0%`, `TLT` drops, `HYG` cracks, and `FedWatch` hikes climb → **FAKE RALLY! Lock `50%–100%` profits in Cash Vault & ban Dip #1 buys.**
    * **Trap B (OpEx / Headline Shakeout Panic Trap):** Media screams "shock hike" while **`UMich`/inflation prints cool, `10Y` falls `< 5.0%`, `TLT` rallies `+1%+`, `FedWatch` prices `< 10%` shock odds**, AND **giant RTH Level-2 Bid Walls stack right underneath oversold quality (`RSI < 25`)** → **SHAKEOUT! Refuse to panic-sell profitable leaders into institutional buy walls (keep `$0.00` new buys until fixed binary dates clear).**
+
+### 🔒 1C. Mandatory Zero-Missing-Data 10-Category Parity Gate & Live L2 Wall Table Mandate
+**Iron Rule (Never Miss Data on ANY Stock Analysis):** Every single stock analysis, chart delivery, or comparison MUST maintain **100% data parity** across all stocks (e.g., `AMD` must never omit Bid shares, `$M` values, level counts, or tables that were shown on `NVDA`). Before finishing any analysis, verify **ALL 10 Mandatory Data Categories** are explicitly rendered (if an API field is genuinely unavailable, state `"N/A — API unavailable"` rather than silently skipping it):
+
+| # | Mandatory Analysis Data Category | Required Proof / Table Output (Zero Skips!) |
+| :--- | :--- | :--- |
+| **1** | **Live Tape, Divergence & Valuation** | Live price (`timestamp`), `%` move vs `SPY`/`QQQ` (`>=1.5%` Siren), **Wall St Market Value (`Cap/Shares`)** + Diluted adjustment + `P/E` + `52W High/Low` |
+| **2** | **Live Level-2 Bid/Ask Order Book Table** | **MANDATORY DEDICATED TABLE** on every analysis: Total Bid & Ask price levels, `±15%` Bid/Ask shares & `$M` value & ratio, **Top 5 Bid Walls (Price, Shares, `$M`)**, **Top 5 Ask Walls (Price, Shares, `$M`)** |
+| **3** | **Macro "Big Game" & Prediction Markets** | Live `10Y` Yield, `TLT`, `HYG`, `VIX`, Brent/Gold, Same-Day Macro `Actual vs. Expected`, **CME FedWatch + Kalshi/Robinhood Prediction Markets** odds |
+| **4** | **Options Volatility, Put/Call & `0D→14M` Cones** | `IV Rank`, `Front IV vs Back IV` inversion check, Put/Call Day Vol & OI, live `0DTE` + `1M/4M/7M/14M` expected move & 6-Factor `%` Probability Table |
+| **5** | **12-Month Technicals & Open Gaps Scan** | `20/50/200-SMA`, `14-RSI`, RTH `VWAP`, Classic Pivots (`S1–S3/R1–R3`), exact count & price bands of **Lower Open Gaps** vs **Upper Open Gaps** |
+| **6** | **4-Gate Macro + Micro News & 3-Link Ecosystem** | 3 orthogonal `search_web` checks (Macro, Wire News, Adversarial/Subpoenas/Short Reports) + Upstream/Downstream/Competitor 3-Link table |
+| **7** | **Executive Solvency & Forensic Debt/Dilution** | Cash, Debt, Net Cash/Debt, OCF, FCF, Buybacks vs Dilution/ATM, Bond Yields `>12%` screen, Next Earnings Date & Analyst Buy/Hold/Sell + Mean/Low/High PT |
+| **8** | **4 Structural Zones & 3 Pivot Scenarios** | Zone 1 Floor → Zone 2 Pivot → Zone 3 Vacuum → Zone 4 Neckline + Scenario A/B/C probabilities |
+| **9** | **Full 6-Zone Chart Parity (`<agent-embed>`)** | All 4 TFs (`Today 5m`, `2D`, `1D`, `1W`), All 3 Views, Row 0 Alert, Cyan Mkt Val, Always-On Purple Target Line, AND **L2 Bid/Ask Shares + `$M` + Levels across ALL 6 chart zones (`Row 0`, `Row 2`, `Row 2B`, `Row 3`, `View A 4 TFs`, `View B`)** |
+| **10** | **Masked `••••3782` Fair Decision & Bullets** | Live holdings/orders/BP (`••••3782`), Fair Decision Split (`Existing Shares` vs `New Cash`), and `🟢 GREEN` / `🔴 RED` bullets pairing `Live Price` vs `Wall St Market Value` |
 
 ---
 
