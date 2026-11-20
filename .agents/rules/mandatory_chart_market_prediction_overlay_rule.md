@@ -1,37 +1,45 @@
 ---
-trigger: model_decision
-description: Mandatory Chart Market Prediction & Downside Risk HUD Rule — Ingests ALL live Robinhood MCP prediction data (VIX, Brent/Gold, Scanner IV Rank/Front-Back IV/Put-Call flow, Level-2 Order Book imbalance, ATM Options Expected Move, 31-day Earnings Calendar, Analyst/Politician flow, 12M Gaps) alongside FedWatch & 10Y yields to display downside risk directly on every chart without cluttering candlesticks.
+trigger: always_on
+description: Mandatory Always-On All-Robinhood-MCP Market Prediction, Downside Risk HUD & Interest-Rate Big-Game Rule — Unconditionally pulls ALL live Robinhood MCP prediction feeds (VIX, SPX, NDX, Brent/Gold, TLT/HYG/SPY/QQQ/IWM, Scanner IV Rank/Front-Back IV/Put-Call flow, Level-2 Bid/Ask Order Book walls, Multi-Expiry 0DTE→14M Options Expected Move & OI magnets, Earnings Calendar, Analyst/Politician flow, 12M Gaps) alongside live CME FedWatch, Kalshi/Robinhood Prediction Markets event odds, 10Y Treasury yields, and economic releases on EVERY stock analysis, trap check, and chart.
 ---
 
-# 🧭 MANDATORY RULE: ALL-ROBINHOOD-MCP ON-CHART MARKET PREDICTION & DOWNSIDE RISK HUD STANDARD
+# 🧭 MANDATORY ALWAYS-ON RULE: ALL-ROBINHOOD-MCP MARKET PREDICTION DATA, INTEREST-RATE "BIG GAME" AUDIT & DOWNSIDE RISK HUD STANDARD
 
-## 🛑 Executive Directive (Why the Nov 13 `NVT` `$116.00` Fill Happened — Never Repeat)
-Looking at a stock's candlesticks alone hides market-wide and options-market downside risk. On Friday, Nov 13, `NVT` looked steady at `$116.00`, yet `10Y` bond yields (`> 5.0%`), pre-weekend de-grossing ahead of `NVDA` earnings + `FOMC`, elevated `VIX`/options `IV Rank` fear, and an **unfilled lower gap (`$107.65–$108.79`)** pulled it straight down to `$106.09` within two sessions.
+## 🛑 Executive Directive (Applies to EVERY Stock Analysis, Trap Check, Order Audit & Visual Chart — Never Miss!)
+Looking at stock candlesticks or headlines alone hides institutional rate, bond, options, and order-book games. On Friday, Nov 13, `NVT` looked steady at `$116.00`, yet `10Y` yields (`> 5.0%`), elevated `VIX`/`IV Rank` fear, and a lower open gap pulled it straight down. Conversely, on Friday, Nov 20 (`11:06 AM ET`), `UMich` 1Y inflation plunged (`4.7% → 3.7%`), `10Y` yields fell below `5%` (`4.97%`, `TLT +1.06%`), and `CME FedWatch` priced only `3%–5%` odds of a `50 bps` shock hike — yet Monthly OpEx flushed `NVDA` into `$136.71` right above `$59.4M` (`$135`) and `$62.0M` (`$130`) resting Level-2 Bid Walls!
 
-Therefore, EVERY interactive stock chart (`<agent-embed>`) generated under [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md) MUST unconditionally pull **ALL available Robinhood MCP predictive datasets** *before* creating the chart and render a clean, non-cluttering **Market Prediction & Downside Risk HUD** directly on the widget.
+Therefore, on **EVERY stock analysis, market-trap check, portfolio/order review, AND interactive visual chart (`<agent-embed>`)**, the assistant **MUST UNCONDITIONALLY** pull and cross-check **ALL live Robinhood MCP prediction feeds** AND **live Prediction Markets / Interest-Rate Data** before giving any verdict or rendering any chart.
 
-**Honesty Mandate:** "Market Prediction" on a chart NEVER claims `100%` certainty. It displays **objective probability tilt** (`Downside Risk Score`) backed by live broker volatility, order-book supply/demand walls, options-implied ranges, macro yields/FedWatch, and `12-Month` gap magnets.
+**Honesty Mandate:** "Market Prediction" NEVER claims `100%` certainty and NEVER hides blind spots (private dark-pool prints before reporting or closed-door Fed votes). Instead, it exposes **real-money institutional footprints** across bonds, rate odds, volatility skew, options open interest, and Level-2 order books.
 
 ---
 
-## 📡 1. Mandatory Pre-Chart Robinhood MCP Prediction Data Pulls (Pull ALL Before Charting)
+## 📡 1. Mandatory Live All-Robinhood-MCP Prediction Data Pipeline (Pull ALL — Zero Skips!)
 
-Before calculating the HUD score or writing any chart HTML, execute these Robinhood MCP predictive calls in parallel (paired with `search_web` ONLY for external items Robinhood MCP does not expose directly: `10Y` Treasury yield, `CME FedWatch` rate-hike odds, and daily CPI/Fed news):
+Before scoring downside risk, answering a market/stock question, or writing chart HTML, execute these **Robinhood MCP predictive feeds** in parallel:
 
-1. **Macro Fear & Commodity Tide (`get_index_quotes`):**
-   * `symbols: ["VIX", "SPX", "NDX"]` → Live CBOE Fear Index (`VIX >= 20.0` elevated fear; `>= 25.0` panic hedging), `SPX`, and `NDX`.
-   * Pass exact `instrument_ids` from `get_indexes` (`"e316e480-6263-4c8c-8687-114fd4381b49"` for `Brent Oil`, `"aee755c2-b2b2-4a9b-984f-e66d383b9980"` for `Spot Gold`; note passing commodity string names via `symbols` returns `not_found`, so always use `instrument_ids`).
-2. **Options IV Regime & Put/Call Flow (`preview_scan`):**
-   * Screen `expression: "symbol"`, `predicate: "ANY_OF"`, `values: ["[TICKER]", "SPY", "QQQ"]` with columns `ivRank`, `frontIV`, `backIV`, `optionsPutDayVolume`, `optionsCallDayVolume`, `optionsPutOpenInterest`, `optionsCallOpenInterest`.
-   * Check for **`IV Rank >= 0.80` (`80%+` fear)**, **Inverted Term Structure (`frontIV > backIV`)** signaling imminent catalyst fear, and **Put/Call Volume or OI skew (`>= 1.0x`)**.
-3. **Live Level-2 Order Book Supply/Demand (`get_equity_price_book`):**
-   * Pull `[TICKER]` and `SPY` bid/ask order books and sum total resting bid shares vs. ask shares.
-   * Flag **`Ask Overhang >= 1.25x`** (heavier overhead sell walls than dip bids) vs. **`Bid Support >= 1.25x`**.
-4. **ATM Options Implied Move (`get_option_chains` + `get_option_instruments` + `get_option_quotes`):**
-   * Required whenever the stock (or direct peer) has a `<= 72h` binary event or high `IV`: sum nearest ATM Call + Put `mark_price` to derive exact **Wall Street Expected Move (`±$ / ±%`)** and check Call vs. Put `open_interest` and `chance_of_profit_long`. Plot the Bear/Bull expected-move targets cleanly on the chart!
+1. **Macro Fear, Bond Safety & Credit Tide (`get_index_quotes` + `get_equity_quotes`):**
+   * `get_index_quotes`: `symbols: ["VIX", "SPX", "NDX"]` (`VIX >= 20` elevated; `>= 25` panic; `>= 30` extreme flush) + commodity `instrument_ids` (`"e316e480-6263-4c8c-8687-114fd4381b49"` Brent Oil, `"aee755c2-b2b2-4a9b-984f-e66d383b9980"` Spot Gold).
+   * `get_equity_quotes`: `[TICKER]`, `SPY`, `QQQ`, `IWM`, `IAU`, **`TLT`** (20Y+ Treasury bond safety gauge — rallies when yields fall!), and **`HYG`** (High-Yield corporate credit stress gauge).
+2. **Options IV Regime, Term-Structure Inversion & Put/Call Flow (`preview_scan`):**
+   * Query `ivRank`, `frontIV`, `backIV`, `optionsPutDayVolume`, `optionsCallDayVolume`, `optionsPutOpenInterest`, `optionsCallOpenInterest` for `[TICKER]` (and `SPY`/`QQQ` when auditing broad market).
+   * Flag **`IV Rank >= 0.80` (`80%+` fear)**, **Inverted Term Structure (`frontIV > backIV`)** signaling imminent binary catalyst hedging (e.g., `FOMC`, Congress testimony, earnings), and **Put/Call Volume or OI skew (`>= 1.0x`)**.
+3. **Live Level-2 Order Book Supply/Demand Walls (`get_equity_price_book`):**
+   * Pull `[TICKER]` (and `SPY`) live Level-2 Bid/Ask depth; compute near-tape `±15%` Bid vs. Ask share ratio and list the **exact top resting Bid Walls (institutional buy shelves)** and **Ask Walls (overhead ceilings)**.
+   * Flag **`Ask Overhang >= 1.25x`** vs. **`Bid Support >= 1.25x`**, while always noting that pre-market books are thin vs. Regular Hours (`9:30 AM – 4:00 PM ET`) and resting bids can be pulled during panic.
+4. **Multi-Horizon Options Implied Move & OI Magnets (`get_option_chains` + `get_option_instruments` + `get_option_quotes`):**
+   * Pull **live ATM + key-strike quotes** across **`0DTE`/Nearest Weekly**, **`1M`**, **`4M`**, **`7M`**, and **`14M`** (for full charts & target odds) — or nearest ATM expiry (for quick checks) — to compute exact **Wall Street Expected Move (`±$ / ±%`)**, live Deltas, and massive Put/Call Open Interest strike magnets (e.g., `45k–100k+` strike pins). Always sanity-check stale pre-market option quotes against live underlying tape!
 5. **12-Month Structure, Technicals & Catalysts:**
-   * `get_equity_historicals` (`12M` daily bars) + `get_equity_technical_indicators` (`20/50/200-SMA`, `rsi` `14`, `pivot_points` `classic`) → Full 1-year open gap scan (`gap magnets` above & below).
-   * `get_earnings_calendar` (`days: 7` or `14`, `filter: "high_market_cap"`), `get_earnings_results`, `get_equity_analyst_ratings`, and `get_politician_trades`.
+   * `get_equity_historicals` (`12M` daily + `52W` weekly + intraday `1m/5m`) + `get_equity_technical_indicators` (`20/50/200-SMA`, `14-RSI`, `Classic Pivots`) → programmatic **12-Month Open Gap scan** (lower gap magnets vs. upper resistance gaps).
+   * `get_earnings_calendar` (`days: 7–14`), `get_earnings_results`, `get_equity_analyst_ratings`, and `get_politician_trades` (`Tip Ranks` attribution).
+
+### 🎲 1B. Mandatory Prediction Markets & Interest-Rate "Big Game" Divergence Check (`search_web`)
+Because Robinhood MCP does not yet expose a direct event-contract tool for **Robinhood Prediction Markets / Kalshi**, the assistant **MUST** pair Robinhood MCP data with live `search_web` verification of:
+1. **Prediction Market & Rate-Hike Odds:** Live **CME FedWatch** AND **Kalshi / Robinhood Prediction Markets** odds for the next FOMC decision (`+25 bps` vs. `+50 bps` vs. Hold/Cut) and recession/CPI contracts.
+2. **Real Bond Yields & Same-Day Economic Prints:** Live **`10-Year Treasury Yield`** and exact **`Actual vs. Expected`** `8:30 AM / 10:00 AM ET` prints (`CPI`, `PCE`, `Jobs`, `UMich` 1Y/5Y Inflation Expectations).
+3. **The "Big Game" Divergence Rule (Headlines vs. Real Money):** Always compare **Media Scare Headlines** against **Real Money Footprints (`10Y` Yield + `TLT` + `HYG` + `CME FedWatch`/Prediction Markets + `Options IV/OI` + `RTH Level-2 Bid Walls`)**:
+   * **Trap A (Hawkish-Rate Buying Trap):** Headlines sound bullish/stocks pop, YET `10Y` yields surge `> 5.0%`, `TLT` drops, `HYG` cracks, and `FedWatch` hikes climb → **FAKE RALLY! Lock `50%–100%` profits in Cash Vault & ban Dip #1 buys.**
+   * **Trap B (OpEx / Headline Shakeout Panic Trap):** Media screams "shock hike" while **`UMich`/inflation prints cool, `10Y` falls `< 5.0%`, `TLT` rallies `+1%+`, `FedWatch` prices `< 10%` shock odds**, AND **giant RTH Level-2 Bid Walls stack right underneath oversold quality (`RSI < 25`)** → **SHAKEOUT! Refuse to panic-sell profitable leaders into institutional buy walls (keep `$0.00` new buys until fixed binary dates clear).**
 
 ---
 
