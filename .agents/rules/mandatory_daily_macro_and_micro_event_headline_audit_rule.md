@@ -42,6 +42,8 @@ Before outputting **any** stock analysis or investment plan, the assistant **MUS
 
 ---
 
+> **Related gates (additive):** upcoming-event timing is governed by [mandatory_macro_calendar_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_macro_calendar_gate_rule.md), and inflation prints by [mandatory_inflation_trinity_and_valuation_multiple_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_inflation_trinity_and_valuation_multiple_rule.md). Render the Macro Calendar Gate Table alongside the scorecard below.
+
 ## 📋 2. Mandatory 4-Gate Daily Macro + Micro Event Scorecard Table
 
 Every stock analysis MUST render this **4-Gate Daily Macro + Micro Event Scorecard Table** before giving any buy/sell/hold price target:

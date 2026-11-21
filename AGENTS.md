@@ -97,6 +97,8 @@ Whenever any market surprise, bad entry, or drawdown occurs, the assistant and u
 * **Headline Spike Fade & Dynamic Harvest Standard:** [headline_spike_fade_and_dynamic_harvest_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/headline_spike_fade_and_dynamic_harvest_rule.md) (The SPCX Oct 21 Post-Mortem: Dynamic Profit-Taking and Breakeven Stops on Headline Pops into Hostile Macro Tapes).
 * **Friday Pre-Catalyst De-Grossing & S1 Trap Standard:** [mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_friday_pre_catalyst_degrossing_and_s1_trap_rule.md) (The Nov 13 Post-Mortem: 4-Gate Pre-Order Forensic Friction Checklist banning S1 limit orders on pre-catalyst Fridays, mandating S2 Deep Capitulation Traps and zero intraday double-dipping).
 * **Chart Behavior Dynamics & Continuous Learning Standard:** [mandatory_chart_behavior_and_continuous_learning_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_chart_behavior_and_continuous_learning_rule.md) (The 4 Structural Chart Zones, Floor-to-Pivot-to-Neckline Surge Mechanics, 3 Pivot Scenarios, 12-Month Ingestion Baseline, and Never-Repeat Rule Codification Standard).
+* **Macro Calendar Gate Standard:** [mandatory_macro_calendar_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_macro_calendar_gate_rule.md) (72h/14-day economic-calendar gate covering Jobs, Growth, Housing, Fed, Energy/Trade and Market-Structure events, with Row 0 chart pill and event markers).
+* **Inflation Trinity & Valuation Multiple Sensitivity Standard:** [mandatory_inflation_trinity_and_valuation_multiple_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_inflation_trinity_and_valuation_multiple_rule.md) (The Three-Stage Inflation Transmission Pipeline: Wholesale PPI -> Retail CPI -> Core PCE Fed Target -> Valuation P/E Multiples, Gross Margin Defense, and Interactive Chart HUD Integration).
 
 ---
 
@@ -347,4 +349,27 @@ Whenever — and **ONLY** whenever — the user explicitly requests a **Balance 
 * **Core Enforced Standard (`trigger: model_decision` — On-Demand Only):** [on_demand_balance_sheet_column_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/on_demand_balance_sheet_column_chart_rule.md).
 * **Strict Non-Intrusion Rule:** Do **NOT** auto-render the Balance Sheet Column Chart on standard stock price chart requests (`"[TICKER] chart"`); render it strictly when requested by the user.
 
+---
 
+## 📊 27. Mandatory Inflation Trinity (PPI + CPI + Core PCE) & Valuation Multiple Sensitivity Standard
+Whenever analyzing any stock, making an investment or exit decision, auditing resting orders, or generating an interactive visual chart (`<agent-embed>`), the assistant MUST unconditionally audit the **Three-Stage Inflation Transmission Pipeline (The Inflation Trinity)**:
+* **Core Enforced Standard (`trigger: always_on`):** [mandatory_inflation_trinity_and_valuation_multiple_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_inflation_trinity_and_valuation_multiple_rule.md).
+* **The 3 Transmission Stages & Stock Impacts:**
+  1. **Stage 1: Wholesale PPI (Producer Price Index):** Evaluates upstream factory and component costs. Spiking PPI squeezes corporate gross margins unless protected by monopoly pricing power (Gross Margin >= 50%).
+  2. **Stage 2: Retail CPI (Consumer Price Index):** Evaluates consumer household purchasing power and end-market demand elasticity. Sticky Core CPI forces consumer spending retrenchment.
+  3. **Stage 3: Benchmark Core PCE (Fed 2.0% Target):** The Federal Reserve's primary compass. Core PCE >= 3.0% enforces higher-for-longer borrowing rates, compressing forward growth P/E multiples by 15%–25%.
+* **Supporting Gauge:** University of Michigan (UMich) 1Y & 5Y Inflation Expectations (leading psychological anchor).
+* **Mandatory Chart Integration (`<agent-embed>`):**
+  - **Row 0 / Top Prediction HUD Pill:** Display live Inflation Trinity regime (`PPI`, `CPI`, `Core PCE`, `Multiple Status: Higher-for-Longer Ceiling` vs `Expansion`).
+  - **Forecast Tooltip Sensitivity:** Explicitly state whether the target price assumes P/E Multiple Expansion (rate cuts) or Pure Earnings Growth under higher-for-longer rates.
+  - **Downside Risk Scorecard:** Flag Signal #1 (Rates & FedWatch) as `🔴 +1 Red Downside Pressure` if recent CPI or Core PCE exceeded consensus.
+
+---
+
+## 🗓️ 28. Mandatory Macro Calendar Gate (Chart-Integrated)
+Before ANY stock analysis, order, or `<agent-embed>` chart, the assistant MUST check the economic calendar for the next 72 hours and 14 days (live `search_web` for exact dates/consensus; mark `unverified` rather than guess).
+* **Core Enforced Standard (`trigger: always_on`):** [mandatory_macro_calendar_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_macro_calendar_gate_rule.md).
+* **Event Tiers:** Tier 1 (FOMC, NFP/unemployment/wages, CPI, Core PCE, PPI, Fed chair, ticker/peer earnings), Tier 2 (JOLTS, ISM, retail sales, GDP, FOMC minutes, Treasury auctions, OpEx/triple witching, index rebalances, tariff/export deadlines, energy events), Tier 3 (claims, ADP, housing, confidence, durable goods).
+* **Gate States:** 🟢 CLEAR → 🟡 CAUTION (S2-only, half size) → 🟠 PRE-EVENT (Tier 1 inside 72h: `$0.00` new buys, cancel S1 bids) → 🔴 DAY-OF / DAY-1 (`$0.00` freeze until digestion).
+* **Chart Integration:** Row 0 Next-Event Pill + Gate State, dashed event markers on View A (14-day projection on 1D/1W), forecast-zone event notes, 7-Signal HUD Signal #5 linkage, View B/C "what could change this" step.
+* **Text Output:** Render the Macro Calendar Gate Table (Event, Tier, Date/Time ET, T-minus, Consensus, Gate State, Action) in every analysis.
