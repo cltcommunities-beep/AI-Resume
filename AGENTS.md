@@ -340,3 +340,11 @@ Whenever evaluating an unrealized loss, drawdown query, or portfolio review in A
   3. **The Dry-Powder Protection Barrier:** Audit spendable cash (`$3.10`). Enforce an immediate **$0.00 Capital Allocation Freeze** to prevent deploying scarce cash or margin into unconfirmed dips.
   4. **The Mandatory Actionable Claw-Back Ladder:** Every drawdown review must conclude with an actionable multi-tier recovery roadmap (Cycle 2 relief trims into December, FOMC rate-cut tailwinds, and January 2027 institutional buying waves) to systematically compound back to the **$20,000+** goal.
 
+---
+
+## 📊 26. On-Demand Balance Sheet Column Chart Standard (Render Strictly When Requested Only)
+Whenever — and **ONLY** whenever — the user explicitly requests a **Balance Sheet Column Chart** or **Balance Sheet Chart** for a stock (`[TICKER]`), the assistant builds and embeds an interactive 4-Tab HTML5 Canvas Balance Sheet Column Chart (`<agent-embed>`) comparing **Core Balance Sheet Columns (`Cash vs. Total Debt vs. Net Cash/Debt vs. OCF/FCF vs. Assets/Liabilities/Equity`)**, **Fixed Contracts: Inbound Customer RPO vs. Outbound Supplier Bills (`1–19 Yrs`)**, **Multi-Period Trend Columns (`4Q / 3Y`)**, and **Per-Share & Dilution Columns (`Live Price vs. Basic Market Value vs. Fully Diluted Fair Value vs. Cash/Debt/Book Value per Share`)**, paired with floating plain-English tooltip cards and the **3-Gate Forensic Debt & Dilution Veto Banner**.
+* **Core Enforced Standard (`trigger: model_decision` — On-Demand Only):** [on_demand_balance_sheet_column_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/on_demand_balance_sheet_column_chart_rule.md).
+* **Strict Non-Intrusion Rule:** Do **NOT** auto-render the Balance Sheet Column Chart on standard stock price chart requests (`"[TICKER] chart"`); render it strictly when requested by the user.
+
+
