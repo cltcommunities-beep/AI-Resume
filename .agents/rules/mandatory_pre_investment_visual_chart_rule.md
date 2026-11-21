@@ -138,6 +138,23 @@ Therefore, **EVERY chart for EVERY stock (`[TICKER]`) MUST display complete L2 B
 
 ---
 
+## 🎯 2C. Mandatory Direct Pill-Hover Action Guidance Engine & Explicit "ASK WALL" Standard (Nov 21 Post-Mortem)
+
+**Nov 21 Trader Loss Protection Directive:** In trading, missing small information or viewing static price numbers without clear trade actions causes real financial losses. When a trader sees `$143.7 GAP 1 ROOF`, they may not know whether to buy, sell, or hold. Every chart MUST explicitly label the **`ASK WALL ($XM)`** and provide an interactive **Direct Pill-Hover Action Guidance Engine** per [mandatory_pill_hover_and_zero_loss_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pill_hover_and_zero_loss_chart_rule.md):
+
+1. **Explicit Level-2 Labeling Mandate:**
+   * Right-axis pills MUST explicitly say **`$XX.X ASK WALL ($YM)`** (bold red) and **`$XX.X BID FLOOR ($YM)`** / **`$XX.X BID WALL ($YM)`** (bold green).
+   * Canvas MUST render BOTH an in-canvas dark-emerald **Bid Floor Badge** (`🟢 L2 Bid Floor $XX.XX–$YY.YY`) AND a dark-rose **Ask Wall Badge** (`🔴 L2 Ask Wall $AA.AA–$BB.BB ($BM Limit Sells · Gap 1 Roof)`).
+2. **Direct Pill-Hover Interaction Law:**
+   * The chart's mousemove event listener MUST track cursor coordinates across the right y-axis padding (`pxLeft - 10` to `rect.width`) where price pills reside.
+   * Hovering directly over ANY price pill MUST:
+     * Change cursor to `pointer` and illuminate the pill with an outer glowing white/yellow border.
+     * Render a dedicated **Pill Action Callout Card** pointing directly at that pill with a triangular speech bubble arrow.
+     * Explain in simple, plain English: **Header & Price Range**, **Order Book Depth**, and **`👉 EXACT ACTION TO TAKE`** (e.g., `Take Profits / Trim 33%–50% · Do Not Buy Here!`, `Hold Tight / Do Not Panic-Sell · Smart Money Accumulates Here`, `Stage Patient Limit Buys after PCE digests`).
+     * Simultaneously illuminate the live **Coach Strip (`#coachStrip`) above the canvas** in matching Red, Green, or Amber with the exact action guidance!
+
+---
+
 ## ✅ 3. Mandatory Pre-Delivery Engineering & Zero-Missing-Data Verification Gate (Rule 2, Rule 3, Rule 4)
 
 Before delivering ANY chart to the user, the assistant MUST pass ALL 6 automated checks in sequence (do NOT stop until ALL pass):
