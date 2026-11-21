@@ -95,7 +95,35 @@ Positioned directly above the canvas, the Coach Strip MUST dynamically respond t
 
 ---
 
-## 🛡️ 5. Zero-Missing-Data Anti-Loss Audit Checklist
+## 📐 5. The Iframe Viewport Priority Standard & Floor-Anchor Scaling Law
+
+### A. Iframe Viewport Priority (Chart & Bid Floor Front and Center)
+In sandboxed webviews and chat embeds, default iframe viewports are ~250–320px tall. Placing multi-line text banners (like a 200px+ Red Alert or Macro box) above the canvas pushes the candlestick chart completely below the fold, causing user confusion (`"am unable to see the chart"`).
+* **The Rule:** The **Interactive Candlestick Chart, Controls, and Green Bid Floor MUST BE PLACED AT THE VERY TOP OF THE WIDGET** (within the first 280px).
+* **Positioning:** Row 1 (Timeframe controls & live quote) ➔ Row 3 (Target slider & coach) ➔ **Row 4 (The Canvas with Green Bid Floor)**.
+* **Secondary Information:** Detailed Red Alert text, Macro Gate notes, and 7-Signal HUD strips MUST be placed **below the canvas** or made collapsible, ensuring they never push the chart out of view.
+
+### B. The Floor-Anchor Scaling Law (Preventing Hidden Bid Floors)
+Dynamic y-axis scaling derived solely from candlestick bars (`minP = min(bars.low)`) will clip out resting Bid Floors located just beneath the session low (e.g., if session low is `$100.29`, auto-scaling clips at `$99.89`, pushing an institutional `$98.50–$100.00` Bid Floor completely off the bottom of the canvas).
+* **The Rule:** Canvas scaling on `Today (5m)` and `2D` MUST explicitly anchor `minP` below the resting Bid Floor:
+  ```javascript
+  // Ensure Bid Floor ($98.50-$100.29) and Ask Wall ($107-$108.1) are ALWAYS in view
+  if (activeTF === 'TODAY' || activeTF === '2D') {
+    minP = Math.min(minP, BID_FLOOR - buffer);
+    maxP = Math.max(maxP, ASK_WALL_TOP + buffer);
+  }
+  ```
+* This guarantees that the translucent green Bid Floor band, the canvas badge, and right-axis pills are permanently visible without clipping.
+
+### C. Complete Level 2 Count Parity ($M, Shares, Level Counts)
+Pills and canvas badges must never display ambiguous or unquantified labels alone:
+* **Right-Axis Pills:** Must display exact dollar values: **`$100.0 BID FLOOR ($20.2M)`**, **`$107.0 ASK WALL ($15.9M)`**.
+* **Canvas Badges:** Must display exact share sizes and level counts: `🟢 L2 Bid Floor $98.50–$100.29 ($100.00: 202.1k sh=$20.2M · 312 Bid Lvls)`.
+* **Hover Callout:** Callout card must explicitly state resting shares and total level counts.
+
+---
+
+## 🛡️ 6. Zero-Missing-Data Anti-Loss Audit Checklist
 
 Before embedding any chart, run this strict zero-missing-data checklist:
 1. [ ] **12-Month Gaps Audit:** Verified exact count of unfilled Lower Gaps vs. Upper Gaps (confirm if 0 lower gaps exist).
