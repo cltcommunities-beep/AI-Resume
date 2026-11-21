@@ -1371,45 +1371,51 @@ class StockRepository {
     return this._stocks.find(s => s.symbol.toUpperCase() === symbol.toUpperCase()) || null;
   }
   async getGraphTopology() {
-    const ANIM_MAP = {
-      NVDA: "brain_gpu",
-      AMD: "processor",
-      AVGO: "networking_switch",
-      MRVL: "optical_bridge",
-      TSM: "chip_fab",
-      AMKR: "packaging_chip",
-      NVT: "liquid_cooling",
-      VRT: "fan_chiller",
-      BE: "fuel_cell",
-      CEG: "nuclear_atom",
-      VST: "power_grid",
-      OKLO: "fast_reactor",
-      NBIS: "cloud_server",
-      CRWV: "gpu_cluster",
-      APLD: "datacenter_campus",
-      PLTR: "ai_graph",
-      SOFI: "fintech_bank",
-      LLY: "pharma_capsule",
-      MSFT: "enterprise_cloud",
-      GOOGL: "search_tpu"
+    const KID_PROFILES = {
+      NVDA: { emoji: "🧠", title: "AI BRAIN", job: "Designs super-smart brains for robots & ChatGPT", friend: "TSMC bakes the chips; Vertiv blows cold air" },
+      TSM: { emoji: "🏭", title: "CHIP FACTORY", job: "The giant kitchen that bakes computer chips for everyone", friend: "Builds chips for Nvidia & Apple" },
+      VRT: { emoji: "❄️", title: "BIG FAN", job: "Blows icy cold air so hot computer brains don’t melt", friend: "Keeps Nvidia and data centers ice cold" },
+      NVT: { emoji: "🧊", title: "ICE LIQUID", job: "Runs chilled water tubes around computers to freeze them", friend: "Cooling partner for AI servers" },
+      BE: { emoji: "⚡", title: "POWER BOX", job: "Magic battery box that makes clean electricity on the spot", friend: "Gives power to AI data center buildings" },
+      CEG: { emoji: "⚛️", title: "ATOM POWER", job: "Splits tiny atoms to power whole cities with clean nuclear energy", friend: "Sends huge electricity to Microsoft" },
+      VST: { emoji: "🔌", title: "POWER GRID", job: "Pumps electricity through giant wires into buildings", friend: "Powers big AI tech campuses" },
+      OKLO: { emoji: "☢️", title: "MINI ATOM", job: "Builds small nuclear batteries that fit inside a room", friend: "Future clean energy for AI" },
+      NBIS: { emoji: "☁️", title: "AI CLOUD", job: "A playground in the sky where you rent fast computers", friend: "Rents thousands of Nvidia chips" },
+      CRWV: { emoji: "🖥️", title: "COMPUTER RENT", job: "Has rooms full of thousands of screens and chips to borrow", friend: "Buys chips from Nvidia" },
+      APLD: { emoji: "🏢", title: "DATA HOUSE", job: "Builds giant football-field houses with power plugs for computers", friend: "Hosts computers for cloud companies" },
+      AMD: { emoji: "💻", title: "SPEED CHIP", job: "Makes speedy gaming and computer processors", friend: "Competes with Nvidia & Intel" },
+      AVGO: { emoji: "🔌", title: "MAGIC CABLES", job: "Makes super-fast cables that let computers talk together", friend: "Connects all data center chips" },
+      MRVL: { emoji: "🌐", title: "LIGHT SPEED", job: "Sends computer messages through beams of light", friend: "Helps data centers move data fast" },
+      AMKR: { emoji: "📦", title: "CHIP PACKER", job: "Puts tiny microchips safely into protective plastic packages", friend: "Packs chips for TSMC & Nvidia" },
+      PLTR: { emoji: "🕵️", title: "SPY AI", job: "Connects the dots like a smart detective to catch bad guys", friend: "Helps governments & hospitals" },
+      SOFI: { emoji: "🏦", title: "PHONE BANK", job: "A friendly bank inside your phone with zero paper or lines", friend: "Digital banking for young people" },
+      LLY: { emoji: "💊", title: "HEALTH PILL", job: "Makes medicine pills that help sick people get strong and healthy", friend: "World leader in weight-loss medicine" },
+      MSFT: { emoji: "🪟", title: "OFFICE TOOLS", job: "Makes Windows, Minecraft, and tools everybody uses for work", friend: "Biggest partner of OpenAI" },
+      GOOGL: { emoji: "🔍", title: "MAGIC SEARCH", job: "Answers every question in the universe in less than 1 second", friend: "Builds Gemini and Android" }
     };
 
-    const nodes = this._stocks.map(s => ({
-      id: s.symbol,
-      label: s.symbol,
-      name: s.name,
-      simpleRole: s.simpleRole,
-      layer: s.layer,
-      animType: s.animType || ANIM_MAP[s.symbol] || "brain_gpu",
-      price: s.price,
-      change1D: s.change1D,
-      change1M: s.change1M,
-      growthYoY: s.growthYoY,
-      whatItDoes: s.whatItDoes,
-      whoBuys: s.whoBuys,
-      size: Math.max(28, Math.min(42, 24 + Math.sqrt(s.marketCapB) * 0.35)),
-      color: this._getLayerColor(s.layer)
-    }));
+    const nodes = this._stocks.map(s => {
+      const kid = KID_PROFILES[s.symbol] || { emoji: "🏢", title: s.symbol, job: s.whatItDoes, friend: s.whoBuys };
+      return {
+        id: s.symbol,
+        label: s.symbol,
+        name: s.name,
+        simpleRole: s.simpleRole,
+        layer: s.layer,
+        kidEmoji: kid.emoji,
+        kidTitle: kid.title,
+        kidJob: kid.job,
+        kidFriend: kid.friend,
+        price: s.price,
+        change1D: s.change1D,
+        change1M: s.change1M,
+        growthYoY: s.growthYoY,
+        whatItDoes: s.whatItDoes,
+        whoBuys: s.whoBuys,
+        size: Math.max(30, Math.min(44, 26 + Math.sqrt(s.marketCapB) * 0.35)),
+        color: this._getLayerColor(s.layer)
+      };
+    });
 
     const edges = [];
     this._stocks.forEach(s => {
