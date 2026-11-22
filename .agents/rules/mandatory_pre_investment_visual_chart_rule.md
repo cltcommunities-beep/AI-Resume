@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-description: Mandatory All-Rules-On Full Visual Chart Creation & 10/10 Validation Standard — Before delivering ANY stock/ETF chart, ALL active workspace rules MUST be ON and validated (10/10 PASS): 4-Layer Current Market Situation & Beginner Weather Light (XLK vs XLP/WMT vs TLT/SGOV), Official Regime/Seesaw/Seasonal tags, Macro Calendar Gate + Inflation Trinity pills, ALL 4 timeframes [Today (5m) | 2D | 1D Daily | 1W Weekly], ALL 3 views [Chart | Simple 4-Step Graph | 4-Step Explanation + Kid-Level Summary], Cyan Market Stock Value, 7-Signal HUD, 6-Factor Target-Price % Probability Bar with Always-On Purple Target Line, 6-Zone L2 Ask Wall / Bid Floor + Pill-Hover Action Callouts, Account ••••3782 Footer, and jsc Syntax Verification.
+description: Mandatory 9-Layer Stock + 5-Layer Broad Market Chart Creation & 10/10 Validation Standard — Individual stock charts enforce all 9 Layers (Market Weather, News/Ecosystem, Fundamentals/Cyan Mkt Val, 4-TF Technicals/12M Gaps, 6-Zone L2 Order Flow + Options/Purple Target, Account ••••3782, Corporate Events/Catalysts, Risk/Trade Validation, 3-5 Competitor Intel); Broad Market Charts (SPY/QQQ) enforce an additional 5 Institutional Macro Layers (1. Breadth & RSP vs SPY, 2. Liquidity & 2Y/10Y + HYG/JNK Credit Stress, 3. Volatility VIX/VVIX/Term Structure/Put-Call/Fear&Greed, 4. Global Confirmation DXY/GLD/USO/EFA/EEM, 5. Leadership & Rotation VUG/VTV, IWM/SPY, XLK/SPY, Defensive vs Cyclical) — ALL programmatically validated (10/10 PASS + jsc check).
 ---
 
 # 📊 MANDATORY FULL CHART CREATION STANDARD (`TODAY / 2D / 1D / 1W` HYBRID + ALWAYS-ON TARGET LINE + 6-FACTOR `%` ODDS + RED ALERT BLUEPRINT)
@@ -22,7 +22,8 @@ Before writing any chart HTML, execute ALL live data fetches (zero static memory
 
 1. **Real-Time Tape, Safe-Haven Weather & Index Divergence (`get_equity_quotes`):**
    * Fetch `[TICKER]`, `SPY`, `QQQ`, `IWM`, `XLK`, `XLP`, `WMT`, `IAU`, `TLT`, `SHY`, `SGOV`, `HYG`.
-   * Record live price (`Regular` / `Pre-Market` / `After-Hours`), `Bid / Ask`, official prior-session close, `>= 1.5%` relative index divergence check, **Beginner Weather Light (`💻 Tech XLK` vs `🛒 Groceries XLP/WMT` vs `🏦 Piggy Bank TLT/SHY/SGOV`)**, **Credit Spread (`HYG` vs `TLT`)**, and **Breadth (`SPY` vs `IWM`)**.
+   * **For Broad Market Charts (`SPY` / `QQQ`):** Also fetch `RSP`, `JNK`, `GLD`, `USO`, `UUP`, `EFA`, `EEM`, `VUG`, `VTV`, `XLV`, `XLU`, `XLY`, `XLI`, `XLF`, `XLE`, plus live `search_web` for `Advance/Decline Line`, `% Above 50/200 SMA`, `52W Highs/Lows`, `2Y/10Y Yields`, `Fed Balance Sheet & Treasury Liquidity`, `VVIX`, `VIX Term Structure (Contango vs Backwardation)`, `CNN Fear & Greed Index`, and `DXY`.
+   * Record live price (`Regular` / `Pre-Market` / `After-Hours`), `Bid / Ask`, official prior-session close, `>= 1.5%` relative index divergence check, **Beginner Weather Light (`💻 Tech XLK` vs `🛒 Groceries XLP/WMT` vs `🏦 Piggy Bank TLT/SHY/SGOV`)**, **Credit Spread (`HYG`/`JNK` vs `TLT`)**, and **Breadth (`RSP` vs `SPY` & `IWM` vs `SPY`)**.
 2. **Intraday Live Bars for `● Today (5m)` & `2D` Tabs (`get_equity_historicals`):**
    * **Today (`24/5` 1-Minute → Aggregated 5-Minute):** Call `interval: "minute"`, `bounds: "24_5"`, `start_time: "<TODAY>T00:00:00-05:00"`. Aggregate non-interpolated bars cleanly into crisp **5-minute candlesticks** with session flags (`OVN`, `PRE`, `RTH`, `AH`) and compute **exact session-reset cumulative Intraday VWAP** for every bar.
    * **2-Day Context (`Prior Day + Today`):** Call `interval: "5minute"`, `bounds: "extended"`, starting at prior trading day `09:30 AM ET`. Aggregate to crisp **10-minute candlesticks** (`~70–85` bars) with day-reset VWAP so yesterday's sell-off/rally flows directly into today's session.
@@ -159,24 +160,58 @@ Therefore, **EVERY chart for EVERY stock (`[TICKER]`) MUST display complete L2 B
 
 ---
 
-## ✅ 3. Mandatory "ALL-RULES-ON" 10-Point Pre-Delivery Chart Validation Gate (ZERO Bypass Allowed!)
+## 🧱 2D. Mandatory 9-Layer Individual Stock Chart Blueprint (Original 6 Layers Unchanged + 3 New Layers)
 
-**HARD BLOCKING DIRECTIVE:** Before giving ANY stock/ETF chart to the user, **ALL active workspace rules MUST be turned ON and programmatically validated** (`10/10 PASS`). If **ANY** single check fails, DO NOT deliver the chart — fix every failure and re-run validation until **`10/10 PASS`** is confirmed:
+Every individual stock chart (`<agent-embed>` + companion report) MUST unconditionally incorporate **ALL 9 Layers**:
+
+| Layer | Name | Required Elements Inside Chart & Companion Report |
+| :---: | :--- | :--- |
+| **1** | **🌦️ Market Weather FIRST** *(Unchanged)* | `SPY`/`QQQ`/`VIX`, Beginner Weather Light (`XLK` vs `XLP`/`WMT` vs `TLT`/`SGOV`), Official Regime (`Pullback`/`Correction`/`Bear`), Fed/Seesaw, Macro Calendar Gate, Seasonal Window. |
+| **2** | **📰 Live News & 3-Link Ecosystem** *(Unchanged)* | 3 unbiased web searches (probes, lawsuits, downgrades, dilution), `>= 1.5%` Divergence Siren, Suppliers ➔ Customers ➔ Competitors. |
+| **3** | **💎 Company Health & True Value** *(Unchanged)* | Always-Visible **Cyan Wall St Market Value (`Cap / Shares`)**, Cash vs Debt, Free Cash Flow, Dilution vs Buybacks, Analyst Targets. |
+| **4** | **📈 4-TF Technicals & 12M Map** *(Unchanged)* | `Today (5m)` + VWAP, `2D`, `1D Daily` (`252`-day `200-SMA` + `12M` Open Gaps), `1W Weekly`, RSI, 4 Structural Zones (`Floor ➔ Pivot ➔ Vacuum ➔ Neckline`). |
+| **5** | **🧱 Live Order Flow & Options Odds** *(Unchanged)* | 6-Zone L2 `🟢 BID FLOOR ($YM)` & `🔴 ASK WALL ($XM)` + Direct Pill-Hover Action Callouts, 5 Options Horizons (`0D/1M/4M/7M/14M`), Always-On Purple Target Line (`★`). |
+| **6** | **💼 Your Account `••••3782` Reality** *(Unchanged)* | Live shares held, avg cost, buying power, open orders, Split Fair Decision (`Existing Shares` vs `New Cash`). |
+| **7** | **📅 Corporate Events & Catalyst Calendar** *(NEW)* | Exact upcoming **earnings dates**, **FDA/NRC/regulatory decisions**, **product launches/keynotes**, **SEC Form 4 insider transactions**, **share offerings/S-3/ATM filings**, **lockup expirations**, and **major company announcements** — surfaced as canvas event markers (when inside window) and inside View C + Companion Table. |
+| **8** | **🛡️ Risk Management & Trade Validation** *(NEW)* | Explicit **Entry Price** *(or `$0.00` Freeze Trigger)*, **Stop Loss**, **3 Profit Targets (`T1 / T2 / T3`)**, **Risk/Reward Ratio (`R:R`)**, **Position Sizing (`$` & `%` of `••••3782`)**, **Maximum Dollar Loss (`$`)**, and **Exact Trade Invalidation Rule** — rendered in View C Card 4 + Companion Trade Ticket (and plotted on canvas when active). |
+| **9** | **🏭 Sector & Competitor Intelligence** *(NEW)* | Live side-by-side comparison against **3–5 direct competitors** covering **Revenue Growth (`YoY %`)**, **Profitability (Net/Operating Margin or FCF)**, **Valuation (`P/E` or `P/S` vs Live Mkt Val)**, **Market Share / Moat Position**, and **Relative Stock Performance (`1D / 1W / 1M %`)** — rendered cleanly inside View C / Companion Comparison Matrix. |
+
+---
+
+## 🌐 2E. Mandatory 5-Layer Broad Market Chart Overlay (Added for `SPY` / `QQQ` Broad Market Charts!)
+
+Whenever creating a **Broad Market Chart** (default **`SPY`**, or **`QQQ`**), unconditionally include ALL **5 Institutional Broad Market Layers** inside the HUD/View C & Companion Report (in addition to all existing chart elements):
+
+| Broad Market Layer | Required Live Telemetry & Signals | Live Source |
+| :---: | :--- | :--- |
+| **1. 📊 Market Breadth & Internal Strength** | **Advance/Decline Line**, **% of S&P 500 Above 50-SMA & 200-SMA**, **52-Week Highs vs. 52-Week Lows**, and **`RSP` (Equal-Weight) vs. `SPY` (Cap-Weight)** relative performance. | Robinhood MCP (`RSP`, `SPY`) + live `search_web` |
+| **2. 💵 Liquidity & Credit Stress** | **`2Y` & `10Y` Treasury Yields (`2s10s` spread)**, **`HYG` / `JNK` vs. `TLT` Credit Spreads**, **Fed Balance Sheet (`QE` vs. `QT` trend)**, and **Treasury Liquidity / TGA / RRP status**. | Robinhood MCP (`HYG`, `JNK`, `TLT`, `SHY`, `SGOV`) + live `search_web` |
+| **3. 📉 Volatility & Sentiment** | **`VIX`**, **`VVIX`** *(vol-of-vol)*, **Equity/Index Put/Call Ratio**, **`VIX` Term Structure** *(Contango = calm vs. Backwardation = panic)*, and **CNN Fear & Greed Index**. | Robinhood MCP (`VIX`, `preview_scan` P/C) + live `search_web` |
+| **4. 🌎 Global Market Confirmation** | **`DXY` (U.S. Dollar Index / `UUP`)**, **`GLD` (Gold)**, **`USO` (Oil / Brent-WTI)**, **`EFA` (Developed Intl)**, and **`EEM` (Emerging Markets)**. | Robinhood MCP (`UUP`, `GLD`, `USO`, `EFA`, `EEM`) + live `search_web` (`DXY`) |
+| **5. 🔄 Market Leadership & Capital Rotation** | **`VUG` vs. `VTV`** *(Growth vs. Value)*, **`IWM` vs. `SPY`** *(Small vs. Large)*, **`XLK` vs. `SPY`** *(Tech vs. Market)*, and **Defensive (`XLP`, `XLV`, `XLU`) vs. Cyclical (`XLY`, `XLI`, `XLF`, `XLE`) Sectors**. | Robinhood MCP (`VUG`, `VTV`, `IWM`, `SPY`, `XLK`, `XLP`, `XLV`, `XLU`, `XLY`, `XLI`, `XLF`, `XLE`) |
+
+---
+
+## ✅ 3. Mandatory "ALL-RULES-ON" 9-Layer Stock / 5-Layer Market & 10-Point Pre-Delivery Chart Validation Gate (ZERO Bypass Allowed!)
+
+**HARD BLOCKING DIRECTIVE:** Before giving ANY stock/ETF chart to the user, **ALL 9 Layers and ALL active workspace rules MUST be turned ON and programmatically validated** (`10/10 PASS`). If **ANY** single check fails, DO NOT deliver the chart — fix every failure and re-run validation until **`10/10 PASS`** is confirmed:
 
 1. **Architecture & Implementation Plan First (Rules 3 & 4):** Create/reference an MVVM + MVVMC Architecture & Implementation Plan diagram artifact (`*_plan.md`).
 2. **Fresh Anti-Cache Filename:** Save to a new distinct `.html` filename in the artifact directory (`<agent-embed src="file:///..."></agent-embed>`, NO `height` attribute).
-3. **4-Layer Market Situation & Beginner Weather Validation (Rules #75, #76, #77):** Programmatically verify Row 0 includes live **Beginner Weather Light (`XLK` vs `XLP`/`WMT` vs `TLT`/`SGOV`)**, **Drawdown Regime (`Pullback`/`Correction`/`Bear`)**, **Duration Seesaw (`SGOV` vs `TLT`) / Liquidity Drain**, and **Seasonal Tag (`Tax-Loss` / `Holiday Override`)**.
-4. **Macro Calendar Gate & Inflation Trinity Validation:** Programmatically verify Row 0 includes Next Tier-1 Event Pill + Gate State (`🟢/🟡/🟠/🔴`), Inflation Trinity Regime (`PPI ➔ CPI ➔ Core PCE`), and View A dashed vertical event markers.
-5. **100% Live Data & Zero-Placeholder Audit:** Verify **0 static/stale/mock prices**, full **252-day (`12M`) 200-SMA & Open Gap scan**, live `5m` VWAP on `Today (5m)`, live `2D`, `1D`, `1W`, and `5` options horizons (`0D/1M/4M/7M/14M`).
-6. **6-Zone L2 Bid/Ask & Direct Pill-Hover Action Validation:** Verify exact `$M` dollar values + share counts + Bid/Ask level counts across ALL 6 zones (`Row 0`, `Row 2 HUD`, `Row 2B Presets`, `Row 3 Checkbox`, `View A` all 4 TFs, `View B`/`C`), explicit **`ASK WALL ($XM)`** & **`BID FLOOR ($YM)`** pills, and interactive hover **Pill Action Callout Card + Coach Strip**.
-7. **Always-On Cyan Market Value & Purple Target Line Validation:** Verify `mktValBanner` (`Cap / Shares`, never hidden), Cyan dashed line + pill, and **Purple Dashed Target Line (`★`)** pinned on-canvas across ALL 4 timeframes (`TODAY`, `2D`, `1D`, `1W`) + View B.
-8. **Kid-Level Explainer & Masked Footer Validation (Rule #78):** Verify `#viewC` contains the **`🧸 Simple Kid-Level Summary`** (3 Kid Questions, zero unexplained jargon) and Row 5 displays masked `••••3782` holdings/buying power.
+3. **Layer 1 & 2 — 4-Layer Market Situation, Beginner Weather & News Validation (Rules #75, #76, #77):** Programmatically verify Row 0 includes live **Beginner Weather Light (`XLK` vs `XLP`/`WMT` vs `TLT`/`SGOV`)**, **Drawdown Regime (`Pullback`/`Correction`/`Bear`)**, **Duration Seesaw (`SGOV` vs `TLT`) / Liquidity Drain**, and **Seasonal Tag (`Tax-Loss` / `Holiday Override`)**.
+4. **Layer 1 & 7 — Macro Calendar Gate, Inflation Trinity & Corporate Catalyst Calendar Validation:** Programmatically verify Row 0 includes Next Tier-1 Event Pill + Gate State (`🟢/🟡/🟠/🔴`), Inflation Trinity Regime (`PPI ➔ CPI ➔ Core PCE`), View A dashed vertical event markers, AND **Layer 7 Corporate Events** (earnings, FDA/regulatory, launches, Form 4 insiders, offerings, lockups).
+5. **Layer 3 & 4 — 100% Live Data, Fundamentals & 4-TF Technical Audit:** Verify **0 static/stale/mock prices**, full **252-day (`12M`) 200-SMA & Open Gap scan**, live `5m` VWAP on `Today (5m)`, live `2D`, `1D`, `1W`, and `5` options horizons (`0D/1M/4M/7M/14M`).
+6. **Layer 5 — 6-Zone L2 Bid/Ask & Direct Pill-Hover Action Validation:** Verify exact `$M` dollar values + share counts + Bid/Ask level counts across ALL 6 zones (`Row 0`, `Row 2 HUD`, `Row 2B Presets`, `Row 3 Checkbox`, `View A` all 4 TFs, `View B`/`C`), explicit **`ASK WALL ($XM)`** & **`BID FLOOR ($YM)`** pills, and interactive hover **Pill Action Callout Card + Coach Strip**.
+7. **Layer 3 & 5 — Always-On Cyan Market Value & Purple Target Line Validation:** Verify `mktValBanner` (`Cap / Shares`, never hidden), Cyan dashed line + pill, and **Purple Dashed Target Line (`★`)** pinned on-canvas across ALL 4 timeframes (`TODAY`, `2D`, `1D`, `1W`) + View B.
+8. **Layer 6, 8, 9 (Stock) OR 5-Layer Macro Overlay (Broad Market) + Kid Explainer Validation:**
+   * **Individual Stock Chart:** Verify masked `••••3782` Footer, **Layer 8 Risk Ticket** (Entry, Stop Loss, `T1/T2/T3`, `R:R`, Position Sizing, Max Loss, Invalidation), **Layer 9 Competitor Matrix (`3–5` peers)**, and **`🧸 Simple Kid-Level Summary`** inside `#viewC`.
+   * **Broad Market Chart (`SPY` / `QQQ`):** Verify masked `••••3782` Shield Footer, **ALL 5 Broad Market Layers** (`1. Breadth + RSP/SPY`, `2. 2Y/10Y + HYG/JNK + Fed Balance Sheet/Liquidity`, `3. VIX/VVIX/Put-Call/Term Structure/Fear&Greed`, `4. Global DXY/GLD/USO/EFA/EEM`, `5. Leadership VUG/VTV, IWM/SPY, XLK/SPY, Defensive vs Cyclical`), and **`🧸 Simple Kid-Level Summary`** inside `#viewC`.
 9. **Static Rules & JavaScriptCore Syntax Test (`jsc` / `node --check`):** Assert **0 raw backticks**, **0 `:root` CSS overrides**, allowlisted `gstatic` Tailwind CDN, and parse the extracted inline `<script>` via `/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc` confirming **exit code `0`**.
-10. **Visual Overlap & Companion Report Validation:** Verify `relaxPills` right-axis spacing fits cleanly inside canvas `ch`, zero x-axis label collisions, and print the compact **`✅ Chart Validation Gate: 10/10 PASS`** proof line right above the `<agent-embed>` in the response!
+10. **Visual Overlap & Companion Report Validation:** Verify `relaxPills` right-axis spacing fits cleanly inside canvas `ch`, zero x-axis label collisions, and print the compact **`✅ 9-Layer Chart Validation Gate: 10/10 PASS`** proof line right above the `<agent-embed>` in the response!
 
 ---
 
 ## 🚦 4. Mandatory Pre-Buy Visual Veto & Response Pairing Rules
 * **Pivot = Turning Switch, NOT a Safety Guarantee:** Touching Pivot or pre-market green is NOT a breakout — require post-`9:45 AM ET` confirmed hourly close + volume `> 1.3x`.
 * **Red Tide `S1` & `24/5` Overnight Order Freeze:** When `4+` HUD signals are Red, `VIX >= 25`, `10Y >= 5.0%`, `<=72h` binary (`FOMC`, `CPI`, `OpEx`, Earnings), or outside **`9:45 AM – 10:30 AM ET`**, enforce **`$0.00` New Buy / Pause `all_day_hours` resting bids** directly in Row 0, HUD, and Step 4.
-* **Mandatory Text Companion:** Always pair `<agent-embed>` + clickable links with the **4-Gate Daily Macro+Micro Scorecard**, **3-Link Dependency Audit**, **6-Factor `%` Probability Table**, **Executive Solvency & Forensic Debt/Dilution Audit**, **4 Structural Zones & 3 Pivot Scenarios**, **Fair Decision Split (`Existing Shares` vs. `New Cash`)**, and **`🟢 GREEN` / `🔴 RED` Action Bullets** (`Live Price` vs. `Wall St Market Value`).
+* **Mandatory Text Companion:** Always pair `<agent-embed>` + clickable links with all **9 Layers** — **4-Gate Daily Macro+Micro Scorecard**, **3-Link Dependency & 3–5 Competitor Comparison Table (Layer 9)**, **Corporate Events & Catalyst Calendar (Layer 7)**, **6-Factor `%` Probability Table**, **Executive Solvency & Forensic Debt/Dilution Audit**, **4 Structural Zones & 3 Pivot Scenarios**, **Risk Management & Trade Validation Ticket (`Entry / Stop / T1–T3 / R:R / Size / Max Loss / Invalidation` — Layer 8)**, **Fair Decision Split (`Existing Shares` vs. `New Cash`)**, **`🟢 GREEN` / `🔴 RED` Action Bullets** (`Live Price` vs. `Wall St Market Value`), and the **`🧸 Simple Kid-Level Summary`**.
