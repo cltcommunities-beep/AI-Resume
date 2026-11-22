@@ -1394,9 +1394,20 @@ class StockRepository {
       GOOGL: { emoji: "🔍", title: "MAGIC SEARCH", job: "Answers every question in the universe in less than 1 second", friend: "Builds Gemini and Android" }
     };
 
-    const nodes = this._stocks.map(s => {
+    
+    const SECTOR_ID_MAP = {
+      NVDA: "ai_compute", AMD: "ai_compute", TSM: "ai_compute", AVGO: "ai_compute", MRVL: "ai_compute", AMKR: "ai_compute",
+      BE: "power_nuclear", CEG: "power_nuclear", VST: "power_nuclear", OKLO: "power_nuclear",
+      VRT: "cooling_thermal", NVT: "cooling_thermal",
+      NBIS: "neocloud_dc", CRWV: "neocloud_dc", APLD: "neocloud_dc",
+      SOFI: "fintech_banking",
+      PLTR: "software_defense", MSFT: "software_defense", GOOGL: "software_defense", LLY: "software_defense"
+    };
+const nodes = this._stocks.map(s => {
       const kid = KID_PROFILES[s.symbol] || { emoji: "🏢", title: s.symbol, job: s.whatItDoes, friend: s.whoBuys };
+      const sId = SECTOR_ID_MAP[s.symbol] || "other";
       return {
+        sectorId: sId,
         id: s.symbol,
         label: s.symbol,
         name: s.name,
@@ -1536,6 +1547,96 @@ class StockRepository {
     });
 
     return { shockSymbol: symbol, shockDelta, affected };
+  }
+
+  async getSectorRotations() {
+    return [
+      {
+        id: "power_nuclear",
+        name: "AI Power & Nuclear",
+        emoji: "⚡",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 HEAVY INFLOW (+24.6% 1M)",
+        macroDriver: "Data centers facing grid power bottlenecks; hyperscalers signing 24/7 on-site and nuclear power purchase agreements.",
+        kidReason: "Computers eat electricity like hungry monsters! Power companies are feeding them.",
+        stocks: [
+          { symbol: "BE", name: "Bloom Energy", price: 178.13, change1D: 15.2, change1M: 28.4, role: "Power Box" },
+          { symbol: "CEG", name: "Constellation", price: 245.50, change1D: 4.8, change1M: 21.0, role: "Atom Power" },
+          { symbol: "VST", name: "Vistra", price: 142.30, change1D: 6.1, change1M: 24.5, role: "Power Grid" },
+          { symbol: "OKLO", name: "Oklo", price: 23.40, change1D: 7.5, change1M: 18.2, role: "Mini Atom" }
+        ]
+      },
+      {
+        id: "cooling_thermal",
+        name: "Liquid Cooling & Thermal",
+        emoji: "❄️",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 INFLOW (+14.2% 1M)",
+        macroDriver: "Nvidia Blackwell 120kW racks generate extreme heat; air conditioning fails and direct liquid cooling is mandated.",
+        kidReason: "Computers get boiling hot! Big fans and ice liquid keep them from melting.",
+        stocks: [
+          { symbol: "VRT", name: "Vertiv", price: 142.10, change1D: 8.3, change1M: 16.5, role: "Big Fan" },
+          { symbol: "NVT", name: "nVent", price: 82.50, change1D: 4.1, change1M: 11.8, role: "Ice Liquid" }
+        ]
+      },
+      {
+        id: "ai_compute",
+        name: "AI Compute & Silicon",
+        emoji: "🧠",
+        flowDirection: "ROTATING",
+        flowTag: "🟡 CONSOLIDATING (+4.1% 1M)",
+        macroDriver: "Institutional profit-taking after earnings runup; capital rotating into power infrastructure and memory partners.",
+        kidReason: "The brain makers are resting after building so many chips.",
+        stocks: [
+          { symbol: "NVDA", name: "Nvidia", price: 125.79, change1D: -13.8, change1M: -21.4, role: "AI Brain" },
+          { symbol: "TSM", name: "TSMC", price: 188.40, change1D: -8.1, change1M: 3.2, role: "Chip Factory" },
+          { symbol: "AMD", name: "AMD", price: 138.20, change1D: -2.4, change1M: 5.1, role: "Speed Chip" },
+          { symbol: "AVGO", name: "Broadcom", price: 164.50, change1D: 1.2, change1M: 8.4, role: "Magic Cables" },
+          { symbol: "AMKR", name: "Amkor", price: 28.90, change1D: 3.2, change1M: 9.5, role: "Chip Packer" }
+        ]
+      },
+      {
+        id: "neocloud_dc",
+        name: "AI Cloud & High-Power Campuses",
+        emoji: "☁️",
+        flowDirection: "ROTATING",
+        flowTag: "🟡 SELECTIVE ACCUMULATION (+8.5% 1M)",
+        macroDriver: "Hyperscalers renting specialized clusters for enterprise inference models; CapEx shift to contracted hosts.",
+        kidReason: "People renting rooms full of super-computers in the sky.",
+        stocks: [
+          { symbol: "NBIS", name: "Nebius", price: 24.80, change1D: 5.4, change1M: 14.2, role: "AI Cloud" },
+          { symbol: "CRWV", name: "CoreWeave", price: 42.10, change1D: 2.1, change1M: 11.5, role: "Computer Rent" },
+          { symbol: "APLD", name: "Applied Digital", price: 8.45, change1D: 1.8, change1M: 6.4, role: "Data House" }
+        ]
+      },
+      {
+        id: "fintech_banking",
+        name: "Digital Banking & Fintech",
+        emoji: "🏦",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 INFLOW (+11.8% 1M)",
+        macroDriver: "Falling interest rate expectations drive loan demand and non-interest fee growth for mobile platforms.",
+        kidReason: "Banks on phones getting popular because they give higher savings rewards.",
+        stocks: [
+          { symbol: "SOFI", name: "SoFi", price: 14.92, change1D: 3.8, change1M: 12.4, role: "Phone Bank" }
+        ]
+      },
+      {
+        id: "software_defense",
+        name: "Software & Defense AI",
+        emoji: "📊",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 FLIGHT TO QUALITY (+12.3% 1M)",
+        macroDriver: "Enterprise AI adoption expanding; military defense AI contracts providing high-visibility cash flow.",
+        kidReason: "Smart detectives and robots helping hospitals and armies.",
+        stocks: [
+          { symbol: "PLTR", name: "Palantir", price: 62.40, change1D: 6.2, change1M: 19.8, role: "Spy AI" },
+          { symbol: "MSFT", name: "Microsoft", price: 422.50, change1D: 1.4, change1M: 4.8, role: "Office Tools" },
+          { symbol: "GOOGL", name: "Alphabet", price: 174.80, change1D: 2.1, change1M: 5.6, role: "Magic Search" },
+          { symbol: "LLY", name: "Eli Lilly", price: 785.00, change1D: 1.9, change1M: 9.1, role: "Health Pill" }
+        ]
+      }
+    ];
   }
 }
 

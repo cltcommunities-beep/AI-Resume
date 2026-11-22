@@ -14,6 +14,7 @@ class ForceDirectedGraph {
     this.draggedNode = null;
     this.hoveredNode = null;
     this.hoveredEdge = null;
+    this.selectedSectorId = null;
     this.ripples = [];
     this.isPaused = false;
     this.time = 0;
@@ -26,45 +27,48 @@ class ForceDirectedGraph {
     const isFull = (typeof document !== "undefined" && document.fullscreenElement === container) || (container && container.classList && container.classList.contains("fullscreen-active"));
     
     if (isFull) {
-      this.cssW = window.innerWidth;
-      this.cssH = window.innerHeight;
+      this.cssW = (typeof window !== "undefined") ? window.innerWidth : 1200;
+      this.cssH = (typeof window !== "undefined") ? window.innerHeight : 700;
     } else {
       const parentW = container ? container.clientWidth : 0;
-      const rectW = this.canvas ? this.canvas.getBoundingClientRect().width : 0;
-      this.cssW = Math.max(900, rectW > 100 ? rectW : (parentW > 100 ? parentW : 1100));
+      this.cssW = Math.max(320, parentW > 100 ? parentW : 800);
       this.cssH = 520;
     }
 
     const dpr = (typeof window !== "undefined" && window.devicePixelRatio) || 1;
     this.canvas.width = Math.floor(this.cssW * dpr);
     this.canvas.height = Math.floor(this.cssH * dpr);
-    this.canvas.style.width = this.cssW + "px";
+    this.canvas.style.width = "100%";
     this.canvas.style.height = this.cssH + "px";
   }
 
-  setData(data) {
+    setData(data) {
     this.resize();
     const cx = this.cssW / 2;
     const cy = this.cssH / 2;
 
-    const n = data.nodes.length;
-    const innerCount = Math.min(8, n);
-    const outerCount = n - innerCount;
+    const sectorClusters = {
+      power_nuclear: { x: cx + 210, y: cy + 110 },
+      cooling_thermal: { x: cx + 20, y: cy - 140 },
+      ai_compute: { x: cx - 210, y: cy - 100 },
+      neocloud_dc: { x: cx - 180, y: cy + 120 },
+      fintech_banking: { x: cx - 290, y: cy + 30 },
+      software_defense: { x: cx + 230, y: cy - 100 }
+    };
 
-    this.nodes = data.nodes.map((node, i) => {
-      let angle, radius;
-      if (i < innerCount) {
-        angle = (i * 2 * Math.PI) / innerCount;
-        radius = 140 + (i % 2) * 25;
-      } else {
-        const outIdx = i - innerCount;
-        angle = (outIdx * 2 * Math.PI) / outerCount + (Math.PI / outerCount);
-        radius = 240 + (outIdx % 2) * 30;
-      }
+    const sectorCounts = {};
+    this.nodes = data.nodes.map(node => {
+      const sId = node.sectorId || "ai_compute";
+      sectorCounts[sId] = (sectorCounts[sId] || 0) + 1;
+      const idx = sectorCounts[sId] - 1;
+      const cluster = sectorClusters[sId] || { x: cx, y: cy };
+      const angle = (idx * 1.57);
+      const dist = 48 + idx * 26;
+
       return {
         ...node,
-        x: cx + Math.cos(angle) * radius,
-        y: cy + Math.sin(angle) * radius,
+        x: cluster.x + Math.cos(angle) * dist,
+        y: cluster.y + Math.sin(angle) * dist,
         vx: 0,
         vy: 0
       };
@@ -80,6 +84,18 @@ class ForceDirectedGraph {
     this.zoom = Math.max(0.45, this.zoom * 0.83);
   }
 
+  
+  setSectorFilter(sectorId) {
+    this.selectedSectorId = (this.selectedSectorId === sectorId) ? null : sectorId;
+    if (this.selectedSectorId) {
+      this.nodes.forEach(n => {
+        if (n.sectorId === this.selectedSectorId) {
+          this.triggerRipple(n.id, "#10b981");
+        }
+      });
+    }
+  }
+
   resetView() {
     this.zoom = 1;
     this.panX = 0;
@@ -91,7 +107,7 @@ class ForceDirectedGraph {
     if (n) {
       this.panX = (this.cssW / 2 - n.x);
       this.panY = (this.cssH / 2 - n.y);
-      this.zoom = 1.35;
+      this.zoom = 1.25;
       this.triggerRipple(symbol, "#38bdf8");
       if (this.onNodeClick) this.onNodeClick(symbol);
     }
@@ -120,11 +136,20 @@ class ForceDirectedGraph {
     }
   }
 
-  _updatePhysics() {
+    _updatePhysics() {
     const cx = this.cssW / 2;
     const cy = this.cssH / 2;
 
-    // Node Repulsion (Anti-Clumping)
+    const sectorClusters = {
+      power_nuclear: { x: cx + 210, y: cy + 110 },
+      cooling_thermal: { x: cx + 20, y: cy - 140 },
+      ai_compute: { x: cx - 210, y: cy - 100 },
+      neocloud_dc: { x: cx - 180, y: cy + 120 },
+      fintech_banking: { x: cx - 290, y: cy + 30 },
+      software_defense: { x: cx + 230, y: cy - 100 }
+    };
+
+    // 1. Strict Hard Collision Anti-Overlap & Mutual Separation
     for (let i = 0; i < this.nodes.length; i++) {
       for (let j = i + 1; j < this.nodes.length; j++) {
         const a = this.nodes[i];
@@ -132,9 +157,25 @@ class ForceDirectedGraph {
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.hypot(dx, dy) || 1;
-        if (dist < 220) {
-          const repel = (220 - dist) / 220;
-          const force = repel * repel * 1.9;
+        const minDist = a.size + b.size + 56; // Minimum 116px clearance so badges never touch!
+
+        if (dist < minDist) {
+          const overlap = minDist - dist;
+          const nx = dx / dist;
+          const ny = dy / dist;
+          // Direct geometric separation (impossible to overlap)
+          a.x -= nx * overlap * 0.52;
+          a.y -= ny * overlap * 0.52;
+          b.x += nx * overlap * 0.52;
+          b.y += ny * overlap * 0.52;
+
+          a.vx -= nx * overlap * 0.08;
+          a.vy -= ny * overlap * 0.08;
+          b.vx += nx * overlap * 0.08;
+          b.vy += ny * overlap * 0.08;
+        } else if (dist < 190) {
+          const repel = (190 - dist) / 190;
+          const force = repel * 0.5;
           const fx = (dx / dist) * force;
           const fy = (dy / dist) * force;
           a.vx -= fx;
@@ -145,7 +186,7 @@ class ForceDirectedGraph {
       }
     }
 
-    // Spring Attraction along Connected Edges
+    // 2. Gentle Spring Attraction along Connected Edges
     this.edges.forEach(e => {
       const a = this.nodes.find(n => n.id === e.source);
       const b = this.nodes.find(n => n.id === e.target);
@@ -153,41 +194,45 @@ class ForceDirectedGraph {
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.hypot(dx, dy) || 1;
-        const targetDist = 150;
-        const force = (dist - targetDist) * 0.018;
-        const fx = (dx / dist) * force;
-        const fy = (dy / dist) * force;
-        a.vx += fx;
-        a.vy += fy;
-        b.vx -= fx;
-        b.vy -= fy;
+        const targetDist = 145;
+        if (dist > targetDist) {
+          const force = (dist - targetDist) * 0.008;
+          const fx = (dx / dist) * force;
+          const fy = (dy / dist) * force;
+          a.vx += fx;
+          a.vy += fy;
+          b.vx -= fx;
+          b.vy -= fy;
+        }
       }
     });
 
-    // Centering Gravity, Velocity Clamping, Damping & Safe Bounds
+    // 3. Sector Cluster Gravity & Safe Canvas Margin Bounding
     this.nodes.forEach(n => {
       if (n !== this.draggedNode) {
-        n.vx += (cx - n.x) * 0.008;
-        n.vy += (cy - n.y) * 0.008;
+        const cluster = sectorClusters[n.sectorId] || { x: cx, y: cy };
+        // Gentle pull towards spacious sector neighborhood
+        n.vx += (cluster.x - n.x) * 0.007;
+        n.vy += (cluster.y - n.y) * 0.007;
 
         const speed = Math.hypot(n.vx, n.vy);
-        if (speed > 4.2) {
-          n.vx = (n.vx / speed) * 4.2;
-          n.vy = (n.vy / speed) * 4.2;
+        if (speed > 2.8) {
+          n.vx = (n.vx / speed) * 2.8;
+          n.vy = (n.vy / speed) * 2.8;
         }
 
-        n.vx *= 0.86;
-        n.vy *= 0.86;
+        n.vx *= 0.82;
+        n.vy *= 0.82;
         n.x += n.vx;
         n.y += n.vy;
 
-        // Strict Bounding
-        n.x = Math.max(n.size + 18, Math.min(this.cssW - n.size - 18, n.x));
-        n.y = Math.max(n.size + 18, Math.min(this.cssH - n.size - 18, n.y));
+        // Strict Margin Bounding
+        n.x = Math.max(n.size + 24, Math.min(this.cssW - n.size - 24, n.x));
+        n.y = Math.max(n.size + 24, Math.min(this.cssH - n.size - 24, n.y));
       }
     });
 
-    // Ripples
+    // 4. Ripples
     for (let i = this.ripples.length - 1; i >= 0; i--) {
       const r = this.ripples[i];
       r.radius += 2.5;
@@ -207,9 +252,9 @@ class ForceDirectedGraph {
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, w, h);
 
-    ctx.translate(w / 2 + this.panX, h / 2 + this.panY);
+    ctx.translate(w / 2, h / 2);
     ctx.scale(this.zoom, this.zoom);
-    ctx.translate(-w / 2, -h / 2);
+    ctx.translate(-w / 2 + this.panX, -h / 2 + this.panY);
 
     // 1. Ripples
     this.ripples.forEach(r => {
@@ -227,6 +272,7 @@ class ForceDirectedGraph {
       const a = this.nodes.find(n => n.id === e.source);
       const b = this.nodes.find(n => n.id === e.target);
       if (a && b) {
+
         const isHovered = (e === this.hoveredEdge);
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -278,6 +324,8 @@ class ForceDirectedGraph {
     // 3. Stock Nodes - Picture Book Design (Large Friendly Emojis + Bobbing)
     this.nodes.forEach(n => {
       const isHovered = (n === this.hoveredNode);
+      const isSectorMatch = !this.selectedSectorId || (n.sectorId === this.selectedSectorId);
+      ctx.globalAlpha = isSectorMatch ? 1.0 : 0.22;
       const r = n.size;
       // Gentle playful floating bob
       const bob = Math.sin(t * 2.8 + (n.x * 0.05)) * 2.8;
@@ -309,6 +357,7 @@ class ForceDirectedGraph {
 
       // Return & Ticker Sub-Badge Underneath Circle
       this._drawUnderNodeBadge(ctx, n.label, n.change1D, n.x, n.y + r + 13 + bob);
+      ctx.globalAlpha = 1.0;
     });
 
     // 4. Detailed Storybook Hover Card
@@ -410,10 +459,8 @@ class ForceDirectedGraph {
       const rect = this.canvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
-      const w = this.cssW;
-      const h = this.cssH;
-      const x = (mx - (w / 2 + this.panX)) / this.zoom + w / 2;
-      const y = (my - (h / 2 + this.panY)) / this.zoom + h / 2;
+      const x = (mx - this.cssW / 2) / this.zoom + this.cssW / 2 - this.panX;
+      const y = (my - this.cssH / 2) / this.zoom + this.cssH / 2 - this.panY;
       return { x, y, mx, my };
     };
 
@@ -458,8 +505,8 @@ class ForceDirectedGraph {
         this.draggedNode.vx = 0;
         this.draggedNode.vy = 0;
       } else if (isPanning) {
-        this.panX += (e.clientX - startPanX);
-        this.panY += (e.clientY - startPanY);
+        this.panX += (e.clientX - startPanX) / this.zoom;
+        this.panY += (e.clientY - startPanY) / this.zoom;
         startPanX = e.clientX;
         startPanY = e.clientY;
       }

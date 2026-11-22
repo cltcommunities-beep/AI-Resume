@@ -189,13 +189,51 @@
       </div>
     </div>
 
-    <div id="networkContainer" class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl transition-all duration-200">
+        <!-- Friendly Kid-Simple Explanation Banner -->
+    <div class="p-2.5 rounded-xl bg-gradient-to-r from-indigo-950/80 via-slate-900 to-cyan-950/80 border border-indigo-500/40 flex items-center justify-between gap-3 flex-wrap shadow-lg">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">👶</span>
+        <div>
+          <span class="text-xs font-black text-white uppercase tracking-wider">Picture-Book Business Learning (No Technical Jargon):</span>
+          <p class="text-[11px] text-slate-300">You don't need to be an engineer! Every stock is explained in simple everyday words: ⚡ Power, ❄️ Cooling Fans, 🧠 Computer Brains, ☁️ Computer Renting, 🏦 Phone Banks, and 💊 Health Medicine.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 text-[11px] font-bold">
+        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">🟢 20 Simple Stocks</span>
+        <span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">🔄 Side-by-Side Sectors</span>
+      </div>
+    </div>
+
+    <!-- Side-by-Side Responsive Grid: Stock Network + Sector Rotation Aside -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
+      <!-- Left 7-8/12: Interactive Stock Network Graph -->
+      <div class="md:col-span-7 lg:col-span-8 space-y-2">
+<div id="networkContainer" class="relative rounded-xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl transition-all duration-200">
       <!-- Top Graph Control Overlay -->
       <div class="absolute top-2.5 left-2.5 z-10 flex items-center gap-2 flex-wrap text-xs bg-slate-900/95 p-1.5 rounded-lg border border-slate-800 backdrop-blur shadow-lg">
         <span class="text-slate-300 font-bold text-[11px]">🔍 Focus:</span>
         <select id="focusStockSelect" class="px-2 py-0.5 rounded bg-slate-950 border border-slate-700 text-slate-200 text-xs font-mono font-bold" onchange="if(graphEngine) graphEngine.focusNode(this.value)">
-          <option value="">-- Choose Stock --</option>
-          <option value="NVDA">NVDA (🧠 The AI Brain Designer)</option><option value="AMD">AMD (⚡ The High-Speed Challenger)</option><option value="AVGO">AVGO (🔌 The Custom Chip & Highway Builder)</option><option value="MRVL">MRVL (💡 The Light-Speed Data Transporter)</option><option value="TSM">TSM (🏭 The World's Microchip Factory)</option><option value="AMKR">AMKR (📦 The Chip Packaging Specialist)</option><option value="NVT">NVT (❄️ The Liquid Cooling & Enclosure Shield)</option><option value="VRT">VRT (🏢 The Data Center Thermal Master)</option><option value="BE">BE (⚡ The Instant On-Site Power Plant)</option><option value="CEG">CEG (⚛️ The Clean Nuclear Giant)</option><option value="VST">VST (⚡ The Power House Producer)</option><option value="OKLO">OKLO (🔬 The Compact Nuclear Pioneer)</option><option value="NBIS">NBIS (☁️ The Clean-Slate AI Neocloud)</option><option value="CRWV">CRWV (⚡ The Specialized GPU Cloud Pioneer)</option><option value="APLD">APLD (🏗️ The High-Power Campus Landlord)</option><option value="PLTR">PLTR (🛡️ The Enterprise & Defense AI Operating System)</option><option value="SOFI">SOFI (🏦 The Mobile-First Digital Bank)</option><option value="LLY">LLY (💊 The Weight-Loss Medicine Monopoly)</option><option value="MSFT">MSFT (💻 The AI Enterprise Powerhouse)</option><option value="GOOGL">GOOGL (🔍 The Vertically-Integrated AI Titan)</option>
+          <option value="">-- Choose Any Stock to Focus --</option>
+          <option value="NVDA">NVDA (🧠 Computer Brain Designer)</option>
+          <option value="AMD">AMD (⚡ Fast Chip Maker)</option>
+          <option value="AVGO">AVGO (🔌 Computer Cable Connector)</option>
+          <option value="MRVL">MRVL (💡 Fast Light Data Wires)</option>
+          <option value="TSM">TSM (🏭 Microchip Factory)</option>
+          <option value="AMKR">AMKR (📦 Microchip Packer)</option>
+          <option value="NVT">NVT (🧊 Ice Liquid Cooling)</option>
+          <option value="VRT">VRT (❄️ Huge Fans & Cooling)</option>
+          <option value="BE">BE (⚡ Instant Power Box)</option>
+          <option value="CEG">CEG (⚛️ Clean Nuclear Energy)</option>
+          <option value="VST">VST (🔌 Electric Power Grid)</option>
+          <option value="OKLO">OKLO (🔬 Mini Nuclear Reactor)</option>
+          <option value="NBIS">NBIS (☁️ Super-Computer Rental)</option>
+          <option value="CRWV">CRWV (🖥️ AI Computer Cloud)</option>
+          <option value="APLD">APLD (🏢 Huge Computer Warehouses)</option>
+          <option value="PLTR">PLTR (🕵️ Smart Computer Detective)</option>
+          <option value="SOFI">SOFI (🏦 Phone Bank & Loans)</option>
+          <option value="LLY">LLY (💊 Health Medicine & Cure)</option>
+          <option value="MSFT">MSFT (🪟 Windows & Office AI)</option>
+          <option value="GOOGL">GOOGL (🔍 Google Search & YouTube)</option>
         </select>
         <div class="h-4 w-px bg-slate-700"></div>
         <button class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] font-bold border border-slate-700" onclick="if(graphEngine) graphEngine.zoomIn()">➕ Zoom In</button>
@@ -205,6 +243,18 @@
         <button id="btnFullscreen" class="px-2.5 py-0.5 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold border border-indigo-500 flex items-center gap-1 shadow" onclick="toggleFullscreenGraph()">
           <span>⛶</span> <span id="btnFullscreenText">Fullscreen</span>
         </button>
+
+        <!-- Quick Sector Switcher Strip directly above canvas -->
+        <div class="w-full flex items-center gap-1 flex-wrap pt-1 border-t border-slate-800/80 text-[10px]">
+          <span class="text-slate-400 font-bold">🔄 Sectors:</span>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-amber-950/80 text-amber-300 font-bold border border-slate-800 hover:border-amber-500 flex items-center gap-1" onclick="toggleSectorFilter('power_nuclear')">⚡ Power (4)</button>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-cyan-950/80 text-cyan-300 font-bold border border-slate-800 hover:border-cyan-500 flex items-center gap-1" onclick="toggleSectorFilter('cooling_thermal')">❄️ Cooling (2)</button>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-purple-950/80 text-purple-300 font-bold border border-slate-800 hover:border-purple-500 flex items-center gap-1" onclick="toggleSectorFilter('ai_compute')">🧠 Brains (5)</button>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-sky-950/80 text-sky-300 font-bold border border-slate-800 hover:border-sky-500 flex items-center gap-1" onclick="toggleSectorFilter('neocloud_dc')">☁️ Cloud (3)</button>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-emerald-950/80 text-emerald-300 font-bold border border-slate-800 hover:border-emerald-500 flex items-center gap-1" onclick="toggleSectorFilter('fintech_banking')">🏦 Bank (1)</button>
+          <button class="px-2 py-0.5 rounded bg-slate-950 hover:bg-pink-950/80 text-pink-300 font-bold border border-slate-800 hover:border-pink-500 flex items-center gap-1" onclick="toggleSectorFilter('software_defense')">📊 Software/Meds (4)</button>
+          <button class="px-2 py-0.5 rounded bg-indigo-900/60 hover:bg-indigo-800 text-indigo-200 font-bold border border-indigo-700" onclick="resetSectorRotationFilter()">Show All</button>
+        </div>
       </div>
 
       <!-- Graph Legend Overlay -->
@@ -217,6 +267,219 @@
 
       <!-- Canvas -->
       <canvas id="networkCanvas" class="w-full block" height="520" style="height: 520px;"></canvas>
+    </div>
+      </div>
+
+      <!-- Right 4-5/12: Market Sector Rotation Aside Panel -->
+      <aside class="md:col-span-5 lg:col-span-4 rounded-xl border border-slate-800 bg-slate-900/95 shadow-2xl p-3.5 space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">🔄</span>
+            <div>
+              <h3 class="text-xs font-black text-white uppercase tracking-wider">Market Sector Rotation</h3>
+              <p class="text-[10px] text-slate-400">Where Wall St capital is flowing in & out</p>
+            </div>
+          </div>
+          <button id="btnResetSectorFilter" class="hidden px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-cyan-400 font-bold border border-slate-700 transition" onclick="resetSectorRotationFilter()">Show All</button>
+        </div>
+
+        <!-- Interactive Capital Flow Timeframe Filter Bar -->
+        <div class="flex items-center justify-between gap-1 text-[10px] bg-slate-950 p-1.5 rounded-lg border border-slate-800">
+          <span class="text-slate-300 font-bold flex items-center gap-1">
+            <span>⏱️ Velocity:</span>
+          </span>
+          <div class="flex items-center gap-1">
+            <button id="btnTf1D" class="px-2.5 py-0.5 rounded bg-cyan-600 text-white font-bold transition shadow-sm" onclick="switchTrackerTimeframe('1D')">1-Day</button>
+            <button id="btnTf1W" class="px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition" onclick="switchTrackerTimeframe('1W')">1-Week</button>
+            <button id="btnTf1M" class="px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition" onclick="switchTrackerTimeframe('1M')">1-Month</button>
+          </div>
+        </div>
+
+        <!-- 4-Stage Rotation Cycle Strip -->
+        <div class="p-2 rounded-lg bg-slate-950 border border-slate-800 text-[10px] space-y-1.5">
+          <div class="flex items-center justify-between font-bold">
+            <span class="text-slate-300">Active Cycle Stage: <strong class="text-amber-400">⚡ Energy Bottleneck</strong></span>
+            <span class="text-emerald-400 font-mono">🟢 Inflows Dominant</span>
+          </div>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden flex">
+            <div class="bg-blue-500 w-1/4 opacity-40" title="1. Early Tech Phase"></div>
+            <div class="bg-purple-500 w-1/4 opacity-40" title="2. Mid Silicon Phase"></div>
+            <div class="bg-amber-400 w-1/4 animate-pulse" title="3. Late Energy & Power Phase (CURRENT)"></div>
+            <div class="bg-emerald-500 w-1/4 opacity-40" title="4. Cash Fortress Phase"></div>
+          </div>
+          <div class="text-[9px] text-slate-400">
+            👉 <span class="text-cyan-300 font-semibold">Tip:</span> Click any sector below to isolate its stocks on the network graph!
+          </div>
+        </div>
+
+        <!-- Sector Rotation Cards Container -->
+        <div id="sectorRotationContainer" class="space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
+          <!-- Card 1: Power & Electricity -->
+          <div id="sectorCard_power_nuclear" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-amber-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('power_nuclear')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">⚡</span>
+                <span class="text-xs font-black text-white">⚡ Electricity & Power</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                🟢 HEAVY INFLOW (+24.6% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              Computers eat electricity like hungry monsters! Power companies are feeding them 24/7.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('BE'); if(graphEngine) graphEngine.focusNode('BE')">
+                <span class="text-amber-400">⚡ BE</span> <span class="text-slate-400 text-[10px]">(Power Box)</span> <span class="text-emerald-400 font-mono">+15.2%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('CEG'); if(graphEngine) graphEngine.focusNode('CEG')">
+                <span class="text-cyan-400">⚛️ CEG</span> <span class="text-slate-400 text-[10px]">(Nuclear)</span> <span class="text-emerald-400 font-mono">+4.8%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('VST'); if(graphEngine) graphEngine.focusNode('VST')">
+                <span class="text-yellow-400">🔌 VST</span> <span class="text-slate-400 text-[10px]">(Grid)</span> <span class="text-emerald-400 font-mono">+6.1%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('OKLO'); if(graphEngine) graphEngine.focusNode('OKLO')">
+                <span class="text-purple-400">🔬 OKLO</span> <span class="text-slate-400 text-[10px]">(Mini Atom)</span> <span class="text-emerald-400 font-mono">+7.5%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Cooling & Thermal -->
+          <div id="sectorCard_cooling_thermal" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-cyan-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('cooling_thermal')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">❄️</span>
+                <span class="text-xs font-black text-white">❄️ Fans & Ice Cooling</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                🟢 INFLOW (+14.2% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              Computers get boiling hot! Big fans and ice liquid keep servers from melting down.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('VRT'); if(graphEngine) graphEngine.focusNode('VRT')">
+                <span class="text-cyan-400">❄️ VRT</span> <span class="text-slate-400 text-[10px]">(Big Fan)</span> <span class="text-emerald-400 font-mono">+8.3%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('NVT'); if(graphEngine) graphEngine.focusNode('NVT')">
+                <span class="text-sky-400">🧊 NVT</span> <span class="text-slate-400 text-[10px]">(Ice Liquid)</span> <span class="text-emerald-400 font-mono">+4.1%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Computer Brains & Chips -->
+          <div id="sectorCard_ai_compute" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-purple-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('ai_compute')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">🧠</span>
+                <span class="text-xs font-black text-white">🧠 Computer Brains & Chips</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-amber-950/80 text-amber-400 border border-amber-800">
+                🟡 CONSOLIDATING (+4.1% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              The brain makers are resting after building so many chips; money is flowing into power.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('NVDA'); if(graphEngine) graphEngine.focusNode('NVDA')">
+                <span class="text-emerald-400">🧠 NVDA</span> <span class="text-slate-400 text-[10px]">(AI Brain)</span> <span class="text-rose-400 font-mono">-13.8%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('TSM'); if(graphEngine) graphEngine.focusNode('TSM')">
+                <span class="text-blue-400">🏭 TSM</span> <span class="text-slate-400 text-[10px]">(Chip Factory)</span> <span class="text-rose-400 font-mono">-8.1%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('AMD'); if(graphEngine) graphEngine.focusNode('AMD')">
+                <span class="text-rose-400">⚡ AMD</span> <span class="text-slate-400 text-[10px]">(Speed Chip)</span> <span class="text-rose-400 font-mono">-2.4%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('AVGO'); if(graphEngine) graphEngine.focusNode('AVGO')">
+                <span class="text-purple-400">🔌 AVGO</span> <span class="text-slate-400 text-[10px]">(Cables)</span> <span class="text-emerald-400 font-mono">+1.2%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('AMKR'); if(graphEngine) graphEngine.focusNode('AMKR')">
+                <span class="text-indigo-400">📦 AMKR</span> <span class="text-slate-400 text-[10px]">(Packer)</span> <span class="text-emerald-400 font-mono">+3.2%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Cloud & Computer Renting -->
+          <div id="sectorCard_neocloud_dc" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-sky-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('neocloud_dc')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">☁️</span>
+                <span class="text-xs font-black text-white">☁️ Cloud & Computer Renting</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-amber-950/80 text-amber-400 border border-amber-800">
+                🟡 SELECTIVE ACCUMULATION (+8.5% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              Companies renting rooms full of super-computers in the cloud to build AI apps.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('NBIS'); if(graphEngine) graphEngine.focusNode('NBIS')">
+                <span class="text-sky-400">☁️ NBIS</span> <span class="text-slate-400 text-[10px]">(Neocloud)</span> <span class="text-emerald-400 font-mono">+5.4%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('CRWV'); if(graphEngine) graphEngine.focusNode('CRWV')">
+                <span class="text-indigo-400">🖥️ CRWV</span> <span class="text-slate-400 text-[10px]">(GPU Rent)</span> <span class="text-emerald-400 font-mono">+2.1%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('APLD'); if(graphEngine) graphEngine.focusNode('APLD')">
+                <span class="text-blue-400">🏢 APLD</span> <span class="text-slate-400 text-[10px]">(Warehouses)</span> <span class="text-emerald-400 font-mono">+1.8%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Phone Banking -->
+          <div id="sectorCard_fintech_banking" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-emerald-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('fintech_banking')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">🏦</span>
+                <span class="text-xs font-black text-white">🏦 Mobile Phone Banking</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                🟢 INFLOW (+11.8% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              Banks on mobile phones getting popular because they give high interest savings rewards.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('SOFI'); if(graphEngine) graphEngine.focusNode('SOFI')">
+                <span class="text-emerald-400">🏦 SOFI</span> <span class="text-slate-400 text-[10px]">(Phone Bank)</span> <span class="text-emerald-400 font-mono">+3.8%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Smart Software & Medicine -->
+          <div id="sectorCard_software_defense" class="p-3 rounded-xl border border-slate-800 bg-slate-950/90 hover:border-pink-500/60 transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('software_defense')">
+            <div class="flex items-center justify-between gap-1 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="text-lg">📊</span>
+                <span class="text-xs font-black text-white">📊 Smart Software & Medicine</span>
+              </div>
+              <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800">
+                🟢 FLIGHT TO QUALITY (+12.3% 1M)
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              Smart detectives and robots helping hospitals, medicines, and national defense.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('PLTR'); if(graphEngine) graphEngine.focusNode('PLTR')">
+                <span class="text-purple-400">🕵️ PLTR</span> <span class="text-slate-400 text-[10px]">(Detective AI)</span> <span class="text-emerald-400 font-mono">+6.2%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('MSFT'); if(graphEngine) graphEngine.focusNode('MSFT')">
+                <span class="text-blue-400">🪟 MSFT</span> <span class="text-slate-400 text-[10px]">(Windows AI)</span> <span class="text-emerald-400 font-mono">+1.4%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('GOOGL'); if(graphEngine) graphEngine.focusNode('GOOGL')">
+                <span class="text-red-400">🔍 GOOGL</span> <span class="text-slate-400 text-[10px]">(Google)</span> <span class="text-emerald-400 font-mono">+2.1%</span>
+              </button>
+              <button class="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-[11px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1.5 transition shadow" onclick="event.stopPropagation(); appCoord.inspectStock('LLY'); if(graphEngine) graphEngine.focusNode('LLY')">
+                <span class="text-pink-400">💊 LLY</span> <span class="text-slate-400 text-[10px]">(Medicine)</span> <span class="text-emerald-400 font-mono">+1.9%</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -3292,6 +3555,15 @@ class StockRepository {
     return this._stocks.find(s => s.symbol.toUpperCase() === symbol.toUpperCase()) || null;
   }
   async getGraphTopology() {
+    const SECTOR_ID_MAP = {
+      NVDA: "ai_compute", AMD: "ai_compute", TSM: "ai_compute", AVGO: "ai_compute", MRVL: "ai_compute", AMKR: "ai_compute",
+      BE: "power_nuclear", CEG: "power_nuclear", VST: "power_nuclear", OKLO: "power_nuclear",
+      VRT: "cooling_thermal", NVT: "cooling_thermal",
+      NBIS: "neocloud_dc", CRWV: "neocloud_dc", APLD: "neocloud_dc",
+      SOFI: "fintech_banking",
+      PLTR: "software_defense", MSFT: "software_defense", GOOGL: "software_defense", LLY: "software_defense"
+    };
+
     const KID_PROFILES = {
       NVDA: { emoji: "🧠", title: "AI BRAIN", job: "Designs super-smart brains for robots & ChatGPT", friend: "TSMC bakes the chips; Vertiv blows cold air" },
       TSM: { emoji: "🏭", title: "CHIP FACTORY", job: "The giant kitchen that bakes computer chips for everyone", friend: "Builds chips for Nvidia & Apple" },
@@ -3317,12 +3589,14 @@ class StockRepository {
 
     const nodes = this._stocks.map(s => {
       const kid = KID_PROFILES[s.symbol] || { emoji: "🏢", title: s.symbol, job: s.whatItDoes, friend: s.whoBuys };
+      const sId = SECTOR_ID_MAP[s.symbol] || "other";
       return {
         id: s.symbol,
         label: s.symbol,
         name: s.name,
         simpleRole: s.simpleRole,
         layer: s.layer,
+        sectorId: sId,
         kidEmoji: kid.emoji,
         kidTitle: kid.title,
         kidJob: kid.job,
@@ -3458,6 +3732,96 @@ class StockRepository {
 
     return { shockSymbol: symbol, shockDelta, affected };
   }
+
+  async getSectorRotations() {
+    return [
+      {
+        id: "power_nuclear",
+        name: "⚡ Electricity & Power",
+        emoji: "⚡",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 HEAVY INFLOW (+24.6% 1M)",
+        macroDriver: "Data centers facing grid power bottlenecks; hyperscalers signing 24/7 on-site and nuclear power purchase agreements.",
+        kidReason: "Computers eat electricity like hungry monsters! Power companies are feeding them.",
+        stocks: [
+          { symbol: "BE", name: "Bloom Energy", price: 178.13, change1D: 15.2, change1M: 28.4, role: "Power Box" },
+          { symbol: "CEG", name: "Constellation", price: 245.50, change1D: 4.8, change1M: 21.0, role: "Atom Power" },
+          { symbol: "VST", name: "Vistra", price: 142.30, change1D: 6.1, change1M: 24.5, role: "Power Grid" },
+          { symbol: "OKLO", name: "Oklo", price: 23.40, change1D: 7.5, change1M: 18.2, role: "Mini Atom" }
+        ]
+      },
+      {
+        id: "cooling_thermal",
+        name: "❄️ Fans & Ice Cooling",
+        emoji: "❄️",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 INFLOW (+14.2% 1M)",
+        macroDriver: "Nvidia Blackwell 120kW racks generate extreme heat; air conditioning fails and direct liquid cooling is mandated.",
+        kidReason: "Computers get boiling hot! Big fans and ice liquid keep them from melting.",
+        stocks: [
+          { symbol: "VRT", name: "Vertiv", price: 142.10, change1D: 8.3, change1M: 16.5, role: "Big Fan" },
+          { symbol: "NVT", name: "nVent", price: 82.50, change1D: 4.1, change1M: 11.8, role: "Ice Liquid" }
+        ]
+      },
+      {
+        id: "ai_compute",
+        name: "🧠 Computer Brains",
+        emoji: "🧠",
+        flowDirection: "ROTATING",
+        flowTag: "🟡 CONSOLIDATING (+4.1% 1M)",
+        macroDriver: "Institutional profit-taking after earnings runup; capital rotating into power infrastructure and memory partners.",
+        kidReason: "The brain makers are resting after building so many chips.",
+        stocks: [
+          { symbol: "NVDA", name: "Nvidia", price: 125.79, change1D: -13.8, change1M: -21.4, role: "AI Brain" },
+          { symbol: "TSM", name: "TSMC", price: 188.40, change1D: -8.1, change1M: 3.2, role: "Chip Factory" },
+          { symbol: "AMD", name: "AMD", price: 138.20, change1D: -2.4, change1M: 5.1, role: "Speed Chip" },
+          { symbol: "AVGO", name: "Broadcom", price: 164.50, change1D: 1.2, change1M: 8.4, role: "Magic Cables" },
+          { symbol: "AMKR", name: "Amkor", price: 28.90, change1D: 3.2, change1M: 9.5, role: "Chip Packer" }
+        ]
+      },
+      {
+        id: "neocloud_dc",
+        name: "☁️ Cloud & Computer Renting",
+        emoji: "☁️",
+        flowDirection: "ROTATING",
+        flowTag: "🟡 SELECTIVE ACCUMULATION (+8.5% 1M)",
+        macroDriver: "Hyperscalers renting specialized clusters for enterprise inference models; CapEx shift to contracted hosts.",
+        kidReason: "People renting rooms full of super-computers in the sky.",
+        stocks: [
+          { symbol: "NBIS", name: "Nebius", price: 24.80, change1D: 5.4, change1M: 14.2, role: "AI Cloud" },
+          { symbol: "CRWV", name: "CoreWeave", price: 42.10, change1D: 2.1, change1M: 11.5, role: "Computer Rent" },
+          { symbol: "APLD", name: "Applied Digital", price: 8.45, change1D: 1.8, change1M: 6.4, role: "Data House" }
+        ]
+      },
+      {
+        id: "fintech_banking",
+        name: "🏦 Phone Banking",
+        emoji: "🏦",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 INFLOW (+11.8% 1M)",
+        macroDriver: "Falling interest rate expectations drive loan demand and non-interest fee growth for mobile platforms.",
+        kidReason: "Banks on phones getting popular because they give higher savings rewards.",
+        stocks: [
+          { symbol: "SOFI", name: "SoFi", price: 14.92, change1D: 3.8, change1M: 12.4, role: "Phone Bank" }
+        ]
+      },
+      {
+        id: "software_defense",
+        name: "📊 Smart Software & Medicine",
+        emoji: "📊",
+        flowDirection: "INFLOW",
+        flowTag: "🟢 FLIGHT TO QUALITY (+12.3% 1M)",
+        macroDriver: "Enterprise AI adoption expanding; military defense AI contracts providing high-visibility cash flow.",
+        kidReason: "Smart detectives and robots helping hospitals and armies.",
+        stocks: [
+          { symbol: "PLTR", name: "Palantir", price: 62.40, change1D: 6.2, change1M: 19.8, role: "Spy AI" },
+          { symbol: "MSFT", name: "Microsoft", price: 422.50, change1D: 1.4, change1M: 4.8, role: "Office Tools" },
+          { symbol: "GOOGL", name: "Alphabet", price: 174.80, change1D: 2.1, change1M: 5.6, role: "Magic Search" },
+          { symbol: "LLY", name: "Eli Lilly", price: 785.00, change1D: 1.9, change1M: 9.1, role: "Health Pill" }
+        ]
+      }
+    ];
+  }
 }
 
 class GrowthScannerViewModel {
@@ -3550,6 +3914,158 @@ class StockNetworkViewModel {
   }
 }
 
+
+class SectorRotationTrackerService {
+  constructor(stockRepository) {
+    this.repo = stockRepository;
+  }
+
+  async getSectorMetrics(timeframe = "1D") {
+    const sectors = await this.repo.getSectorRotations();
+    return sectors.map(sec => {
+      const count = sec.stocks.length || 1;
+      const sum1D = sec.stocks.reduce((acc, s) => acc + (s.change1D || 0), 0);
+      const avg1D = Number((sum1D / count).toFixed(1));
+      const sum1M = sec.stocks.reduce((acc, s) => acc + (s.change1M || 0), 0);
+      const avg1M = Number((sum1M / count).toFixed(1));
+      const avg1W = Number((avg1D * 2.2 + avg1M * 0.25).toFixed(1));
+
+      let activeMomentum = avg1D;
+      let tfLabel = "1-Day";
+      if (timeframe === "1W") { activeMomentum = avg1W; tfLabel = "1-Week"; }
+      if (timeframe === "1M") { activeMomentum = avg1M; tfLabel = "1-Month"; }
+
+      let flowState = "IMPROVING";
+      let stateBadge = "🔄 Improving";
+      let stateColor = "#60a5fa";
+      let stateBg = "rgba(59, 130, 246, 0.15)";
+      let stateBorder = "border-blue-500/50";
+
+      if (avg1M >= 15 && avg1D >= 3) {
+        flowState = "LEADING";
+        stateBadge = "🚀 Leading Inflow";
+        stateColor = "#34d399";
+        stateBg = "rgba(16, 185, 129, 0.15)";
+        stateBorder = "border-emerald-500/50";
+      } else if (avg1M >= 10 && avg1D < 0) {
+        flowState = "WEAKENING";
+        stateBadge = "⚠️ Weakening / Peak";
+        stateColor = "#fbbf24";
+        stateBg = "rgba(245, 158, 11, 0.15)";
+        stateBorder = "border-amber-500/50";
+      } else if (avg1M < 5 && avg1D < 0) {
+        flowState = "LAGGING";
+        stateBadge = "🛑 Lagging / Outflow";
+        stateColor = "#f87171";
+        stateBg = "rgba(239, 68, 68, 0.15)";
+        stateBorder = "border-rose-500/50";
+      }
+
+      const sortedStocks = [...sec.stocks].sort((a, b) => b.change1D - a.change1D);
+      const leadStock = sortedStocks[0] || { symbol: "N/A", change1D: 0 };
+      const clampedScore = Math.max(8, Math.min(100, Math.round(50 + activeMomentum * 2.5)));
+
+      return {
+        id: sec.id,
+        name: sec.name,
+        emoji: sec.emoji,
+        flowState,
+        stateBadge,
+        stateColor,
+        stateBg,
+        stateBorder,
+        flowTag: sec.flowTag,
+        kidReason: sec.kidReason,
+        macroDriver: sec.macroDriver,
+        momentum1D: avg1D,
+        momentum1W: avg1W,
+        momentum1M: avg1M,
+        activeMomentum,
+        tfLabel,
+        inflowScore: clampedScore,
+        leadStock: leadStock.symbol,
+        leadStockChange: leadStock.change1D,
+        stocks: sec.stocks
+      };
+    }).sort((a, b) => b.activeMomentum - a.activeMomentum);
+  }
+
+  async getRotationCycleState() {
+    return {
+      activeStage: 3,
+      totalStages: 4,
+      stageTitle: "⚡ Energy & Baseload Power Bottleneck",
+      stageSubtitle: "Institutional capital rotating into power infrastructure & cooling",
+      priorStage: "🧠 Stage 2: Hardware Compute & Chip Buildout (Consolidating)",
+      currentFocus: "⚡ Stage 3: Instant Power & Cooling Deployment (Active Surge)",
+      nextProjectedStage: "☁️ Stage 4: Enterprise Cloud & Mobile Cash Fortresses (Preparing)"
+    };
+  }
+}
+
+class SectorRotationTrackerViewModel {
+  constructor(trackerService, eventBus) {
+    this.trackerService = trackerService;
+    this.eventBus = eventBus;
+    this.timeframe = "1D";
+    this.metrics = [];
+    this.cycleState = null;
+    this.selectedSectorId = null;
+  }
+
+  async loadTracker() {
+    this.metrics = await this.trackerService.getSectorMetrics(this.timeframe);
+    this.cycleState = await this.trackerService.getRotationCycleState();
+    this.eventBus.publish("tracker:dataLoaded", {
+      timeframe: this.timeframe,
+      metrics: this.metrics,
+      cycleState: this.cycleState,
+      selectedSectorId: this.selectedSectorId
+    });
+    return { metrics: this.metrics, cycleState: this.cycleState };
+  }
+
+  async setTimeframe(tf) {
+    this.timeframe = tf;
+    this.metrics = await this.trackerService.getSectorMetrics(this.timeframe);
+    this.eventBus.publish("tracker:timeframeChanged", {
+      timeframe: this.timeframe,
+      metrics: this.metrics
+    });
+    return this.metrics;
+  }
+
+  selectSector(sectorId) {
+    this.selectedSectorId = (this.selectedSectorId === sectorId) ? null : sectorId;
+    this.eventBus.publish("tracker:sectorSelected", this.selectedSectorId);
+    return this.selectedSectorId;
+  }
+}
+
+class SectorRotationViewModel {
+  constructor(stockRepository, eventBus) {
+    this.repo = stockRepository;
+    this.eventBus = eventBus;
+    this.rotations = [];
+    this.selectedSector = null;
+  }
+
+  async loadRotations() {
+    this.rotations = await this.repo.getSectorRotations();
+    this.eventBus.publish("rotation:dataLoaded", this.rotations);
+    return this.rotations;
+  }
+
+  selectSector(sectorId) {
+    this.selectedSector = (this.selectedSector === sectorId) ? null : sectorId;
+    this.eventBus.publish("rotation:sectorSelected", this.selectedSector);
+  }
+
+  selectStock(symbol) {
+    this.eventBus.publish("rotation:stockSelected", symbol);
+  }
+}
+
 class StockDetailViewModel {
   constructor(stockRepo, eventBus) {
     this.repo = stockRepo;
@@ -3608,6 +4124,7 @@ class ForceDirectedGraph {
     this.draggedNode = null;
     this.hoveredNode = null;
     this.hoveredEdge = null;
+    this.selectedSectorId = null;
     this.ripples = [];
     this.isPaused = false;
     this.time = 0;
@@ -3620,45 +4137,48 @@ class ForceDirectedGraph {
     const isFull = (typeof document !== "undefined" && document.fullscreenElement === container) || (container && container.classList && container.classList.contains("fullscreen-active"));
     
     if (isFull) {
-      this.cssW = window.innerWidth;
-      this.cssH = window.innerHeight;
+      this.cssW = (typeof window !== "undefined") ? window.innerWidth : 1200;
+      this.cssH = (typeof window !== "undefined") ? window.innerHeight : 700;
     } else {
       const parentW = container ? container.clientWidth : 0;
-      const rectW = this.canvas ? this.canvas.getBoundingClientRect().width : 0;
-      this.cssW = Math.max(900, rectW > 100 ? rectW : (parentW > 100 ? parentW : 1100));
+      this.cssW = Math.max(320, parentW > 100 ? parentW : 800);
       this.cssH = 520;
     }
 
     const dpr = (typeof window !== "undefined" && window.devicePixelRatio) || 1;
     this.canvas.width = Math.floor(this.cssW * dpr);
     this.canvas.height = Math.floor(this.cssH * dpr);
-    this.canvas.style.width = this.cssW + "px";
+    this.canvas.style.width = "100%";
     this.canvas.style.height = this.cssH + "px";
   }
 
-  setData(data) {
+    setData(data) {
     this.resize();
     const cx = this.cssW / 2;
     const cy = this.cssH / 2;
 
-    const n = data.nodes.length;
-    const innerCount = Math.min(8, n);
-    const outerCount = n - innerCount;
+    const sectorClusters = {
+      power_nuclear: { x: cx + 210, y: cy + 110 },
+      cooling_thermal: { x: cx + 20, y: cy - 140 },
+      ai_compute: { x: cx - 210, y: cy - 100 },
+      neocloud_dc: { x: cx - 180, y: cy + 120 },
+      fintech_banking: { x: cx - 290, y: cy + 30 },
+      software_defense: { x: cx + 230, y: cy - 100 }
+    };
 
-    this.nodes = data.nodes.map((node, i) => {
-      let angle, radius;
-      if (i < innerCount) {
-        angle = (i * 2 * Math.PI) / innerCount;
-        radius = 140 + (i % 2) * 25;
-      } else {
-        const outIdx = i - innerCount;
-        angle = (outIdx * 2 * Math.PI) / outerCount + (Math.PI / outerCount);
-        radius = 240 + (outIdx % 2) * 30;
-      }
+    const sectorCounts = {};
+    this.nodes = data.nodes.map(node => {
+      const sId = node.sectorId || "ai_compute";
+      sectorCounts[sId] = (sectorCounts[sId] || 0) + 1;
+      const idx = sectorCounts[sId] - 1;
+      const cluster = sectorClusters[sId] || { x: cx, y: cy };
+      const angle = (idx * 1.57);
+      const dist = 48 + idx * 26;
+
       return {
         ...node,
-        x: cx + Math.cos(angle) * radius,
-        y: cy + Math.sin(angle) * radius,
+        x: cluster.x + Math.cos(angle) * dist,
+        y: cluster.y + Math.sin(angle) * dist,
         vx: 0,
         vy: 0
       };
@@ -3674,6 +4194,18 @@ class ForceDirectedGraph {
     this.zoom = Math.max(0.45, this.zoom * 0.83);
   }
 
+  
+  setSectorFilter(sectorId) {
+    this.selectedSectorId = (this.selectedSectorId === sectorId) ? null : sectorId;
+    if (this.selectedSectorId) {
+      this.nodes.forEach(n => {
+        if (n.sectorId === this.selectedSectorId) {
+          this.triggerRipple(n.id, "#10b981");
+        }
+      });
+    }
+  }
+
   resetView() {
     this.zoom = 1;
     this.panX = 0;
@@ -3685,7 +4217,7 @@ class ForceDirectedGraph {
     if (n) {
       this.panX = (this.cssW / 2 - n.x);
       this.panY = (this.cssH / 2 - n.y);
-      this.zoom = 1.35;
+      this.zoom = 1.25;
       this.triggerRipple(symbol, "#38bdf8");
       if (this.onNodeClick) this.onNodeClick(symbol);
     }
@@ -3714,11 +4246,20 @@ class ForceDirectedGraph {
     }
   }
 
-  _updatePhysics() {
+    _updatePhysics() {
     const cx = this.cssW / 2;
     const cy = this.cssH / 2;
 
-    // Node Repulsion (Anti-Clumping)
+    const sectorClusters = {
+      power_nuclear: { x: cx + 210, y: cy + 110 },
+      cooling_thermal: { x: cx + 20, y: cy - 140 },
+      ai_compute: { x: cx - 210, y: cy - 100 },
+      neocloud_dc: { x: cx - 180, y: cy + 120 },
+      fintech_banking: { x: cx - 290, y: cy + 30 },
+      software_defense: { x: cx + 230, y: cy - 100 }
+    };
+
+    // 1. Strict Hard Collision Anti-Overlap & Mutual Separation
     for (let i = 0; i < this.nodes.length; i++) {
       for (let j = i + 1; j < this.nodes.length; j++) {
         const a = this.nodes[i];
@@ -3726,9 +4267,25 @@ class ForceDirectedGraph {
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.hypot(dx, dy) || 1;
-        if (dist < 220) {
-          const repel = (220 - dist) / 220;
-          const force = repel * repel * 1.9;
+        const minDist = a.size + b.size + 56; // Minimum 116px clearance so badges never touch!
+
+        if (dist < minDist) {
+          const overlap = minDist - dist;
+          const nx = dx / dist;
+          const ny = dy / dist;
+          // Direct geometric separation (impossible to overlap)
+          a.x -= nx * overlap * 0.52;
+          a.y -= ny * overlap * 0.52;
+          b.x += nx * overlap * 0.52;
+          b.y += ny * overlap * 0.52;
+
+          a.vx -= nx * overlap * 0.08;
+          a.vy -= ny * overlap * 0.08;
+          b.vx += nx * overlap * 0.08;
+          b.vy += ny * overlap * 0.08;
+        } else if (dist < 190) {
+          const repel = (190 - dist) / 190;
+          const force = repel * 0.5;
           const fx = (dx / dist) * force;
           const fy = (dy / dist) * force;
           a.vx -= fx;
@@ -3739,7 +4296,7 @@ class ForceDirectedGraph {
       }
     }
 
-    // Spring Attraction along Connected Edges
+    // 2. Gentle Spring Attraction along Connected Edges
     this.edges.forEach(e => {
       const a = this.nodes.find(n => n.id === e.source);
       const b = this.nodes.find(n => n.id === e.target);
@@ -3747,41 +4304,45 @@ class ForceDirectedGraph {
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.hypot(dx, dy) || 1;
-        const targetDist = 150;
-        const force = (dist - targetDist) * 0.018;
-        const fx = (dx / dist) * force;
-        const fy = (dy / dist) * force;
-        a.vx += fx;
-        a.vy += fy;
-        b.vx -= fx;
-        b.vy -= fy;
+        const targetDist = 145;
+        if (dist > targetDist) {
+          const force = (dist - targetDist) * 0.008;
+          const fx = (dx / dist) * force;
+          const fy = (dy / dist) * force;
+          a.vx += fx;
+          a.vy += fy;
+          b.vx -= fx;
+          b.vy -= fy;
+        }
       }
     });
 
-    // Centering Gravity, Velocity Clamping, Damping & Safe Bounds
+    // 3. Sector Cluster Gravity & Safe Canvas Margin Bounding
     this.nodes.forEach(n => {
       if (n !== this.draggedNode) {
-        n.vx += (cx - n.x) * 0.008;
-        n.vy += (cy - n.y) * 0.008;
+        const cluster = sectorClusters[n.sectorId] || { x: cx, y: cy };
+        // Gentle pull towards spacious sector neighborhood
+        n.vx += (cluster.x - n.x) * 0.007;
+        n.vy += (cluster.y - n.y) * 0.007;
 
         const speed = Math.hypot(n.vx, n.vy);
-        if (speed > 4.2) {
-          n.vx = (n.vx / speed) * 4.2;
-          n.vy = (n.vy / speed) * 4.2;
+        if (speed > 2.8) {
+          n.vx = (n.vx / speed) * 2.8;
+          n.vy = (n.vy / speed) * 2.8;
         }
 
-        n.vx *= 0.86;
-        n.vy *= 0.86;
+        n.vx *= 0.82;
+        n.vy *= 0.82;
         n.x += n.vx;
         n.y += n.vy;
 
-        // Strict Bounding
-        n.x = Math.max(n.size + 18, Math.min(this.cssW - n.size - 18, n.x));
-        n.y = Math.max(n.size + 18, Math.min(this.cssH - n.size - 18, n.y));
+        // Strict Margin Bounding
+        n.x = Math.max(n.size + 24, Math.min(this.cssW - n.size - 24, n.x));
+        n.y = Math.max(n.size + 24, Math.min(this.cssH - n.size - 24, n.y));
       }
     });
 
-    // Ripples
+    // 4. Ripples
     for (let i = this.ripples.length - 1; i >= 0; i--) {
       const r = this.ripples[i];
       r.radius += 2.5;
@@ -3801,9 +4362,9 @@ class ForceDirectedGraph {
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, w, h);
 
-    ctx.translate(w / 2 + this.panX, h / 2 + this.panY);
+    ctx.translate(w / 2, h / 2);
     ctx.scale(this.zoom, this.zoom);
-    ctx.translate(-w / 2, -h / 2);
+    ctx.translate(-w / 2 + this.panX, -h / 2 + this.panY);
 
     // 1. Ripples
     this.ripples.forEach(r => {
@@ -3821,6 +4382,7 @@ class ForceDirectedGraph {
       const a = this.nodes.find(n => n.id === e.source);
       const b = this.nodes.find(n => n.id === e.target);
       if (a && b) {
+
         const isHovered = (e === this.hoveredEdge);
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -3867,11 +4429,14 @@ class ForceDirectedGraph {
           ctx.fillText(e.source + " ➔ " + e.target + " (Click Flow)", midX, midY);
         }
       }
+      ctx.globalAlpha = 1.0;
     });
 
     // 3. Stock Nodes - Picture Book Design (Large Friendly Emojis + Bobbing)
     this.nodes.forEach(n => {
       const isHovered = (n === this.hoveredNode);
+      const isSectorMatch = !this.selectedSectorId || (n.sectorId === this.selectedSectorId);
+      ctx.globalAlpha = isSectorMatch ? 1.0 : 0.22;
       const r = n.size;
       // Gentle playful floating bob
       const bob = Math.sin(t * 2.8 + (n.x * 0.05)) * 2.8;
@@ -3903,6 +4468,7 @@ class ForceDirectedGraph {
 
       // Return & Ticker Sub-Badge Underneath Circle
       this._drawUnderNodeBadge(ctx, n.label, n.change1D, n.x, n.y + r + 13 + bob);
+      ctx.globalAlpha = 1.0;
     });
 
     // 4. Detailed Storybook Hover Card
@@ -4004,10 +4570,8 @@ class ForceDirectedGraph {
       const rect = this.canvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
-      const w = this.cssW;
-      const h = this.cssH;
-      const x = (mx - (w / 2 + this.panX)) / this.zoom + w / 2;
-      const y = (my - (h / 2 + this.panY)) / this.zoom + h / 2;
+      const x = (mx - this.cssW / 2) / this.zoom + this.cssW / 2 - this.panX;
+      const y = (my - this.cssH / 2) / this.zoom + this.cssH / 2 - this.panY;
       return { x, y, mx, my };
     };
 
@@ -4052,8 +4616,8 @@ class ForceDirectedGraph {
         this.draggedNode.vx = 0;
         this.draggedNode.vy = 0;
       } else if (isPanning) {
-        this.panX += (e.clientX - startPanX);
-        this.panY += (e.clientY - startPanY);
+        this.panX += (e.clientX - startPanX) / this.zoom;
+        this.panY += (e.clientY - startPanY) / this.zoom;
         startPanX = e.clientX;
         startPanY = e.clientY;
       }
@@ -4107,6 +4671,9 @@ const stockRepo = new StockRepository(networkService, eventBus);
 const scannerVM = new GrowthScannerViewModel(stockRepo, eventBus);
 const networkVM = new StockNetworkViewModel(stockRepo, eventBus);
 const detailVM = new StockDetailViewModel(stockRepo, eventBus);
+const sectorVM = new SectorRotationViewModel(stockRepo, eventBus);
+const trackerService = new SectorRotationTrackerService(stockRepo);
+const trackerVM = new SectorRotationTrackerViewModel(trackerService, eventBus);
 const appCoord = new AppCoordinator(container);
 
 appCoord.start(scannerVM, networkVM, detailVM);
@@ -4114,20 +4681,49 @@ appCoord.start(scannerVM, networkVM, detailVM);
 let graphEngine = null;
 
 async function initApp() {
-  const canvas = document.getElementById('networkCanvas');
-  if (canvas) {
-    graphEngine = new ForceDirectedGraph(
-      canvas,
-      (symbol) => { appCoord.inspectStock(symbol); },
-      (source, target) => { appCoord.inspectRelationship(source, target); }
-    );
-    const graphData = await networkVM.loadGraph();
-    graphEngine.setData(graphData);
+  try {
+    const trackerData = await trackerVM.loadTracker();
+    renderSectorRotationTracker(trackerData.metrics, trackerData.cycleState);
+  } catch (err) {
+    console.error("Sector tracker load error:", err);
   }
 
-  const stocks = await scannerVM.loadData();
-  renderScannerTable(stocks);
-  runSelectedScenario('nvda_boom');
+  try {
+    const rotations = await sectorVM.loadRotations();
+    if (!trackerVM.metrics || trackerVM.metrics.length === 0) {
+      renderSectorRotation(rotations);
+    }
+  } catch (err) {
+    console.error("Sector rotation load error:", err);
+  }
+
+  try {
+    const canvas = document.getElementById('networkCanvas');
+    if (canvas) {
+      graphEngine = new ForceDirectedGraph(
+        canvas,
+        (symbol) => { appCoord.inspectStock(symbol); },
+        (source, target) => { appCoord.inspectRelationship(source, target); }
+      );
+      const graphData = await networkVM.loadGraph();
+      graphEngine.setData(graphData);
+    }
+  } catch (err) {
+    console.error("Graph init error:", err);
+  }
+
+  try {
+    const stocks = await scannerVM.loadData();
+    renderScannerTable(stocks);
+  } catch (err) {
+    console.error("Scanner table load error:", err);
+  }
+
+  try {
+    runSelectedScenario('nvda_boom');
+  } catch (err) {
+    console.error("Scenario load error:", err);
+  }
 }
 
 if (document.readyState === 'loading') {
@@ -4514,6 +5110,153 @@ function setSectorFilter(filter, btn) {
   btn.classList.add('active');
   scannerVM.setFilter(filter);
 }
+
+async function switchTrackerTimeframe(tf) {
+  ["1D", "1W", "1M"].forEach(t => {
+    const btn = document.getElementById("btnTf" + t);
+    if (btn) {
+      if (t === tf) {
+        btn.className = "px-2.5 py-0.5 rounded bg-cyan-600 text-white font-bold transition shadow-sm";
+      } else {
+        btn.className = "px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition";
+      }
+    }
+  });
+
+  const metrics = await trackerVM.setTimeframe(tf);
+  renderSectorRotationTracker(metrics, trackerVM.cycleState);
+}
+
+function renderSectorRotationTracker(metrics, cycleState) {
+  const container = document.getElementById("sectorRotationContainer");
+  if (!container || !metrics) return;
+
+  container.innerHTML = metrics.map(sec => {
+    const isSelected = graphEngine && graphEngine.selectedSectorId === sec.id;
+    const cardBorder = isSelected ? "border-cyan-400 bg-slate-800/95 shadow-cyan-900/40 shadow-lg scale-[1.01]" : sec.stateBorder + " bg-slate-950/90 hover:border-slate-600";
+    const sign = sec.activeMomentum >= 0 ? "+" : "";
+    const momColor = sec.activeMomentum >= 0 ? "text-emerald-400" : "text-rose-400";
+
+    return `
+      <div id="sectorCard_${sec.id}" class="p-3 rounded-xl border ${cardBorder} transition-all space-y-2 cursor-pointer shadow-md" onclick="toggleSectorFilter('${sec.id}')">
+        <!-- Header -->
+        <div class="flex items-center justify-between gap-1 flex-wrap">
+          <div class="flex items-center gap-1.5">
+            <span class="text-base">${sec.emoji}</span>
+            <span class="text-xs font-black text-white">${sec.name}</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded" style="background-color: ${sec.stateBg}; color: ${sec.stateColor}; border: 1px solid ${sec.stateColor}">
+              ${sec.stateBadge}
+            </span>
+            <span class="text-xs font-mono font-bold ${momColor} bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
+              ${sign}${sec.activeMomentum}%
+            </span>
+          </div>
+        </div>
+
+        <!-- Real-Time Momentum Progress Bar -->
+        <div class="space-y-1">
+          <div class="flex items-center justify-between text-[9.5px]">
+            <span class="text-slate-400">Capital Velocity (${sec.tfLabel}):</span>
+            <span class="font-bold text-slate-300">🔥 Lead: <strong class="text-white">${sec.leadStock} (${sec.leadStockChange >= 0 ? "+" : ""}${sec.leadStockChange}%)</strong></span>
+          </div>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="h-1.5 rounded-full transition-all duration-300" style="width: ${sec.inflowScore}%; background-color: ${sec.stateColor}"></div>
+          </div>
+        </div>
+
+        <!-- Kid Explanation -->
+        <p class="text-[11px] text-slate-300 leading-snug">
+          ${sec.kidReason}
+        </p>
+
+        <!-- Component Stock Badges -->
+        <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+          ${sec.stocks.map(stk => `
+            <button class="px-2 py-0.5 rounded bg-slate-900 hover:bg-cyan-950 text-[10.5px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1 transition shadow-sm" onclick="event.stopPropagation(); appCoord.inspectStock('${stk.symbol}'); if(graphEngine) graphEngine.focusNode('${stk.symbol}')">
+              <span>${stk.symbol}</span>
+              <span class="${stk.change1D >= 0 ? "text-emerald-400" : "text-rose-400"}">${stk.change1D >= 0 ? "+" : ""}${stk.change1D}%</span>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderSectorRotation(rotations) {
+  const container = document.getElementById('sectorRotationContainer');
+  if (!container || !rotations) return;
+
+  container.innerHTML = rotations.map(sec => {
+    const isSelected = graphEngine && graphEngine.selectedSectorId === sec.id;
+    const cardBorder = isSelected ? 'border-cyan-400 bg-slate-800/90 shadow-cyan-900/30 shadow-lg' : 'border-slate-800 bg-slate-950/80 hover:border-slate-700';
+
+    return `
+      <div id="sectorCard_${sec.id}" class="p-2.5 rounded-lg border ${cardBorder} transition-all space-y-2 cursor-pointer hover:bg-slate-900/80" onclick="toggleSectorFilter('${sec.id}')">
+        <!-- Header -->
+        <div class="flex items-center justify-between gap-1 flex-wrap">
+          <div class="flex items-center gap-1.5">
+            <span class="text-base">${sec.emoji}</span>
+            <span class="text-xs font-bold text-white">${sec.name}</span>
+          </div>
+          <span class="text-[9px] font-bold font-mono px-1.5 py-0.5 rounded ${sec.flowDirection === 'INFLOW' ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-800' : 'bg-amber-950/80 text-amber-400 border border-amber-800'}">
+            ${sec.flowTag}
+          </span>
+        </div>
+
+        <!-- Macro / Kid Reason -->
+        <p class="text-[10.5px] text-slate-300 leading-snug">
+          ${sec.kidReason}
+        </p>
+
+        <!-- Stock Badges -->
+        <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+          ${sec.stocks.map(stk => `
+            <button class="px-2 py-0.5 rounded bg-slate-900 hover:bg-cyan-950 text-[10px] font-mono font-bold text-white border border-slate-700 hover:border-cyan-500 flex items-center gap-1 transition shadow-sm" onclick="event.stopPropagation(); appCoord.inspectStock('${stk.symbol}'); if(graphEngine) graphEngine.focusNode('${stk.symbol}')">
+              <span>${stk.symbol}</span>
+              <span class="${stk.change1D >= 0 ? 'text-emerald-400' : 'text-red-400'}">${stk.change1D >= 0 ? '+' : ''}${stk.change1D}%</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+let activeSectorFilterId = null;
+
+function toggleSectorFilter(sectorId) {
+  if (activeSectorFilterId === sectorId) {
+    activeSectorFilterId = null;
+  } else {
+    activeSectorFilterId = sectorId;
+  }
+
+  if (graphEngine) {
+    graphEngine.setSectorFilter(activeSectorFilterId);
+  }
+
+  const resetBtn = document.getElementById('btnResetSectorFilter');
+  if (resetBtn) {
+    if (activeSectorFilterId) resetBtn.classList.remove('hidden');
+    else resetBtn.classList.add('hidden');
+  }
+
+  sectorVM.loadRotations().then(renderSectorRotation);
+}
+
+function resetSectorRotationFilter() {
+  activeSectorFilterId = null;
+  if (graphEngine) {
+    graphEngine.setSectorFilter(null);
+  }
+  const resetBtn = document.getElementById('btnResetSectorFilter');
+  if (resetBtn) resetBtn.classList.add('hidden');
+  sectorVM.loadRotations().then(renderSectorRotation);
+}
+
 </script>
 </body>
 </html>
