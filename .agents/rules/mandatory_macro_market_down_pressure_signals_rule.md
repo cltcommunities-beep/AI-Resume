@@ -20,7 +20,7 @@ Before evaluating individual stock entries, the assistant MUST check the live st
 | :--- | :--- | :--- | :--- | :--- |
 | **1️⃣ Oil Shock** | **Brent Crude Oil Benchmark** | Brent < $90 / bbl | **Brent Spiking > $95 – $100+ / bbl** | Spiking energy costs reignite inflation fears, driving discount rate multiple compression. |
 | **2️⃣ Tech Beta** | **QQQ (Nasdaq 100)** | QQQ Green / Pre-Mkt Flat | **QQQ Pre-Mkt Red > -0.5% to -1.0%** | Systematic algorithmic selling across semiconductors, hardware, and cloud. |
-| **3️⃣ Yields / Bonds** | **TLT (20Y+ Treasury ETF) / 10Y Yield** | TLT Rising / Yields < 4.8% | **TLT Dropping >0.5% / Yields > 5.0%** | Higher discount rates crush tech valuation multiples (P/E compression). |
+| **3️⃣ Yields / Bonds & Flight-to-Safety** | **TLT (20Y+ Treasury ETF) / 10Y Yield** | TLT Steady / Yields < 4.8% (with SPY Green) | **TLT Dropping >0.5% / Yields > 5.0%** *(Rate Shock)* **OR `TLT` Rising 2+ days while `SPY`/`QQQ` Fall** *(Flight-to-Safety Panic)* | Rate spikes crush P/E multiples; **TLT rising while stocks fall** exposes stealth institutional Flight-to-Safety liquidation. |
 | **4️⃣ Broad Equity** | **SPY (S&P 500)** | Holding above VWAP / 20-EMA | **SPY Breaking Support / Down > -0.4%** | Market-wide institutional de-risking and index delta hedging. |
 | **5️⃣ Small Caps** | **IWM (Russell 2000)** | Outperforming or Flat | **IWM Dumping > -0.7% to -1.2%** | Signals liquidity contraction, credit risk sensitivity, and margin de-leveraging. |
 | **6️⃣ Event Catalyst** | **High-Impact Macro Calendar** | No high-impact releases | **Pre-FOMC Minutes (2 PM), CPI, or Bank Earnings** | Automated algorithms pull bids, leaving order books thin and volatile. |
@@ -42,8 +42,9 @@ When 3 or more Downward Pressure signals are triggered:
    * Downward pressure regimes reflect systematic institutional liquidation. Support floors do not hold during macro de-risking. Wait for macro stabilization.
 3. **Cash War Chest Lock (100% Liquid Preservation):**
    * Maintain the liquid cash buying power ($10,000+ base) completely untouched. Never deploy capital into an active macro storm.
-4. **No Panic Selling of 4/4 Gate Compounders:**
-   * Existing positions passing the 4/4 Fundamental Gate (`AMKR`, `NVDA`) with multi-year cash runways are governed by Fundamental Invalidation, not technical panic selling.
+4. **Two-Phase Protection for EXISTING Investments (Early Trim vs. Late Anti-Panic):**
+   * **Phase 1 — Early Warning (`Day 1–2`, `VIX 18–25`, Flight-to-Safety Just Starting):** Do NOT sit 100% exposed while existing holdings get dragged down. Proactively trim **`20%–33%`** of high-beta swings, extended winners, or weak laggards into **Cash / `SGOV` / `TLT` / `XLP`** and tighten trailing stops so `20%–30%` of the portfolio is shielded *before* panic hits.
+   * **Phase 2 — Late Panic (`Day 4–5+`, `VIX > 30`, Crash Already Hit):** Do NOT panic-sell profitable 4/4 Gate compounders (`NVDA`, `NVT`, `AMKR`) at capitulation lows. Hold through peak fear, then use the **next relief bounce into Resistance/Neckline** to trim and rebuild the **15%–25% Cash / Safe-Haven Shield** (see [mandatory_flight_to_safety_rotation_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_flight_to_safety_rotation_rule.md)).
 
 ---
 
