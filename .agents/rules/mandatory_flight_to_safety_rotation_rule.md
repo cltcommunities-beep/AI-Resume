@@ -12,9 +12,16 @@ Whenever the user asks about **ANY stock, buy, sell, hold, chart, or portfolio**
 
 ---
 
-## 🚦 0. Mandatory Top-of-Reply "Beginner Market Weather Box" (Render FIRST Every Time!)
+## 🚦 0. Mandatory Top-of-Reply "Current Market Situation & Beginner Weather Box" (Render FIRST Every Time!)
 
-Pull live Robinhood MCP quotes for `XLK`, `QQQ`, `SPY`, `XLP`, `WMT`, `TLT`, `SHY`, `SGOV`, and `VIX`, then display this exact beginner-friendly table at the top before any buy/sell/hold advice:
+Before answering ANY stock, buy, sell, hold, chart, or portfolio question, ALWAYS diagnose **WHICH EXACT SITUATION / MARKET TERM(S)** the market is currently in right now across **4 layers** (combining this rule + `mandatory_barbell_bond_and_liquidity_rule.md` + `mandatory_market_regime_and_seasonal_playbook_rule.md`):
+
+1. **🌦️ Daily Weather Light (`Flight to Safety` vs. `Risk-On`):** Check live Robinhood quotes for 💻 Tech (`XLK`/`QQQ`), 🛒 Groceries (`XLP`/`WMT`), 🏦 Piggy Bank (`TLT`/`SHY`/`SGOV`), and 😱 Fear (`VIX`).
+2. **📉 Drawdown & Breadth Situation:** Classify `Bull Uptrend`, `Pullback (-5% to -9.9%)`, `Official Correction (-10% to -19.9%)`, or `Bear Market (-20%+)` + `Broadening` vs. `Narrow Breadth`.
+3. **🏛️ Bond, Fed & Liquidity Situation:** Name active Fed/bond terms (`QE`/`QT`, `Hawkish`/`Dovish`, `Fed Pivot`, `Sticky Inflation`, `Soft`/`Hard Landing`, `Duration Seesaw: SGOV vs. TLT`, `Liquidity Drain`, `Credit Spread`, `Yield Curve`).
+4. **📆 Active Traps & Seasonal Window:** Flag any active crowd trap or calendar term (`Dead-Cat Bounce`, `Bull/Bear Trap`, `Sell the News`, `Short Squeeze`, `Tax-Loss Harvesting`, `January Effect`, `Window Dressing`, `Holiday Override`, `OpEx`).
+
+Display the 1-Glance Situation & Weather Table right at the top before any buy/sell/hold advice:
 
 | Market Weather Light | Everyday Store Check (Live Robinhood Tape) | What It Means (Plain English) | Automatic Action (New Cash + Existing Stocks) |
 | :---: | :--- | :--- | :--- |

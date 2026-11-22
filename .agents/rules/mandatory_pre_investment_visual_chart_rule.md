@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-description: Mandatory Full Visual Chart Creation Standard — Every stock/ETF chart MUST include ALL 4 timeframes [Today (5m) | 2D (Prior+Today) | 1D Daily | 1W Weekly], ALL 3 views [Chart | Simple 4-Step Graph | 4-Step Explanation], Row 0 Red Alert Trap & Cash-Vault Banner, Always-Visible Cyan Market Stock Value (Banner + Line + Pill + Tooltip), 7-Signal Robinhood MCP HUD, Always-On Interactive 6-Factor Target-Price % Probability Bar (0DTE + 1M/4M/7M/14M) with Always-Visible Purple Dashed Target Line (edge-pinned if off intraday scale), Live VWAP & Event Clock on Today (5m), Mandatory Zero-Missing-Data 6-Zone L2 Bid/Ask Parity (Exact Shares + $M Dollar Values + Total Bid/Ask Level Counts on ALL 4 TFs & View B), Account ••••3782 Footer, and Mandatory Automated Completeness + jsc Syntax Verification.
+description: Mandatory All-Rules-On Full Visual Chart Creation & 10/10 Validation Standard — Before delivering ANY stock/ETF chart, ALL active workspace rules MUST be ON and validated (10/10 PASS): 4-Layer Current Market Situation & Beginner Weather Light (XLK vs XLP/WMT vs TLT/SGOV), Official Regime/Seesaw/Seasonal tags, Macro Calendar Gate + Inflation Trinity pills, ALL 4 timeframes [Today (5m) | 2D | 1D Daily | 1W Weekly], ALL 3 views [Chart | Simple 4-Step Graph | 4-Step Explanation + Kid-Level Summary], Cyan Market Stock Value, 7-Signal HUD, 6-Factor Target-Price % Probability Bar with Always-On Purple Target Line, 6-Zone L2 Ask Wall / Bid Floor + Pill-Hover Action Callouts, Account ••••3782 Footer, and jsc Syntax Verification.
 ---
 
 # 📊 MANDATORY FULL CHART CREATION STANDARD (`TODAY / 2D / 1D / 1W` HYBRID + ALWAYS-ON TARGET LINE + 6-FACTOR `%` ODDS + RED ALERT BLUEPRINT)
@@ -20,9 +20,9 @@ Whenever the user asks for a chart of **ANY stock, ETF, or index (`[TICKER]`)** 
 
 Before writing any chart HTML, execute ALL live data fetches (zero static memory):
 
-1. **Real-Time Tape & Index Divergence (`get_equity_quotes`):**
-   * Fetch `[TICKER]`, `SPY`, `QQQ`, `IWM`, `IAU`, `TLT`, `HYG`.
-   * Record live price (`Regular` / `Pre-Market` / `After-Hours`), `Bid / Ask`, official prior-session close, and `>= 1.5%` relative index divergence check.
+1. **Real-Time Tape, Safe-Haven Weather & Index Divergence (`get_equity_quotes`):**
+   * Fetch `[TICKER]`, `SPY`, `QQQ`, `IWM`, `XLK`, `XLP`, `WMT`, `IAU`, `TLT`, `SHY`, `SGOV`, `HYG`.
+   * Record live price (`Regular` / `Pre-Market` / `After-Hours`), `Bid / Ask`, official prior-session close, `>= 1.5%` relative index divergence check, **Beginner Weather Light (`💻 Tech XLK` vs `🛒 Groceries XLP/WMT` vs `🏦 Piggy Bank TLT/SHY/SGOV`)**, **Credit Spread (`HYG` vs `TLT`)**, and **Breadth (`SPY` vs `IWM`)**.
 2. **Intraday Live Bars for `● Today (5m)` & `2D` Tabs (`get_equity_historicals`):**
    * **Today (`24/5` 1-Minute → Aggregated 5-Minute):** Call `interval: "minute"`, `bounds: "24_5"`, `start_time: "<TODAY>T00:00:00-05:00"`. Aggregate non-interpolated bars cleanly into crisp **5-minute candlesticks** with session flags (`OVN`, `PRE`, `RTH`, `AH`) and compute **exact session-reset cumulative Intraday VWAP** for every bar.
    * **2-Day Context (`Prior Day + Today`):** Call `interval: "5minute"`, `bounds: "extended"`, starting at prior trading day `09:30 AM ET`. Aggregate to crisp **10-minute candlesticks** (`~70–85` bars) with day-reset VWAP so yesterday's sell-off/rally flows directly into today's session.
@@ -50,7 +50,10 @@ Before writing any chart HTML, execute ALL live data fetches (zero static memory
 ### 🚨 Row 0 — Top-of-Chart Red Alert Trap & Cash-Vault Instruction Banner (`#redAlertBanner` — ALWAYS FIRST & NEVER HIDDEN)
 * Placed as the **very first element** above Row 1 and **NEVER hidden with `hidden sm/md/lg:`**.
 * **Always-Visible Compact Strip:** Alert Tier Badge (**`🟢 CLEAR (L0)` / `🟡 YELLOW WATCH (L1)` / `🟠 ORANGE DE-RISK (L2)` / `🔴 RED LOCKDOWN (L3)`**), live leading storm count (`X/5 Leading`), live `VIX` / `10Y` / Fed / OpEx alerts, **Cash-Vault Lock rule** (`50% L1` / `100% L2–L3`), **stock-specific Trap Check line** (separating Trap #1 Credit/Dilution/Ask-Wall traps from Trap #2 Panic-Sell traps), and clickable **`Trap Details ▾`** button.
-* **Macro Calendar Gate Pill (additive):** Row 0 MUST also carry the **Next-Event Pill + Gate State** (`🟢 CLEAR / 🟡 CAUTION / 🟠 PRE-EVENT / 🔴 DAY-OF`) per [mandatory_macro_calendar_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_macro_calendar_gate_rule.md), plus the **Inflation Trinity pill** per [mandatory_inflation_trinity_and_valuation_multiple_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_inflation_trinity_and_valuation_multiple_rule.md). View A draws dashed vertical event markers (`CPI`, `FOMC`, `NFP`, `PCE`, `OpEx`) for events in the visible window and projects the next 14 days in the forecast zone on `1D`/`1W`.
+* **4-Layer Market Situation, Macro Calendar & Inflation Trinity Pills (additive — ALL ALWAYS-ON):** Row 0 MUST also carry:
+  1. **🌦️ Beginner Weather Light & Flight-to-Safety Pill** (`🟢 SUNNY` / `🟡 STORM CLOUDS` / `🔴 STORM ACTIVE — XLK vs XLP/WMT vs TLT/SGOV`) per [mandatory_flight_to_safety_rotation_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_flight_to_safety_rotation_rule.md).
+  2. **📉 Active 1947 Regime, Seesaw Bond & Seasonal Tag** (e.g. `Official Correction -11.6% · SGOV > TLT Seesaw · Tax-Loss Harvesting`) per [mandatory_barbell_bond_and_liquidity_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_barbell_bond_and_liquidity_rule.md) & [mandatory_market_regime_and_seasonal_playbook_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_market_regime_and_seasonal_playbook_rule.md).
+  3. **🗓️ Next-Event Macro Calendar Gate Pill** (`🟢 CLEAR / 🟡 CAUTION / 🟠 PRE-EVENT / 🔴 DAY-OF`) per [mandatory_macro_calendar_gate_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_macro_calendar_gate_rule.md), plus the **🔥 Inflation Trinity Pill** per [mandatory_inflation_trinity_and_valuation_multiple_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_inflation_trinity_and_valuation_multiple_rule.md). View A draws dashed vertical event markers (`CPI`, `FOMC`, `NFP`, `PCE`, `OpEx`) for events in the visible window and projects the next 14 days in the forecast zone on `1D`/`1W`.
 * **Expandable 5-Trap Checklist Drawer (`#trapDrawer`, collapsed by default):** Reveals all 5 traps (`Bonds & Fed`, `Cash-Vault Profit-Lock`, `Balance Sheet / Solvency Gate`, `Today Pivot / Ask-Wall / 0DTE Pin Trap`, and `How to Read Today's Chart / Target Line`).
 
 ### Row 1 — Header Bar: 4-Timeframe Switcher + Live Price + 3 Main View Tabs + `🌓`
@@ -113,8 +116,9 @@ Before writing any chart HTML, execute ALL live data fetches (zero static memory
 #### 2. View B — `Simple 4-Step Graph` (`#storyCanvas`, `154px` height)
 * Real graphical swing-to-live curve controlled by **4 Step Buttons** (`1`–`4`, default Step `4`), displaying shaded Floor & Gap zones, Cyan Market Value dashed line + pill, **Purple Target Line + pill**, live Options Cone, and plain-English `#storyCap` bottom bar.
 
-#### 3. View C — `4-Step Explanation` (`#viewC`, `2x2` Card Grid)
+#### 3. View C — `4-Step Explanation` + `🧸 Kid-Level Summary` (`#viewC`, `2x2` Card Grid + Bottom Kid Box)
 * `grid-cols-1 sm:grid-cols-2 gap-2` with 4 color-coded plain-English cards (`emerald`, `orange`, `purple`, `rose`) summarizing: **(1) Live Base, VWAP & Solvency**, **(2) Pivot, Ask Wall & Upper Gaps**, **(3) Target Line & Multi-Horizon Options Odds**, and **(4) Fair Decision & Watchlist Plan** — each with a clickable **`Show Graph →`** (`data-jump="1..4"`) button.
+* Directly below the 4 cards inside `#viewC`, render a compact **`🧸 Simple Kid-Level Summary`** strip answering the 3 Kid Questions (*🌦️ Weather? 🔍 Why moving? 🚦 Simple move?*) with zero unexplained jargon per [mandatory_kid_level_plain_english_explainer_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_kid_level_plain_english_explainer_rule.md).
 
 ### Row 5 — Compact Masked Account `••••3782` Footer Strip
 * **Left:** Masked `••••3782` holdings (`shares @ avg cost` or `0 sh Held` + prior realized P&L), Cyan `Mkt Val`, active open order, Buying Power, and today's buy verdict.
@@ -155,17 +159,20 @@ Therefore, **EVERY chart for EVERY stock (`[TICKER]`) MUST display complete L2 B
 
 ---
 
-## ✅ 3. Mandatory Pre-Delivery Engineering & Zero-Missing-Data Verification Gate (Rule 2, Rule 3, Rule 4)
+## ✅ 3. Mandatory "ALL-RULES-ON" 10-Point Pre-Delivery Chart Validation Gate (ZERO Bypass Allowed!)
 
-Before delivering ANY chart to the user, the assistant MUST pass ALL 6 automated checks in sequence (do NOT stop until ALL pass):
-1. **Architecture Plan First (Rules 3 & 4):** Create/reference an MVVM + MVVMC Architecture & Implementation Plan diagram artifact (`*_plan.md`).
-2. **Fresh Filename (Anti-Cache):** Save updated charts to a new distinct `.html` filename in the artifact directory.
-3. **Static Rules Audit:** Programmatically assert **0 raw backticks**, **0 `:root` CSS overrides**, allowlisted `gstatic` Tailwind CDN, and presence of `redAlertBanner`, `mktValBanner`, `probBar`, and all 4 timeframe buttons (`TODAY`, `2D`, `1D`, `1W`).
-4. **Automated Zero-Missing-Data & 6-Zone L2 Parity Audit:** Run a Python verification script asserting **zero missing data** across the generated HTML:
-   * L2 Bid/Ask `$M` dollar values + share counts + total Bid/Ask level counts appear in Row 0, Row 2 HUD, Row 2B Presets, Row 3 Checkbox, View A Intraday (`drawIntraday`), View A Interday (`drawInterday` — `1D/1W` Bid pill MUST exist!), and View B (`drawStory` — Bid pill MUST exist!).
-   * All core indicators present: Live RTH/Extended VWAP, Cyan Market Stock Value (`MKT VAL`), Always-On Purple Target Line (`★`), `0D/1M/4M/7M/14M` Horizons, `12M` Lower/Upper Open Gap count, Big-Game Bonds/Prediction Markets (`10Y`/`TLT`/`Kalshi` or `FedWatch`), Solvency metrics, and masked `••••3782` Footer.
-5. **JavaScript Engine Syntax Test:** Extract the inline `<script>` block and execute a parse check via macOS JavaScriptCore (`/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc`) confirming **exit code `0`**.
-6. **Visual Math Sanity Check:** Verify right-axis pill count × `15px` fits cleanly within canvas `ch` (both View A and View B) and confirm zero x-axis label collisions before embedding `<agent-embed src="file:///..."></agent-embed>`.
+**HARD BLOCKING DIRECTIVE:** Before giving ANY stock/ETF chart to the user, **ALL active workspace rules MUST be turned ON and programmatically validated** (`10/10 PASS`). If **ANY** single check fails, DO NOT deliver the chart — fix every failure and re-run validation until **`10/10 PASS`** is confirmed:
+
+1. **Architecture & Implementation Plan First (Rules 3 & 4):** Create/reference an MVVM + MVVMC Architecture & Implementation Plan diagram artifact (`*_plan.md`).
+2. **Fresh Anti-Cache Filename:** Save to a new distinct `.html` filename in the artifact directory (`<agent-embed src="file:///..."></agent-embed>`, NO `height` attribute).
+3. **4-Layer Market Situation & Beginner Weather Validation (Rules #75, #76, #77):** Programmatically verify Row 0 includes live **Beginner Weather Light (`XLK` vs `XLP`/`WMT` vs `TLT`/`SGOV`)**, **Drawdown Regime (`Pullback`/`Correction`/`Bear`)**, **Duration Seesaw (`SGOV` vs `TLT`) / Liquidity Drain**, and **Seasonal Tag (`Tax-Loss` / `Holiday Override`)**.
+4. **Macro Calendar Gate & Inflation Trinity Validation:** Programmatically verify Row 0 includes Next Tier-1 Event Pill + Gate State (`🟢/🟡/🟠/🔴`), Inflation Trinity Regime (`PPI ➔ CPI ➔ Core PCE`), and View A dashed vertical event markers.
+5. **100% Live Data & Zero-Placeholder Audit:** Verify **0 static/stale/mock prices**, full **252-day (`12M`) 200-SMA & Open Gap scan**, live `5m` VWAP on `Today (5m)`, live `2D`, `1D`, `1W`, and `5` options horizons (`0D/1M/4M/7M/14M`).
+6. **6-Zone L2 Bid/Ask & Direct Pill-Hover Action Validation:** Verify exact `$M` dollar values + share counts + Bid/Ask level counts across ALL 6 zones (`Row 0`, `Row 2 HUD`, `Row 2B Presets`, `Row 3 Checkbox`, `View A` all 4 TFs, `View B`/`C`), explicit **`ASK WALL ($XM)`** & **`BID FLOOR ($YM)`** pills, and interactive hover **Pill Action Callout Card + Coach Strip**.
+7. **Always-On Cyan Market Value & Purple Target Line Validation:** Verify `mktValBanner` (`Cap / Shares`, never hidden), Cyan dashed line + pill, and **Purple Dashed Target Line (`★`)** pinned on-canvas across ALL 4 timeframes (`TODAY`, `2D`, `1D`, `1W`) + View B.
+8. **Kid-Level Explainer & Masked Footer Validation (Rule #78):** Verify `#viewC` contains the **`🧸 Simple Kid-Level Summary`** (3 Kid Questions, zero unexplained jargon) and Row 5 displays masked `••••3782` holdings/buying power.
+9. **Static Rules & JavaScriptCore Syntax Test (`jsc` / `node --check`):** Assert **0 raw backticks**, **0 `:root` CSS overrides**, allowlisted `gstatic` Tailwind CDN, and parse the extracted inline `<script>` via `/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc` confirming **exit code `0`**.
+10. **Visual Overlap & Companion Report Validation:** Verify `relaxPills` right-axis spacing fits cleanly inside canvas `ch`, zero x-axis label collisions, and print the compact **`✅ Chart Validation Gate: 10/10 PASS`** proof line right above the `<agent-embed>` in the response!
 
 ---
 
