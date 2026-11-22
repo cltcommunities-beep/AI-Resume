@@ -17,7 +17,7 @@ Whenever the user asks about **ANY stock, buy, sell, hold, chart, or portfolio**
 Before answering ANY stock, buy, sell, hold, chart, or portfolio question, ALWAYS diagnose **WHICH EXACT SITUATION / MARKET TERM(S)** the market is currently in right now across **4 layers** (combining this rule + `mandatory_barbell_bond_and_liquidity_rule.md` + `mandatory_market_regime_and_seasonal_playbook_rule.md`):
 
 1. **🌦️ Daily Weather Light (`Flight to Safety` vs. `Risk-On`):** Check live Robinhood quotes for 💻 Tech (`XLK`/`QQQ`), 🛒 Groceries (`XLP`/`WMT`), 🏦 Piggy Bank (`TLT`/`SHY`/`SGOV`), and 😱 Fear (`VIX`).
-2. **📉 Drawdown & Breadth Situation:** Classify `Bull Uptrend`, `Pullback (-5% to -9.9%)`, `Official Correction (-10% to -19.9%)`, or `Bear Market (-20%+)` + `Broadening` vs. `Narrow Breadth`.
+2. **📉 Cycle Phase, Drawdown & Breadth Situation:** Classify the active **Market Cycle Phase** (`Markdown`, `Stabilization`, `Accumulation`, `Expansion`, or `Distribution`) + Drawdown (`Pullback -5% to -9.9%`, `Official Correction -10% to -19.9%`, or `Bear Market -20%+`) + `Broadening` vs. `Narrow Breadth`.
 3. **🏛️ Bond, Fed & Liquidity Situation:** Name active Fed/bond terms (`QE`/`QT`, `Hawkish`/`Dovish`, `Fed Pivot`, `Sticky Inflation`, `Soft`/`Hard Landing`, `Duration Seesaw: SGOV vs. TLT`, `Liquidity Drain`, `Credit Spread`, `Yield Curve`).
 4. **📆 Active Traps & Seasonal Window:** Flag any active crowd trap or calendar term (`Dead-Cat Bounce`, `Bull/Bear Trap`, `Sell the News`, `Short Squeeze`, `Tax-Loss Harvesting`, `January Effect`, `Window Dressing`, `Holiday Override`, `OpEx`).
 

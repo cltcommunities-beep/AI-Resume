@@ -39,13 +39,19 @@ Bond prices and interest rates sit on a **seesaw**: **Rates UP ➔ Bond Prices D
 | **✨ `Soft Landing`** | Inflation cools toward `2.0%` while jobs stay healthy. | Bullish multiple expansion; dips recover fast. | Hold core compounders; deploy staged dry powder after macro prints clear. |
 | **🥶 `Hard Landing`** | High rates trigger rising layoffs & contracting GDP/ISM. | Prolonged Bear Market (`-20%+`); earnings estimates get cut. | Expand Safe Shield to `30%+` (`SGOV`/`TLT`/`XLP`); strict `$0.00` ban on cyclical/leveraged growth. |
 | **🏛️ `Government Stimulus`** | Major federal spending/tax-cut packages. | **Split effect:** Boosts direct beneficiaries (defense/grid/chips) **BUT** if unfunded deficits push 10Y yields `> 5.0%`, long-duration multiples compress. | Verify 10Y yield reaction before chasing stimulus headlines. |
+| **🌤️ `Disinflation`** | Inflation slows down (`3.5% → 2.2%`) while growth stays positive. | **#1 Best Regime for Tech & AI** — falling yields expand P/E multiples. | Lean into Growth end of Barbell; let 4/4-Gate compounders run (`Expansion`). |
+| **🔥 `Reflation`** | Growth AND inflation pick back up together (post-stimulus / cuts). | Favors energy, industrials, commodities, financials; pressures long bonds (`TLT`). | Favor cyclicals/power/grid & **`SGOV`** over `TLT` (avoid Seesaw drop). |
+| **🧊 `Deflation`** | Falling prices + contracting demand (recession fear). | Hurts high-debt & cyclical equities; strong tailwind for **`TLT`** & cash. | Expand Safe Shield (`30%+` `SGOV`/`TLT`); zero leveraged/unprofitable stocks. |
+| **🥵 `Stagflation`** | Sticky/hot inflation + slowing growth & rising unemployment. | **Worst regime for BOTH stocks & bonds** (margins + multiples squeezed simultaneously). | Hold maximum **`SGOV`** Shield + gold (`IAU`/`GLD`), energy, & staples (`XLP`); `$0.00` high-P/E chase. |
 
 ---
 
-## 4. 🚨 Three Hidden Plumbing Alarms (`Liquidity Drain`, `Credit Spread`, `Yield Curve`)
+## 4. 🚨 Five Hidden Plumbing & Global Shock Alarms (`Liquidity Drain`, `Credit Spread`, `Yield Curve`, `Carry Trade Unwind`, `Black Swan`)
 1. **`Liquidity Drain` (Mega-IPOs & Tax Day):** Giant capital raises (e.g., Nov 19, 2026 **`$81B+` Anthropic IPO `ANT`**) or mid-April tax payments suck billions of cash out of popular retail/tech stocks (`NVDA`, `SOFI`, `BE`) for 48–72 hours. **Rule:** Enforce a **`$0.00` Buy Freeze** on Day 0–1 of a mega-IPO (`>$20B`); wait for post-IPO settlement before judging true support.
 2. **`Credit Spread` (`HYG` vs. `TLT`):** Compare junk bonds (`HYG`) against safe Treasuries (`TLT`). If `HYG` drops `> -1.5%` in a week while `TLT` rises, corporate credit stress is spreading — enforce **immediate `$0.00` ban** on high-debt companies (`CRWV`, `APLD`).
 3. **`Yield Curve` (`2s10s` Inversion / Un-Inversion):** When 2-Year yields exceed 10-Year yields (inverted), recession risk is building; when the curve **rapidly un-inverts (bull steepens)** as 2Y yields plunge on layoffs, recession onset is historically closest — keep the Barbell Safe Shield locked in!
+4. **`Carry Trade Unwind` (`JPY` / Global Funding Shock):** When the Bank of Japan hikes rates or the Yen surges suddenly, leveraged global funds liquidate U.S. tech (`NVDA`/`QQQ`) and crypto overnight to repay Yen loans. **Rule:** Treat sudden overnight Yen spikes (`USD/JPY` plunging `> 2%`) as an automatic **`$0.00` Buy Freeze** until forced liquidation clears.
+5. **`Black Swan` / `Tail Risk`:** Unscheduled systemic shocks (war/Hormuz blockade, bank failure, sudden crisis) where all stock correlations snap to `1.0` instantly. **Rule:** Never drop the **`15%–25%` `SGOV` Barbell Shield** to `0%` even in sunny bull markets — it is permanent survival insurance.
 
 ---
 
