@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Inflation Trinity (Wholesale PPI -> Retail CPI -> Core PCE Fed Target -> Valuation P/E Multiples) and Interactive Chart Integration Rule for Every Stock Analysis, Buy/Sell Decision, and Visual Chart
 ---
 

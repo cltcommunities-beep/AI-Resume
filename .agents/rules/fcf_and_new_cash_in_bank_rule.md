@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in balance-sheet, earnings, and solvency audits to calculate Free Cash Flow conversion and projected New Cash in Bank runway.
 ---
 
 # Rule: Priority FCF & New Cash in Bank Solvency Runway Rule

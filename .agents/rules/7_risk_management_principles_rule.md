@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in trade-entry/order audits and stock evaluations to enforce the 7 Golden Institutional Risk Management Principles (position sizing, stop buffers, risk/reward, and drawdown caps).
 ---
 
 # Rule: 7 Golden Institutional Risk Management Principles Rule

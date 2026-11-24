@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use when staging buys, calculating 1% risk sizing, setting hard stop-losses, or enforcing 3-Pillar Pre-Buy Quality Checklists.
 ---
 
 # Rule: Mandatory Elite Execution, Quality Business Checklist & Structural Safeguards Standard

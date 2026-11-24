@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use whenever a stock drops or gaps post-earnings to enforce multi-day digestion discipline, guidance/margin audits, and Wall St PT revision checks before buying.
 ---
 
 # 🔴 RED-TAG MANDATORY DISCIPLINE RULE: POST-EARNINGS ANNOUNCEMENT DIP & WALL STREET ANALYST AUDIT

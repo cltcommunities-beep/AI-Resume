@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in deep-dive stock reports to audit Wall Street Investment Bank ratings, price target changes, and institutional coverage.
 ---
 
 # Mandatory Investment Bank Analyst & Ownership Tracking Rule

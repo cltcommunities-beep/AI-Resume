@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Daily Macro-Economic Data Release (Actual vs. Expected) and Micro-Company Event/Headline Dual-Audit Rule for Every Stock Analysis and Investment Decision
 ---
 

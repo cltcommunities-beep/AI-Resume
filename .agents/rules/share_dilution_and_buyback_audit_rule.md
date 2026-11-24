@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in solvency/balance-sheet deep-dives to audit YoY diluted share count expansion vs. net share buybacks and S-3/ATM overhang.
 ---
 
 # Rule: Mandatory Share Dilution & Buyback Audit Rule

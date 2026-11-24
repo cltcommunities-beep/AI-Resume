@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in earnings, solvency, and fundamental deep-dives to calculate Dual Future Net Surplus (F1 conservative and F2 growth cash surplus formulas).
 ---
 
 # Rule: Dual Future Net Surplus Formula Architecture Rule

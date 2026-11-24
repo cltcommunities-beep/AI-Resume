@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in market audits, pre-buy screens, and catalyst reviews to classify and score active Macroeconomic Catalysts.
 ---
 
 # Rule: Macroeconomic Catalysts Classification & Audit Standard

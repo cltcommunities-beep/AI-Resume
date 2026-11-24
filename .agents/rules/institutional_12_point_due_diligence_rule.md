@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in comprehensive stock due-diligence and valuation deep-dives requiring the 12-Point Fundamental & Technical Institutional Checklist.
 ---
 
 # Rule: Institutional 12-Point Fundamental & Technical Due Diligence Rule

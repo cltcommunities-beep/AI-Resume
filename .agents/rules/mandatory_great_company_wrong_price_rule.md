@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Use before buying even Anchor Monopolies to enforce support-floor staging, ban mid-air buying (>3% above 20MFA or >5% above 50MFA), and check PEG <= 1.5x.
+---
+
 # 🏛️ Institutional Rule: A Great Company is NOT a Great Investment if You Pay the Wrong Price
 **Rule Name:** `mandatory_great_company_wrong_price_rule.md`  
 **Governing Authority:** Robinhood Margin Account `••••3782` Compounding Engine ($10,000 to $20,000 Milestone Architecture)  

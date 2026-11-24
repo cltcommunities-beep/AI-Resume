@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in portfolio reviews and rebalancing checks on Account ••••3782 to audit Tier 1/2/3 targets, 15% single-stock cap, ±5% rebalance bands, and hyperscaler CapEx cuts.
 ---
 
 # Rule: Mandatory Quantitative Portfolio Risk Manager & 4 Algorithmic Maintenance Rules

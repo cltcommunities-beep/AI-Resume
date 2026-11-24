@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in macro oil shock, energy, and geopolitical headline audits tracking Strait of Hormuz / Persian Gulf disruption and Brent crude risks.
 ---
 
 # MANDATORY STRAIT OF HORMUZ GEOPOLITICAL & OIL MONITOR RULE

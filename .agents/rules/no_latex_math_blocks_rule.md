@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in any response with financial math or equations enforcing plain text/tables only and zero $$ or LaTeX syntax (also folded into Tier 0).
 ---
 
 # Rule: Strict No LaTeX Math Code / Plain Text Only Rule

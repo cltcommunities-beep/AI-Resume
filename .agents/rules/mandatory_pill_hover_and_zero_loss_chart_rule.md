@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Rule for Direct Pill-Hover Action Guidance, Explicit L2 Ask Wall & Bid Floor Standards, and Zero-Missing-Data Anti-Loss Chart Creation across ALL Stocks.
 ---
 

@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in per-stock news/crisis checks and analysis reports requiring independent same-turn live web searches for every ticker.
 ---
 
 # MANDATORY PER-STOCK INDEPENDENT LIVE WEB SEARCH RULE

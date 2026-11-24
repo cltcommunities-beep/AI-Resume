@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in full morning opening-bell portfolio readiness scans and full portfolio reviews requiring the 17-Column Master Executive Portfolio Readiness Table.
 ---
 
 # MANDATORY EXECUTIVE PORTFOLIO TABLE RULE

@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in breaking-news and daily market/stock audits when formatting Table 1 Breaking Market & Geopolitical Headlines with live source attribution.
 ---
 
 # MANDATORY BREAKING MARKET & GEOPOLITICAL HEADLINES TABLE RULE

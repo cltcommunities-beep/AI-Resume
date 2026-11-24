@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use when evaluating semiconductor, datacenter, neocloud, or AI hardware stocks for the 5-Filter Anti-CapEx Reversal Screen (pre-paid CapEx, CFO > CapEx, net debt).
 ---
 
 # Rule: Mandatory "Capex Reversal" Trap & Hyperscaler Digestion Forensic Audit Rule

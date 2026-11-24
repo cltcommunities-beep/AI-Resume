@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use whenever analyzing quarterly earnings reports or guidance to render the 6-Column Institutional Earnings Benchmark Table.
 ---
 
 # MANDATORY 6-COLUMN INSTITUTIONAL EARNINGS BENCHMARK RULE

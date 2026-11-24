@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in anchor-monopoly screening and deep valuation reviews prioritizing net-cash Massive Cash Flow Monster compounders.
 ---
 
 # Rule: Massive Cash Flow Monsters Portfolio Mandate

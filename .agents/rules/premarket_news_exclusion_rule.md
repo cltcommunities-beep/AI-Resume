@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use during 8:15 AM EST pre-market high-gainer news scans to exclude existing core portfolio holdings from speculative chase alerts.
 ---
 
 # PRE-MARKET NEWS SCANNER EXCLUSION RULE

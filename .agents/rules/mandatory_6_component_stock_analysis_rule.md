@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in full standalone written stock analysis reports requiring all 6 chronological executive analysis components.
 ---
 
 # Mandatory 6-Component Stock Analysis Standard Rule

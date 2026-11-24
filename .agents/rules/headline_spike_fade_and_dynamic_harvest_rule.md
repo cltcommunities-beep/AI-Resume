@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Use when a stock spikes on breaking headlines into hostile macro resistance to apply dynamic R1/R2 profit-harvesting and breakeven stops instead of chasing.
+---
+
 # 📰 Institutional Rule: Headline Spike Fading & Dynamic Profit-Harvest Protocol
 **Rule Name:** `headline_spike_fade_and_dynamic_harvest_rule.md`  
 **Governing Authority:** Robinhood Margin Account `••••3782` Compounding Engine  

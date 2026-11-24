@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use only when generating raster stock/news cartoon or comic infographics with image tools (natural webcomic aesthetic).
 ---
 
 # Image Generation Style Rule (Natural & Funny Webcomic Aesthetic)

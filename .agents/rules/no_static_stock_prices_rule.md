@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use whenever quoting stock prices, market caps, or balances requiring live Robinhood MCP/web calls and banning static hardcoded numbers (also folded into Tier 0).
 ---
 
 # 🔴 RED-TAG MANDATORY RULE: STRICT BAN ON STATIC STOCK PRICES & HARDCODED DATA

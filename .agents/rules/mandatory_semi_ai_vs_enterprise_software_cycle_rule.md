@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in tech sector rotation reviews and software/semiconductor comparisons to distinguish AI hardware tailwinds vs. enterprise SaaS disruption risk.
 ---
 
 # MANDATORY SEMI/AI HARDWARE VS. ENTERPRISE SOFTWARE ROTATION CYCLE RULE

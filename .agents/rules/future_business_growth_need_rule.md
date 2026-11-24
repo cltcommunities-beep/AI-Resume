@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in long-term compounding and growth due diligence to evaluate structural secular demand and Future Business Growth Need.
 ---
 
 # FUTURE BUSINESS GROWTH NEED & EXPANSION MANDATE RULE

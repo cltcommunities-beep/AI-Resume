@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Use whenever checking orders, live ticks, positions, or cash in Account ••••3782 (folded into Tier 0 Fair Decision Gate 1 as well).
+---
+
 # 📲 Institutional Rule: Always Check with Robinhood Live APIs First
 **Rule Name:** `mandatory_always_check_robinhood_api_rule.md`  
 **Governing Authority:** Robinhood Margin Account `••••3782` Compounding Engine ($10,000 to $20,000 Milestone Architecture)  

@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use when analyzing weekly trend structure or building 1W chart timeframes using live Robinhood 1-week historical candlesticks.
 ---
 
 # ROBINHOOD API 1-WEEK CANDLE DATA BREAKDOWN & MOMENTUM RULE

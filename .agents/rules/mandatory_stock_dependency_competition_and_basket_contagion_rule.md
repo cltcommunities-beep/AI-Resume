@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Stock Dependency, Competition & AI Infrastructure Basket Contagion Rule (Upstream Suppliers, Downstream Customers, and Direct Competitors Audit)
 ---
 

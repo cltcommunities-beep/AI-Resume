@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in stock due diligence and swing evaluations combining Dual-Moat quantitative candlestick levels with pure cash solvency runways.
 ---
 
 # Rule: Dual-Moat Quant Algorithmic Candlestick & Pure Cash Solvency Rule

@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in market overviews, morning recaps, and portfolio reviews to render the Daily Sector Rotation & Capital Flow Prediction Matrix.
 ---
 
 # MANDATORY DAILY SECTOR ROTATION & CAPITAL FLOW PREDICTION RULE

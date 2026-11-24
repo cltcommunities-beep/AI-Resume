@@ -1,62 +1,72 @@
 ---
-trigger: always_on
-description: Universal Mandatory Pre-Recommendation Live News Search, Relative Divergence Alarm, and Past/Future Catalyst Audit Rule for ALL Stocks
+trigger: model_decision
+description: Universal Mandatory Pre-Recommendation Live News Search, Relative Divergence Alarm, and Every-Penny Past/Future Announcement, CapEx/Growth & Government Impact Audit Rule for ALL Stocks
 ---
 
-# 🚨 UNIVERSAL MANDATORY RULE: PRE-RECOMMENDATION LIVE NEWS, DIVERGENCE & PAST/FUTURE CATALYST AUDIT (APPLIES TO ALL STOCKS)
+# 🚨 UNIVERSAL MANDATORY RULE: EVERY-PENNY PAST/FUTURE ANNOUNCEMENTS, GROWTH/INVESTMENT & GOVERNMENT IMPACT AUDIT (APPLIES TO ALL STOCKS)
 
-## 🛑 Executive Directive (100% Generic — Applies to Every Stock on the Market)
-This rule applies **universally and generically to EVERY SINGLE STOCK (`[ANY_TICKER]`)** across the entire market whenever any stock is discussed, evaluated, compared, or considered for buying, selling, or holding.
+## 🛑 Executive Directive (100% Generic — Applies to Every Penny & Every Stock)
+This rule applies **universally and generically to EVERY SINGLE PENNY INVESTMENT (`$1` fractional, DCA, limit bid, or full tranche) and EVERY STOCK (`[ANY_TICKER]`)** whenever any stock is discussed, evaluated, compared, or considered for buying, selling, or holding.
 
-The assistant is **STRICTLY PROHIBITED** from naming, ranking, or suggesting **ANY stock** as a "Buy Candidate" or "Recommendation" by relying solely on broker price quotes (`get_equity_quotes`) or historical fundamental memory. Price tools only return numbers—they do **NOT** return breaking news, investigations, lawsuits, or forward event risks.
+The assistant is **STRICTLY PROHIBITED** from naming, ranking, or suggesting **ANY stock** as a "Buy Candidate" or "Recommendation" by relying solely on broker price quotes (`get_equity_quotes`) or historical fundamental memory. Price tools only return numbers—they do **NOT** return breaking announcements, CapEx burn shifts, government policy rulings, investigations, lawsuits, or forward event risks.
 
-Before recommending, evaluating, or proposing **ANY stock ticker**, the assistant **MUST UNCONDITIONALLY** execute a live web search (`search_web`) in that exact same turn to audit both the **Past News** and **Future Fixed-Date Catalysts**. **ZERO EXCEPTIONS PERMITTED.**
+Before recommending, evaluating, or deploying even **one penny** on **ANY stock ticker**, the assistant **MUST UNCONDITIONALLY** execute a live web search (`search_web`) in that exact same turn to audit:
+1. **Past Announcements & Real Stock Impact** (`7–30 days`),
+2. **Future Announcements & Expected Catalyst Impact** (`14–90 days`),
+3. **Company Investment (`CapEx/R&D`) & Growth Sustainability** (self-funded Cash vs. `5%`-yield debt/dilution), AND
+4. **Government, Policy & External Impacts** (subsidies, contracts, tariffs/export controls, `NRC`/`FDA`/`DOE`/`SEC`/`DOJ` rulings, Fed rates, geopolitics, or anything else).
+
+**Output Hygiene Law (Zero Clutter):** Present findings concisely in the **1-Glance 4-Row Summary Card** below so the user is never overwhelmed with walls of clumsy text. **ZERO EXCEPTIONS PERMITTED.**
 
 ---
 
-## 🏛️ The 4 Universal Laws for Every Stock Analysis or Recommendation
+## 🏛️ The 5 Universal Laws for Every Penny & Stock Evaluation
 
-For **ANY stock ticker (`[TICKER]`)** discussed or considered for investment, the assistant MUST execute these 4 steps **before** outputting any recommendation:
+For **ANY stock ticker (`[TICKER]`)** discussed or considered for even `$1` of investment, execute these 5 checks **before** outputting any verdict:
 
 ### 1. 🔍 Mandatory Live `search_web` News Audit (Every Stock, Every Turn)
 * Broker quote APIs (`get_equity_quotes`) provide prices only—never news.
-* Before suggesting or analyzing **any stock (`[TICKER]`)**, the assistant MUST execute an independent live `search_web` call:
-  `"[TICKER] stock breaking news why dropping OR rising catalysts [Current Month Year]"`
+* Before suggesting or analyzing **any stock (`[TICKER]`)**, execute independent live `search_web` calls covering past announcements, upcoming catalysts, CapEx/growth news, and government/policy impacts:
+  `"[TICKER] stock announcements earnings guidance capex growth government policy news [Current Month Year]"`
 * Relying on prior-turn context, static memory, or past reputation ("this is a great company") without a fresh live news search is an automatic rule violation.
 
 ### 2. 🚨 The Universal ≥1.5% Index Divergence Siren
-* For **every stock** checked, the assistant must calculate its real-time percentage move relative to the broad market (`SPY` and `QQQ`):
+* Calculate real-time percentage move relative to the broad market (`SPY` and `QQQ`):
   `Relative Divergence = Stock % Change - Market Index (SPY or QQQ) % Change`
-* **Automatic Siren Trigger:** If any stock is underperforming `SPY` or `QQQ` by **≥1.5%** (for example, the market index is green/flat while the stock is down -2%, -3%, or -5%), the assistant MUST treat this as an **Active Company-Specific Shock Siren**.
-* The assistant is strictly forbidden from calling a diverging drop a "normal technical dip to support" until it runs `search_web` and identifies the exact company-specific headline causing the divergence.
+* **Automatic Siren Trigger:** If any stock underperforms `SPY` or `QQQ` by **≥1.5%**, treat it as an **Active Company-Specific Shock Siren** and identify the exact headline before calling it a normal dip.
 
-### 3. ⏪ Universal Past 7-Day Forensic News Audit (Why Did It Move?)
-For **every stock** evaluated, the assistant must verify and explicitly state whether any of the following occurred in the **past 7 days**:
-* Government, DOJ, SEC, Congressional, or Internal Board investigations, subpoenas, or regulatory probes
-* Executive controversies, CEO/CFO resignations, or major insider selling
-* Customer contract cancellations, tightened customer oversight, or order delays
-* Analyst downgrades, price target cuts, or short-seller reports
-* Share dilution filings (S-3 shelf registrations, ATM offerings, convertible debt)
+### 3. ⏪ Past Announcements & Actual Stock Impact Audit (`7–30 Days`)
+For **every penny evaluated**, verify what the company, customer, Fed, or government recently announced AND **how the stock actually reacted**:
+* Quarterly earnings, revenue/margin surprises, or lowered full-year guidance (and whether sellers trapped buyers)
+* Major CapEx expansions, datacenter/factory delays (e.g., slippage into `2027`), or contract cancellations/wins
+* Government/DOJ/SEC/Congressional probes, executive changes, insider selling, or analyst PT cuts
+* Share dilution filings (`S-3` shelf registrations, `ATM` offerings, convertible debt)
 
-### 4. ⏩ Universal Future 14-Day Fixed-Date & Catalyst Audit (What Is Coming Next?)
-For **every stock** evaluated, the assistant must verify (via `get_earnings_results` AND `search_web`) and explicitly state all scheduled events in the **next 14 days**:
-* Exact upcoming quarterly earnings date and timing (Pre-Market AM vs. Post-Market PM)
-* Direct sector peer earnings occurring within the next 72 hours (sympathy sell-off risk)
-* Regulatory, legal, or Congressional response deadlines and hearing dates
-* Product launch deadlines, FDA/NRC milestones, or lockup expirations
+### 4. ⏩ Future Scheduled Announcements & Expected Impact (`14–90 Days`)
+Verify (via `get_earnings_results` / `get_earnings_calendar` AND `search_web`) all upcoming catalysts and their expected stock direction:
+* Exact upcoming quarterly earnings date (Pre-Market AM vs. Post-Market PM) & direct peer earnings within `72h`
+* Scheduled macro prints (`FOMC`, `CPI`, `Core PCE`, `NFP` Jobs) and `72h` binary freezes
+* Product launches, `FDA`/`NRC`/`DOE` licensing milestones, customer ramp dates, or lockup expirations
+
+### 5. 🏛️ Company Investment, Growth & Government / External Impact Audit
+Before risking a single penny, explicitly verify:
+* **Company Investment (`CapEx`) & Growth Engine:** Is the company growing organically AND funding its buildouts with **positive operating cash flow** (`NVDA`, `NVT`, `GOOG`), OR is it burning cash and risking **`5%`-yield debt/share dilution** (`NBIS`, `CRWV`, `APLD`, `OKLO`)?
+* **Government & Policy Impacts (Tailwind vs. Headwind):** Check federal subsidies/grants (`CHIPS Act`, `DOE` loans, tax credits), regulatory approvals (`NRC` reactors, `FDA`), government contracts, **tariffs & chip export controls**, antitrust/DOJ actions, Fed rate policy (`~5%` yield gravity), and external shocks (Hormuz/energy, supply chains, or anything else).
 
 ---
 
-## 📋 Mandatory Universal Pre-Recommendation Proof Table (4-Gate Macro + Micro Standard)
+## 📋 Mandatory 1-Glance Clean Proof Card (Zero Clutter Standard)
 
-Whenever evaluating or proposing **ANY stock (`[TICKER]`)** as a buy, dip-buy, or reinvestment candidate, the assistant MUST render this standardized **4-Gate Macro + Micro Proof Table** before giving its verdict:
+Whenever evaluating **ANY stock (`[TICKER]`)** for even `$1` of investment, render this **clean, scannable 1-Glance Table** before giving the Split Decision:
 
-| Universal Audit Gate | Live Verification Source | Verified Finding for `[TICKER]` (Today's Macro + Past/Future Micro) | Clearance Verdict |
+| Check Area | What Was Found (Plain English) | Impact on Stock | Verdict |
 | :--- | :--- | :--- | :---: |
-| **0. Today's Macro Data Release** | Live `search_web` (8:30 AM / 10:00 AM Data) | Exact `Actual vs. Expected` print (e.g., Core CPI `0.3%` vs `0.2%`, PPI, Jobs, Fed) | 🟢 Clear / 🔴 Macro Headwind |
-| **1. Index Divergence Check** | `get_equity_quotes` vs `SPY`/`QQQ` | `[TICKER]`: X.XX% vs Index: Y.YY% (Divergence: Z.ZZ%) | 🟢 Clear / 🔴 Siren |
-| **2. Past 7-Day & Today's Micro News** | Live `search_web` (Executed Now) | Explicit summary of today's analyst PT changes, probes, customer news, or dilution | 🟢 Clean / 🔴 Veto |
-| **3. Next 14-Day Fixed Dates** | `get_earnings_results` + Live Web | Exact dates for earnings, peer reports (`CRWV`/`NBIS`), or legal/regulatory deadlines | 🟢 Safe / 🔴 Freeze |
+| **1. Past Announcements** *(7–30d)* | `[Key earnings/guidance/delay/contract + how stock reacted]` | `[e.g., Trapped overhead supply / Institutional support]` | 🟢 / 🟡 / 🔴 |
+| **2. Future Announcements** *(14–90d)* | `[Next earnings, Fed/CPI/PCE dates, product/milestone dates]` | `[e.g., 72h Pre-Event Freeze / Post-Dec 10 catalyst]` | 🟢 / 🟡 / 🔴 |
+| **3. Company Investment & Growth** | `[CapEx expansion, revenue/backlog trend & Cash Flow vs. Debt/Dilution]` | `[Self-funded Cash Monster vs. 5%-yield cash burn]` | 🟢 / 🟡 / 🔴 |
+| **4. Government & External Impact** | `[DOE/NRC/CHIPS/Tariffs/Export bans/DOJ/Fed 5% yields/Macro]` | `[Tailwind vs. Delay/Tariff/Valuation ceiling]` | 🟢 / 🟡 / 🔴 |
+
+*(Plus `Relative Divergence`: `[TICKER] X% vs. SPY/QQQ Y%` noted in 1 crisp line above or below.)*
 
 ---
 

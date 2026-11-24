@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in full fundamental stock deep-dives to query and audit live SEC Form 4 insider buying/selling and Hedge Fund 13F ownership shifts.
 ---
 
 # Mandatory Insider SEC Form 4 & Hedge Fund 13F Live Audit Standard Rule

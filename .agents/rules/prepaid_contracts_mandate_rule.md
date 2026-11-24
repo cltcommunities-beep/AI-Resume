@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in AI infrastructure/neocloud/hardware deep-dives to prioritize binding pre-paid customer RPO contracts over debt-funded speculative buildouts.
 ---
 
 # Rule: Pre-Paid Contracts & Upfront Cash Inflow Mandate Rule

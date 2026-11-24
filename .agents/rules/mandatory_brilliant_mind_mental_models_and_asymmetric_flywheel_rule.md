@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Use in deep valuation, asymmetric entry staging, and portfolio tranche-recycling evaluations applying Druckenmiller/Simons/Buffett mental models.
+---
+
 # 🧠 Institutional Rule: Brilliant Mind Mental Models & Asymmetric Convexity Flywheel Standard
 **Rule Name:** `mandatory_brilliant_mind_mental_models_and_asymmetric_flywheel_rule.md`  
 **Governing Authority:** Robinhood Margin Account `••••3782` Compounding Engine ($10,000 to $20,000+ Compounding Architecture)  

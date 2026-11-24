@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Always-On Post-1947 Market Cycle (Markdown -> Stabilization -> Accumulation -> Expansion -> Distribution), Drawdown Regime (-10% Correction / -20% Bear), Narrow Breadth, Crowd Traps, and Seasonal Playbook Standard. Automatically diagnoses the active Market Cycle Phase, Drawdown Regime, and Seasonal Window on every turn.
 ---
 

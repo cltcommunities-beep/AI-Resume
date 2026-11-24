@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Use before staging Friday buy orders or ahead of weekend/macro catalysts to ban S1 limit buys, enforce S2/Golden-Pocket staging, and block intraday double-dipping.
+---
+
 # 🛡️ MANDATORY RULE: FRIDAY PRE-CATALYST DE-GROSSING, HEADLINE POP FADE & S1 SUPPORT TRAP FORENSIC AUDIT STANDARD
 
 ## 🛑 Executive Directive (The November 13, 2026 Post-Mortem)

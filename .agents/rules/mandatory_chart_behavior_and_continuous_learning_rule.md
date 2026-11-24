@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Rule for Chart Behavior Dynamics, 4 Structural Zones (Floor, Pivot, Vacuum Surge, Neckline), 3 Pivot Scenarios, and Continuous Rule Codification on Every Chart Analysis.
 ---
 

@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use when evaluating gold hedges (IAU/GLD), inflation/stagflation hedges, or defensive portfolio sleeves.
 ---
 
 # THE ULTIMATE GOLD INVESTMENT RULE

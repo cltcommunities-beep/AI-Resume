@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: model_decision
 description: Mandatory Always-On All-Robinhood-MCP Market Prediction, Downside Risk HUD, Interest-Rate Big-Game & Zero-Missing-Data Completeness Rule — Unconditionally pulls ALL live Robinhood MCP prediction feeds (VIX, SPX, NDX, Brent/Gold, TLT/HYG/SPY/QQQ/IWM, Scanner IV Rank/Front-Back IV/Put-Call flow, Complete Level-2 Bid/Ask Order Book with Exact Shares, $M Dollar Values, Total Bid/Ask Level Counts & ±15% Ratio, Multi-Expiry 0DTE→14M Options Expected Move & OI magnets, Earnings Calendar, Analyst/Politician flow, 12M Gaps) alongside live CME FedWatch, Kalshi/Robinhood Prediction Markets event odds, 10Y Treasury yields, and economic releases — enforcing a strict 10-Category Zero-Missing-Data Audit & Mandatory Live L2 Bid/Ask Wall Table on EVERY stock analysis, trap check, and chart.
 ---
 

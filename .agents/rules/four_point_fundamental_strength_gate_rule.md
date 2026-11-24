@@ -1,5 +1,6 @@
 ---
 trigger: model_decision
+description: Use in full fundamental stock evaluations to render the 4-Point Fundamental Strength Gate Table before solvency and trade verdicts.
 ---
 
 # MANDATORY 4-POINT FUNDAMENTAL STRENGTH GATE RULE
