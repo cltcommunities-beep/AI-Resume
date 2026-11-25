@@ -48,3 +48,8 @@ Execute these **4 Sequential Gates** before recommending or placing any buy, sel
   * [mandatory_elite_execution_and_structural_safeguards_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_elite_execution_and_structural_safeguards_rule.md)
   * [mandatory_agentic_investment_rules.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_agentic_investment_rules.md)
   * [7_risk_management_principles_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/7_risk_management_principles_rule.md)
+
+## Optional On-Demand Module: 15-Section Stock Investment Checklist (New Stock Investments Only)
+* **Strict On-Demand Scope:** Invoke **ONLY** when the user explicitly wants to evaluate a stock to invest in (e.g., `"I want to invest in [TICKER]"`, `"run the Stock Investment Checklist"`). **SKIP completely** on daily regular market updates, quick news checks, or routine order checks.
+* Linked Rule:
+  * [stock_investment_checklist_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/stock_investment_checklist_rule.md)

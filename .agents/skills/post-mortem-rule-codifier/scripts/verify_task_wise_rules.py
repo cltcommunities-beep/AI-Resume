@@ -161,7 +161,9 @@ def main() -> int:
             print(f"  - {item}")
         return 1
 
-    print("\n🎉 ALL GATES PASSED — ZERO OVERFLOW, 78/78 RULES ROUTED!")
+    routed_count = len(covered_rules & actual_rule_names)
+    total_count = len(actual_rule_names)
+    print(f"\n🎉 ALL GATES PASSED — ZERO OVERFLOW, {routed_count}/{total_count} RULES ROUTED!")
     return 0
 
 
