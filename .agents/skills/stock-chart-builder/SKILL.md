@@ -14,7 +14,8 @@ Follow this modular workflow strictly whenever generating or updating any chart 
 ## Linked Institutional References & Contracts
 * **Individual Stock 9-Layer & 6-Zone L2 Spec:** [stock_9layer_spec.md](./references/stock_9layer_spec.md)
 * **Broad Market (`SPY`/`QQQ`) 5-Layer Macro Overlay:** [market_5layer_spec.md](./references/market_5layer_spec.md)
-* **Core Workspace Chart Rules (`7` Rules Preserved):**
+* **Core Workspace Chart Rules (`8` Rules Preserved):**
+  * [tradingChart.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/tradingChart.md) (70-Pattern Robinhood MCP Detection Engine: 40 Price-Chart + 30 Candlestick Patterns across Daily/Weekly/Monthly with 5-Factor Validation & 4-State Lifecycle)
   * [mandatory_pre_investment_visual_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pre_investment_visual_chart_rule.md)
   * [mandatory_chart_market_prediction_overlay_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_chart_market_prediction_overlay_rule.md)
   * [mandatory_pill_hover_and_zero_loss_chart_rule.md](file:///Users/karthik/Desktop/AI%20Resume/.agents/rules/mandatory_pill_hover_and_zero_loss_chart_rule.md)

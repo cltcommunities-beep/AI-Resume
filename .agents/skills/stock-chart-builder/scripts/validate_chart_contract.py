@@ -80,12 +80,19 @@ class ChartContractValidator:
                 if re.search(rf"\b{re.escape(phrase)}\b", html, flags=re.IGNORECASE):
                     leaks.append(f"Foreign signature for {other_sym}: '{phrase}'")
 
-        # Automatically check for foreign price fingerprints belonging to other stocks
+        # Automatically check for foreign price fingerprints in UI, prose, pills, and JS constants
+        # (exclude raw historical OHLC bar arrays so legitimate 5Y candles crossing e.g. $14.85 don't false-positive)
+        html_no_bars = re.sub(
+            r"var\s+(?:TODAY|TWO_DAY|DAILY|ALL_DAILY|WEEKLY|MONTHLY|FIVE_YEAR)_BARS\s*=\s*\[.*?\];",
+            "",
+            html,
+            flags=re.DOTALL,
+        )
         for other_sym, prices in FOREIGN_PRICE_SIGNATURES.items():
             if other_sym.upper() in allowed:
                 continue
             for price in prices:
-                if re.search(rf"(?<![\d.]){re.escape(price)}(?![\d.])", html):
+                if re.search(rf"(?<![\d.]){re.escape(price)}(?![\d.])", html_no_bars):
                     leaks.append(f"Foreign price fingerprint for {other_sym}: '${price}'")
 
         for term in self.contract.banned_legacy_terms:
